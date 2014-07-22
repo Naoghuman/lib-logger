@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.pro.logger.api;
+package de.pro.lib.logger.api;
 
-import de.pro.logger.PRoLogger;
+import de.pro.lib.logger.PRoLogger;
 
 /**
  *

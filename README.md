@@ -1,4 +1,4 @@
-PRo-Logger
+Lib-Logger
 ==============
 
 A library for `easy` logging in a [JavaFX](http://docs.oracle.com/javase/8/javase-clienttechnologies.htm) &amp; [Maven](http://maven.apache.org/) application.

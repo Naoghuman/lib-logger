@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.pro</groupId>
-    <artifactId>PRo-Logger</artifactId>
-    <name>PRo-Logger</name>
+    <artifactId>Lib-Logger</artifactId>
+    <name>Lib-Logger</name>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -74,5 +74,5 @@
             <version>2.0-rc2</version>
         </dependency>
     </dependencies>
-    <description>A library for easy logging in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/pro-logger for more details.</description>
+    <description>A library for easy logging in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/lib-logger for more details.</description>
 </project>
