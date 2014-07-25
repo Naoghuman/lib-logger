@@ -19,12 +19,21 @@ package de.pro.lib.logger.api;
 import de.pro.lib.logger.PRoLogger;
 
 /**
+ * The factory <code>de.pro.lib.logger.api.LoggerFactory</code> provides a 
+ * singleton instance of the Interface <code>de.pro.lib.logger.api.ILogger</code>.
  *
  * @author PRo
+ * @see de.pro.lib.logger.api.ILogger
  */
 public final class LoggerFactory {
     private static ILogger instance = null;
     
+    /**
+     * Provides a singleton instance from the Interface <code>de.pro.lib.logger.api.ILogger</code>.
+     * 
+     * @return A singleton instance of <code>de.pro.lib.logger.api.ILogger</code>.
+     * @see de.pro.lib.logger.api.ILogger
+     */
     public static ILogger getDefault() {
         
         if (instance == null) {

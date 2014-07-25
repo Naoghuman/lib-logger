@@ -17,17 +17,81 @@
 package de.pro.lib.logger.api;
 
 /**
+ * The <code>Interface</code> for the class <code>de.pro.lib.logger.PRoLogger</code>.
+ * Over the factory <code>de.pro.lib.logger.api.LoggerFactory</code> you can 
+ * access the methods in this <code>Interface</code>.
  *
  * @author PRo
+ * @see de.pro.lib.logger.PRoLogger
+ * @see de.pro.lib.logger.api.LoggerFactory
  */
 public interface ILogger {
+    /**
+     * Print a specific message im debug-mode for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     */
     public void debug(Class clazz, String msg);
+    
+    /**
+     * Print a specific message im debug-mode with a throwable for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     */
     public void debug(Class clazz, String msg, Throwable ta);
+    
+    /**
+     * Print a specific message im error-mode for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     */
     public void error(Class clazz, String msg);
+    
+    /**
+     * Print a specific message im error-mode with a throwable for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     */
     public void error(Class clazz, String msg, Throwable ta);
+    
+    /**
+     * Print a specific message im info-mode for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     */
     public void info(Class clazz, String msg);
+    
+    /**
+     * Print a specific message im info-mode with a throwable for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     */
     public void info(Class clazz, String msg, Throwable ta);
+    
+    /**
+     * Print a specific message im warn-mode for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     */
     public void warn(Class clazz, String msg);
+    
+    /**
+     * Print a specific message im warn-mode with a throwable for the given class.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     */
     public void warn(Class clazz, String msg, Throwable ta);
     
     /**
