@@ -18,7 +18,7 @@
 --------------------------------------------------------------------------------
 IMPORTANT
 --------------------------------------------------------------------------------
-1) Move this file log4j2.xml to the default package in src/main/resources.
+1) Move the file log4j2.xml to the default package in src/main/resources.
 2) Don't forget to tweak the file so that the logmessages have the format which
    you want.
     - See wiki.apache.org/logging-log4j/Log4jXmlFormat

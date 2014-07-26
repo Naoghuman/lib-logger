@@ -2,6 +2,7 @@ Lib-Logger
 ==============
 
 A library for `easy` logging with the [Apache Log4j 2] in a [JavaFX] &amp; [Maven] application.
+
 Current `version` is `0.0.1-SNAPSHOT` (07.2014).
 
 
@@ -57,20 +58,12 @@ LoggerFactory.getDefault().debug(Class clazz, String msg, Throwable ta);
 
 ```java
 /**
- * This method print a <code>Welcome</code> message at start in the logfile. 
- * The length from the <code>param welcomeMessage</code> shouldn't above 65 
- * characters.<br />
- * The <code>Welcome</code> message will print in the format:<br /><br />
+ * This will print a <code>Welcome</code> message at start in the logfile
+ * between two lines of '#'s with a length from 65 characters.<br />
+ * The <code>Welcome</code> message will print in the format:<p>
  * 
  * #####################################################################<br />
- * # Here you can read your welcome message                            #<br />
- * #####################################################################<br /><br />
- * 
- * If your <code>Welcome</code> message is longer then 65 characters then you 
- * you will see:<br /><br />
- * 
- * #####################################################################<br />
- * # Here you can read your to long ..................... welcome message #<br />
+ * &nbsp;&nbsp;Here you can read your welcome message.<br />
  * #####################################################################
  * 
  * @param welcomeMessage the welcome message
@@ -83,7 +76,7 @@ LoggerFactory.getDefault().sayWelcome(String welcomeMessage);
 Requirements<a name="Requirements" />
 ------------
 
-* On your system you need [JRE 8] installed.
+* On your system you need [JRE 8] or [JDK 8] installed.
 * The library [Lib-Logger-0.0.1-SNAPSHOT.jar](#Installation).
   * Included is the [log4j-api-2.0-rc2.jar].
   * Included is the [log4j-core-2.0-rc2.jar].
@@ -105,7 +98,7 @@ Installation<a name="Installation" />
 Documentation<a name="Documentation" />
 -------------
 
-Momentary only the [JavaDoc] in the library is available.
+Momentary only the [JavaDoc] in the library itself is available.
 
 
 

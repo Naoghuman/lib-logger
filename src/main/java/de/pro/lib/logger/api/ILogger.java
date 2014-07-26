@@ -95,20 +95,12 @@ public interface ILogger {
     public void warn(Class clazz, String msg, Throwable ta);
     
     /**
-     * This method print a <code>Welcome</code> message at start in the logfile. 
-     * The length from the <code>param welcomeMessage</code> shouldn't above 65 
-     * characters.<br />
-     * The <code>Welcome</code> message will print in the format:<br /><br />
+     * This will print a <code>Welcome</code> message at start in the logfile
+     * between two lines of '#'s with a length from 65 characters.<br />
+     * The <code>Welcome</code> message will print in the format:<p>
      * 
      * #####################################################################<br />
-     * # Here you can read your welcome message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#<br />
-     * #####################################################################<br /><br />
-     * 
-     * If your <code>Welcome</code> message is longer then 65 characters then you 
-     * you will see:<br /><br />
-     * 
-     * #####################################################################<br />
-     * # Here you can read your to long ..................... welcome message #<br />
+     * &nbsp;&nbsp;Here you can read your welcome message.<br />
      * #####################################################################
      * 
      * @param welcomeMessage the welcome message
@@ -116,20 +108,12 @@ public interface ILogger {
     public void sayWelcome(String welcomeMessage);
     
     /**
-     * This method print a <code>Goodbye</code> message at start in the logfile. 
-     * The length from the <code>param goodbyeMessage</code> shouldn't above 65 
-     * characters.<br />
-     * The <code>Goodbye</code> message will print in the format:<br /><br />
+     * This will print a <code>Goodbye</code> message at the end in the logfile
+     * between two lines of '#'s with a length from 65 characters.<br />
+     * The <code>Goodbye</code> message will print in the format:<p>
      * 
      * #####################################################################<br />
-     * # Here you can read your goodbye message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#<br />
-     * #####################################################################<br /><br />
-     * 
-     * If your <code>Goodbye</code> message is longer then 65 characters then you 
-     * you will see:<br /><br />
-     * 
-     * #####################################################################<br />
-     * # Here you can read your to long ..................... goodbye message #<br />
+     * &nbsp;&nbsp;Here you can read your goodbye message.<br />
      * #####################################################################
      * 
      * @param goodbyeMessage the goodbye message
