@@ -10,7 +10,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
-    <description>A library for easy logging in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/lib-logger for more details.</description>
+    <description>A library for easy logging with the Apache Log4j 2  in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/lib-logger for more details.</description>
     <name>Lib-Logger</name>
     <dependencies>
         <dependency>
@@ -24,5 +24,17 @@
             <version>2.0-rc2</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
