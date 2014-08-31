@@ -17,9 +17,9 @@
 package de.pro.lib.logger.api;
 
 /**
- * The <code>Interface</code> for the class <code>de.pro.lib.logger.PRoLogger</code>.
- * Over the factory <code>de.pro.lib.logger.api.LoggerFactory</code> you can 
- * access the methods in this <code>Interface</code>.
+ * The <code>Interface</code> for the class {@link de.pro.lib.logger.PRoLogger}.
+ * Over the factory {@link de.pro.lib.logger.api.LoggerFactory} you can access
+ * the methods in this <code>Interface</code>.
  *
  * @author PRo
  * @see de.pro.lib.logger.PRoLogger
