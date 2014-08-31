@@ -4,7 +4,7 @@
     
     <groupId>de.pro</groupId>
     <artifactId>Lib-Logger</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version> <!-- -SNAPSHOT -->
     <packaging>jar</packaging>
     <description>A library for easy logging with the Apache Log4j 2  in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/lib-logger for more details.</description>
     <name>Lib-Logger</name>
