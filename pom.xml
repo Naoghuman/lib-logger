@@ -1,29 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
     <groupId>de.pro</groupId>
     <artifactId>Lib-Logger</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <description>A library for easy logging with the Apache Log4j 2  in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/lib-logger for more details.</description>
+    <name>Lib-Logger</name>
+    <inceptionYear>2014</inceptionYear>
+    
+    <developers>
+        <developer>
+            <email>peter.rogge@yahoo.de</email>
+            <id>Naoghuman</id>
+            <name>Peter Rogge</name>
+            <timezone>+1</timezone>
+            <url>https://github.com/Naoghuman/lib-logger.git</url>
+        </developer>
+    </developers>
+    
+    <licenses>
+        <license>
+            <name>The GNU General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+            <comments>The GNU General Public License is a free, copyleft license for software and other kinds of works.</comments>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:ssh://github.com:Naoghuman/lib-logger.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:Naoghuman/lib-logger.git</developerConnection>
+        <url>https://github.com/Naoghuman/lib-logger.git</url>
+    </scm>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    <description>A library for easy logging with the Apache Log4j 2  in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/lib-logger for more details.</description>
-    <name>Lib-Logger</name>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.0</version>
-        </dependency>
-    </dependencies>
+    
     <build>
         <plugins>
             <plugin>
@@ -36,5 +53,18 @@
             </plugin>
         </plugins>
     </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+    </dependencies>
 </project>
 

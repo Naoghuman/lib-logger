@@ -78,8 +78,8 @@ Requirements<a name="Requirements" />
 
 * On your system you need [JRE 8] or [JDK 8] installed.
 * The library [Lib-Logger-0.0.2-SNAPSHOT.jar](#Installation).
-  * Included is the [log4j-api-2.0.jar].
-  * Included is the [log4j-core-2.0.jar].
+  * Included is the [log4j-api-2.0.2.jar].
+  * Included is the [log4j-core-2.0.2.jar].
 
 
 
@@ -144,8 +144,8 @@ You can reach me under <peter.rogge@yahoo.de>.
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
-[log4j-api-2.0.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
-[log4j-core-2.0.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-api-2.0.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-core-2.0.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/
 [NetBeans]:https://netbeans.org/
 [Pull Request]:https://help.github.com/articles/using-pull-requests
