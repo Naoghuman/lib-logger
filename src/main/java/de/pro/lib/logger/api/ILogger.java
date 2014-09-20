@@ -100,7 +100,7 @@ public interface ILogger {
      * The <code>Welcome</code> message will print in the format:<p>
      * 
      * #####################################################################<br />
-     * &nbsp;&nbsp;Here you can read your welcome message.<br />
+     * # &nbsp;&nbsp;Here you can read your welcome message. (fill ' ' to the end of #)<br />
      * #####################################################################
      * 
      * @param welcomeMessage the welcome message
@@ -113,7 +113,7 @@ public interface ILogger {
      * The <code>Goodbye</code> message will print in the format:<p>
      * 
      * #####################################################################<br />
-     * &nbsp;&nbsp;Here you can read your goodbye message.<br />
+     * # &nbsp;&nbsp;Here you can read your goodbye message. (fill ' ' to the end of #)<br />
      * #####################################################################
      * 
      * @param goodbyeMessage the goodbye message

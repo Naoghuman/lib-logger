@@ -26,13 +26,13 @@ Example<a name="Example" />
 
 ```java
 /**
- * The factory <code>de.pro.lib.logger.api.LoggerFactory</code> provides a 
- * singleton instance of the Interface <code>de.pro.lib.logger.api.ILogger</code>.
+ * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides a 
+ * singleton instance of the Interface {@link de.pro.lib.logger.api.ILogger}.
  *
  * @author PRo
  * @see de.pro.lib.logger.api.ILogger
  */
-public final class LoggerFactory
+public final class LoggerFacade
 ```
 
 ```java
@@ -42,7 +42,7 @@ public final class LoggerFactory
  * @param clazz The class for that the message should print.
  * @param msg The message which sould print.
  */
-LoggerFactory.getDefault().debug(Class clazz, String msg);
+LoggerFacade.getDefault().debug(Class clazz, String msg);
 ```
 
 ```java
@@ -53,7 +53,7 @@ LoggerFactory.getDefault().debug(Class clazz, String msg);
  * @param msg The message which sould print.
  * @param ta The error which is thrown.
  */
-LoggerFactory.getDefault().debug(Class clazz, String msg, Throwable ta);
+LoggerFacade.getDefault().debug(Class clazz, String msg, Throwable ta);
 ```
 
 ```java
@@ -63,12 +63,12 @@ LoggerFactory.getDefault().debug(Class clazz, String msg, Throwable ta);
  * The <code>Welcome</code> message will print in the format:<p>
  * 
  * #####################################################################<br />
- * &nbsp;&nbsp;Here you can read your welcome message.<br />
+ * # &nbsp;&nbsp;Here you can read your welcome message. (fill ' ' to the end of #)<br />
  * #####################################################################
  * 
  * @param welcomeMessage the welcome message
  */
-LoggerFactory.getDefault().sayWelcome(String welcomeMessage);
+LoggerFacade.getDefault().sayWelcome(String welcomeMessage);
 ```
 
 
@@ -105,7 +105,7 @@ Momentary only the [JavaDoc] in the library itself is available.
 Contribution<a name="Contribution" />
 ------------
 
-* If you find a bug I will be glad if you will report an [Issue].
+* If you find a `Bug` I will be glad if you could report an [Issue].
 * If you want to contribute to the project plz fork the project and do a [Pull Request].
 
 
@@ -113,14 +113,14 @@ Contribution<a name="Contribution" />
 License<a name="License" />
 -------
 
-PRo-Logger is licensed under [General Public License 3.0].
+The project `PRo-Logger` is licensed under [General Public License 3.0].
 
 
 
 Autor<a name="Autor" />
 ----
 
-Pro-Logger is maintained by me, Peter Rogge. See [Contact](#Contact).
+The project `Pro-Logger` is maintained by me, Peter Rogge. See [Contact](#Contact).
 
 
 
