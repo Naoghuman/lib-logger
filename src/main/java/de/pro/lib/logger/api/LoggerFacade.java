@@ -19,13 +19,13 @@ package de.pro.lib.logger.api;
 import de.pro.lib.logger.PRoLogger;
 
 /**
- * The factory {@link de.pro.lib.logger.api.LoggerFactory} provides a 
+ * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides a 
  * singleton instance of the Interface {@link de.pro.lib.logger.api.ILogger}.
  *
  * @author PRo
  * @see de.pro.lib.logger.api.ILogger
  */
-public final class LoggerFactory {
+public final class LoggerFacade {
     private static ILogger instance = null;
     
     /**
@@ -43,5 +43,5 @@ public final class LoggerFactory {
         return instance;
     }
     
-    private LoggerFactory() { }
+    private LoggerFacade() { }
 }

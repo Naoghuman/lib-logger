@@ -22,14 +22,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * The implementation from the Interface <code>de.pro.lib.logger.api.ILogger</code>.
+ * The implementation from the Interface <code>de.pro.lib.logger.api.ILogger</code>.<br />
+ * Access to this class is over the facade {@link de.pro.lib.logger.api.LoggerFacade}.
  * 
  * @author PRo
+ * @see de.pro.lib.logger.api.ILogger
+ * @see de.pro.lib.logger.api.LoggerFacade
  */
 public final class PRoLogger implements ILogger {
     
     private final HashMap<Class, Logger> loggers = new HashMap<>();
     
+    /**
+     * Default contructor.
+     */
     public PRoLogger() { }
     
     private Logger getLogger(Class clazz) {
