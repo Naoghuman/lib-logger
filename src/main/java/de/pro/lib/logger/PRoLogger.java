@@ -22,7 +22,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * The implementation from the Interface <code>de.pro.lib.logger.api.ILogger</code>.<br />
+ * The implementation from the Interface {@link de.pro.lib.logger.api.ILogger}.<br />
  * Access to this class is over the facade {@link de.pro.lib.logger.api.LoggerFacade}.
  * 
  * @author PRo

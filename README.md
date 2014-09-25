@@ -113,18 +113,18 @@ Contribution<a name="Contribution" />
 License<a name="License" />
 -------
 
-The project `PRo-Logger` is licensed under [General Public License 3.0].
+The project `Lib-Logger` is licensed under [General Public License 3.0].
 
 
 
 Autor<a name="Autor" />
-----
+-----
 
-The project `Pro-Logger` is maintained by me, Peter Rogge. See [Contact](#Contact).
+The project `Lib-Logger` is maintained by me, Peter Rogge. See [Contact](#Contact).
 
 
 
-Contact
+Contact<a name="Contact" />
 -------
 
 You can reach me under <peter.rogge@yahoo.de>.
