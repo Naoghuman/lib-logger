@@ -23,5 +23,7 @@ IMPORTANT
 2) Don't forget to tweak the file so that the logmessages have the format which
    you want.
     - See wiki.apache.org/logging-log4j/Log4jXmlFormat
+3) Is your project hosted on GitHub don't forgot to add the folder /log/ to your
+   gitignore file.
 
 --------------------------------------------------------------------------------
