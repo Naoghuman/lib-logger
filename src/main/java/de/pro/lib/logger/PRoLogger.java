@@ -33,6 +33,8 @@ public final class PRoLogger implements ILogger {
     
     private final HashMap<Class, Logger> loggers = new HashMap<>();
     
+    private Boolean deactivate = Boolean.FALSE;
+    
     /**
      * Default contructor.
      */
@@ -52,13 +54,20 @@ public final class PRoLogger implements ILogger {
     }
 
     @Override
+    public void deactivate(Boolean deactivate) {
+        this.deactivate = deactivate;
+    }
+
+    @Override
     public void debug(Class clazz, String msg) {
         this.debug(clazz, msg, null);
     }
 
     @Override
     public void debug(Class clazz, String msg, Throwable ta) {
-        this.getLogger(clazz).debug(msg, ta);
+        if (!deactivate) {
+            this.getLogger(clazz).debug(msg, ta);
+        }
     }
 
     @Override
@@ -68,7 +77,9 @@ public final class PRoLogger implements ILogger {
 
     @Override
     public void error(Class clazz, String msg, Throwable ta) {
-        this.getLogger(clazz).error(msg, ta);
+        if (!deactivate) {
+            this.getLogger(clazz).error(msg, ta);
+        }
     }
 
     @Override
@@ -78,7 +89,9 @@ public final class PRoLogger implements ILogger {
 
     @Override
     public void info(Class clazz, String msg, Throwable ta) {
-        this.getLogger(clazz).info(msg, ta);
+        if (!deactivate) {
+            this.getLogger(clazz).info(msg, ta);
+        }
     }
 
     @Override
@@ -88,7 +101,9 @@ public final class PRoLogger implements ILogger {
 
     @Override
     public void warn(Class clazz, String msg, Throwable ta) {
-        this.getLogger(clazz).warn(msg, ta);
+        if (!deactivate) {
+            this.getLogger(clazz).warn(msg, ta);
+        }
     }
 
     @Override
@@ -126,4 +141,5 @@ public final class PRoLogger implements ILogger {
         this.getLogger(PRoLogger.class).info(msg.toString());
         this.getLogger(PRoLogger.class).info("#####################################################################"); // NOI18N
     }
+    
 }

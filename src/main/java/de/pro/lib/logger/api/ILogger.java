@@ -26,6 +26,17 @@ package de.pro.lib.logger.api;
  * @see de.pro.lib.logger.api.LoggerFacade
  */
 public interface ILogger {
+    
+    /**
+     * Alloweds the developer to decide if the Logger should log or not.<br />
+     * Can be usefull during testing purpose.
+     * 
+     * @param deactivate <code>Boolean</code> which defined if the Logger should
+     * log or not. <code>TRUE</code> if no logging desired, otherwise <code>FALSE</code>
+     * for logging.
+     */
+    public void deactivate(Boolean deactivate);
+    
     /**
      * Print a specific message im debug-mode for the given class.
      * 
@@ -119,4 +130,5 @@ public interface ILogger {
      * @param goodbyeMessage the goodbye message
      */
     public void sayGoodbye(String goodbyeMessage);
+    
 }
