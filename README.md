@@ -58,17 +58,18 @@ LoggerFacade.getDefault().debug(Class clazz, String msg, Throwable ta);
 
 ```java
 /**
- * This will print a <code>Welcome</code> message at start in the logfile
- * between two lines of '#'s with a length from 65 characters.<br />
+ * This will print a <code>Welcome</code> message at start in the logfile.<br />
  * The <code>Welcome</code> message will print in the format:<p>
  * 
  * #####################################################################<br />
- * # &nbsp;&nbsp;Here you can read your welcome message. (fill ' ' to the end of #)<br />
- * #####################################################################
+ * # &nbsp;&nbsp;Here you can read your welcome message.<br />
+ * #####################################################################<br />
  * 
- * @param welcomeMessage the welcome message
+ * @param borderSign The sign which represent an element from the border.
+ * @param borderSignCount Define how much elements have the border.
+ * @param welcomeMessage The welcome message.
  */
-LoggerFacade.getDefault().sayWelcome(String welcomeMessage);
+LoggerFacade.getDefault().sayWelcome(char borderSign, int borderSignCount, String welcomeMessage);
 ```
 
 

@@ -106,29 +106,31 @@ public interface ILogger {
     public void warn(Class clazz, String msg, Throwable ta);
     
     /**
-     * This will print a <code>Welcome</code> message at start in the logfile
-     * between two lines of '#'s with a length from 65 characters.<br />
+     * This will print a <code>Welcome</code> message at start in the logfile.<br />
      * The <code>Welcome</code> message will print in the format:<p>
      * 
      * #####################################################################<br />
-     * # &nbsp;&nbsp;Here you can read your welcome message. (fill ' ' to the end of #)<br />
-     * #####################################################################
+     * # &nbsp;&nbsp;Here you can read your welcome message.<br />
+     * #####################################################################<br />
      * 
-     * @param welcomeMessage the welcome message
+     * @param borderSign The sign which represent an element from the border.
+     * @param borderSignCount Define how much elements have the border.
+     * @param welcomeMessage The welcome message.
      */
-    public void sayWelcome(String welcomeMessage);
+    public void sayWelcome(char borderSign, int borderSignCount, String welcomeMessage);
     
     /**
-     * This will print a <code>Goodbye</code> message at the end in the logfile
-     * between two lines of '#'s with a length from 65 characters.<br />
+     * This will print a <code>Goodbye</code> message at the end in the logfile.<br />
      * The <code>Goodbye</code> message will print in the format:<p>
      * 
      * #####################################################################<br />
-     * # &nbsp;&nbsp;Here you can read your goodbye message. (fill ' ' to the end of #)<br />
-     * #####################################################################
+     * # &nbsp;&nbsp;Here you can read your goodbye message.<br />
+     * #####################################################################<br />
      * 
+     * @param borderSign The sign which represent an element from the border.
+     * @param borderSignCount Define how much elements have the border.
      * @param goodbyeMessage the goodbye message
      */
-    public void sayGoodbye(String goodbyeMessage);
+    public void sayGoodbye(char borderSign, int borderSignCount, String goodbyeMessage);
     
 }

@@ -107,39 +107,27 @@ public final class PRoLogger implements ILogger {
     }
 
     @Override
-    public void sayWelcome(String welcomeMessage) {
-        final StringBuilder msg = new StringBuilder();
-        msg.append("# "); // NOI18N
-        msg.append(welcomeMessage);
-        if (welcomeMessage.length() < 65) {
-            for (int i = welcomeMessage.length(); i < 65; i++) {
-                msg.append(" "); // NOI18N
-            }
+    public void sayWelcome(char borderSign, int borderSignCount, String welcomeMessage) {
+        final StringBuilder border = new StringBuilder();
+        for (int i = 0; i < borderSignCount; i++) {
+            border.append(String.valueOf(borderSign));
         }
-        msg.append(" #"); // NOI18N
         
-        this.getLogger(PRoLogger.class).info("#####################################################################"); // NOI18N
-        this.getLogger(PRoLogger.class).info(msg.toString());
-        this.getLogger(PRoLogger.class).info("#####################################################################"); // NOI18N
-    
+        this.getLogger(PRoLogger.class).info(border.toString());
+        this.getLogger(PRoLogger.class).info(welcomeMessage);
+        this.getLogger(PRoLogger.class).info(border.toString());
     }
-
+    
     @Override
-    public void sayGoodbye(String goodbyeMessage) {
-        final StringBuilder msg = new StringBuilder();
-        msg.append("# "); // NOI18N
-        msg.append(goodbyeMessage);
-        if (goodbyeMessage.length() < 65) {
-            for (int i = goodbyeMessage.length(); i < 65; i++) {
-                msg.append(" "); // NOI18N
-            }
+    public void sayGoodbye(char borderSign, int borderSignCount, String goodbyeMessage) {
+        final StringBuilder border = new StringBuilder();
+        for (int i = 0; i < borderSignCount; i++) {
+            border.append(String.valueOf(borderSign));
         }
-        msg.append(" #"); // NOI18N
         
-        
-        this.getLogger(PRoLogger.class).info("#####################################################################"); // NOI18N
-        this.getLogger(PRoLogger.class).info(msg.toString());
-        this.getLogger(PRoLogger.class).info("#####################################################################"); // NOI18N
+        this.getLogger(PRoLogger.class).info(border.toString());
+        this.getLogger(PRoLogger.class).info(goodbyeMessage);
+        this.getLogger(PRoLogger.class).info(border.toString());
     }
     
 }
