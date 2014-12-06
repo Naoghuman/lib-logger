@@ -107,27 +107,20 @@ public final class PRoLogger implements ILogger {
     }
 
     @Override
-    public void sayWelcome(char borderSign, int borderSignCount, String welcomeMessage) {
+    public void message(char borderSign, int borderSignCount, String message) {
+        final StringBuilder msg = new StringBuilder();
+        msg.append("\n"); // NOI18N
+        
         final StringBuilder border = new StringBuilder();
+        
         for (int i = 0; i < borderSignCount; i++) {
             border.append(String.valueOf(borderSign));
         }
+        msg.append(border.toString()).append("\n"); // NOI18N
+        msg.append(message).append("\n"); // NOI18N
+        msg.append(border.toString());
         
-        this.getLogger(PRoLogger.class).info(border.toString());
-        this.getLogger(PRoLogger.class).info(welcomeMessage);
-        this.getLogger(PRoLogger.class).info(border.toString());
-    }
-    
-    @Override
-    public void sayGoodbye(char borderSign, int borderSignCount, String goodbyeMessage) {
-        final StringBuilder border = new StringBuilder();
-        for (int i = 0; i < borderSignCount; i++) {
-            border.append(String.valueOf(borderSign));
-        }
-        
-        this.getLogger(PRoLogger.class).info(border.toString());
-        this.getLogger(PRoLogger.class).info(goodbyeMessage);
-        this.getLogger(PRoLogger.class).info(border.toString());
+        this.getLogger(PRoLogger.class).info(msg.toString());
     }
     
 }

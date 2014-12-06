@@ -106,31 +106,22 @@ public interface ILogger {
     public void warn(Class clazz, String msg, Throwable ta);
     
     /**
-     * This will print a <code>Welcome</code> message at start in the logfile.<br />
-     * The <code>Welcome</code> message will print in the format:<p>
+     * This will print a <code>Figlet</code> or <code>normal</code> message in 
+     * the logfile.<br />
+     * For example with <code>Loggerfacade.getDefault().message('#', 70, msg);</code>
+     * following will print to the log:<p>
      * 
      * #####################################################################<br />
-     * # &nbsp;&nbsp;Here you can read your welcome message.<br />
-     * #####################################################################<br />
+     * Here you can see your message message.<br />
+     * #####################################################################<p>
      * 
-     * @param borderSign The sign which represent an element from the border.
-     * @param borderSignCount Define how much elements have the border.
-     * @param welcomeMessage The welcome message.
-     */
-    public void sayWelcome(char borderSign, int borderSignCount, String welcomeMessage);
-    
-    /**
-     * This will print a <code>Goodbye</code> message at the end in the logfile.<br />
-     * The <code>Goodbye</code> message will print in the format:<p>
-     * 
-     * #####################################################################<br />
-     * # &nbsp;&nbsp;Here you can read your goodbye message.<br />
-     * #####################################################################<br />
+     * Have a look at <code>http://www.lemoda.net/games/message/message-instant.html</code> 
+     * how to generate a message-message.
      * 
      * @param borderSign The sign which represent an element from the border.
      * @param borderSignCount Define how much elements have the border.
-     * @param goodbyeMessage the goodbye message
+     * @param figlet The figlet (or in normal format) message between the border.
      */
-    public void sayGoodbye(char borderSign, int borderSignCount, String goodbyeMessage);
+    public void message(char borderSign, int borderSignCount, String figlet);
     
 }

@@ -58,18 +58,35 @@ LoggerFacade.getDefault().debug(Class clazz, String msg, Throwable ta);
 
 ```java
 /**
- * This will print a <code>Welcome</code> message at start in the logfile.<br />
- * The <code>Welcome</code> message will print in the format:<p>
+ * This will print a <code>Figlet</code> or <code>normal</code> message in 
+ * the logfile.<br />
+ * For example with <code>Loggerfacade.getDefault().message('#', 70, msg);</code>
+ * following will print to the log:<p>
  * 
  * #####################################################################<br />
- * # &nbsp;&nbsp;Here you can read your welcome message.<br />
- * #####################################################################<br />
+ * Here you can see your message message.<br />
+ * #####################################################################<p>
+ * 
+ * Have a look at <code>http://www.lemoda.net/games/message/message-instant.html</code> 
+ * how to generate a message-message.
  * 
  * @param borderSign The sign which represent an element from the border.
  * @param borderSignCount Define how much elements have the border.
- * @param welcomeMessage The welcome message.
+ * @param figlet The figlet (or in normal format) message between the border.
  */
-LoggerFacade.getDefault().sayWelcome(char borderSign, int borderSignCount, String welcomeMessage);
+LoggerFacade.getDefault().message(char borderSign, int borderSignCount, String figlet);
+```
+
+For example with `Loggerfacade.getDefault().message('#', 62, figlet);` following message will
+logged (Have a look in [Figlet] when you are interested how to gernerate such messages):
+```
+#############################################################
+         __        __   _                                   
+         \ \      / /__| | ___ ___  _ __ ___   ___          
+          \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \         
+           \ V  V /  __/ | (_| (_) | | | | | |  __/         
+            \_/\_/ \___|_|\___\___/|_| |_| |_|\___|         
+#############################################################
 ```
 
 
@@ -86,7 +103,6 @@ Requirements<a name="Requirements" />
 
 Installation<a name="Installation" />
 ------------
-
 
 * If not installed download the [JRE 8] or the [JDK 8].
   * Optional: To work better with [FXML] files in a [JavaFX] application download the [JavaFX Scene Builder] under 'Additional Resources'.
@@ -135,6 +151,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [//]: # (Links)
 [Apache Log4j 2]:https://logging.apache.org/log4j/2.0/index.html
 [Eclipse]:https://www.eclipse.org/
+[Figlet]:http://www.lemoda.net/games/figlet/figlet-instant.html
 [FXML]:http://docs.oracle.com/javafx/2/fxml_get_started/jfxpub-fxml_get_started.htm
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [IntelliJ IDEA]:http://www.jetbrains.com/idea/
