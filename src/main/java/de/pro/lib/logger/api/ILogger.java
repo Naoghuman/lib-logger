@@ -39,7 +39,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im debug-mode for the given class if
-     * (deactive == false) and isDebugEnabled() == true.
+     * (deactive == false) and (isDebugEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -50,7 +50,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im debug-mode with a throwable for the given 
-     * class if (deactive == false) and isDebugEnabled() == true.
+     * class if (deactive == false) and (isDebugEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -62,7 +62,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im error-mode for the given class if
-     * (deactive == false) and isErrorEnabled() == true.
+     * (deactive == false) and (isErrorEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -73,7 +73,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im error-mode with a throwable for the given 
-     * class if (deactive == false) and isErrorEnabled() == true.
+     * class if (deactive == false) and (isErrorEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -85,7 +85,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im info-mode for the given class if
-     * (deactive == false) and isInfoEnabled() == true.
+     * (deactive == false) and (isInfoEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -96,7 +96,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im info-mode with a throwable for the given 
-     * class if (deactive == false) and isInfoEnabled() == true.
+     * class if (deactive == false) and (isInfoEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -108,7 +108,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im warn-mode for the given class if
-     * (deactive == false) and isTraceEnabled() == true.
+     * (deactive == false) and (isTraceEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -119,7 +119,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im trace-mode with a throwable for the given 
-     * class if (deactive == false) and isTraceEnabled() == true.
+     * class if (deactive == false) and (isTraceEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -131,7 +131,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im trace-mode for the given class if
-     * (deactive == false) and isWarnEnabled() == true.
+     * (deactive == false) and (isWarnEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -142,7 +142,7 @@ public interface ILogger {
     
     /**
      * Print a specific message im warn-mode with a throwable for the given 
-     * class if (deactive == false) and isWarnEnabled() == true.
+     * class if (deactive == false) and (isWarnEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
