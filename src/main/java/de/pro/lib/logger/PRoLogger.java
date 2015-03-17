@@ -65,7 +65,7 @@ public final class PRoLogger implements ILogger {
 
     @Override
     public void debug(Class clazz, String msg, Throwable ta) {
-        if (!deactivate) {
+        if (!deactivate && this.getLogger(clazz).isDebugEnabled()) {
             this.getLogger(clazz).debug(msg, ta);
         }
     }
@@ -77,7 +77,7 @@ public final class PRoLogger implements ILogger {
 
     @Override
     public void error(Class clazz, String msg, Throwable ta) {
-        if (!deactivate) {
+        if (!deactivate && this.getLogger(clazz).isErrorEnabled()) {
             this.getLogger(clazz).error(msg, ta);
         }
     }
@@ -89,8 +89,20 @@ public final class PRoLogger implements ILogger {
 
     @Override
     public void info(Class clazz, String msg, Throwable ta) {
-        if (!deactivate) {
+        if (!deactivate && this.getLogger(clazz).isInfoEnabled()) {
             this.getLogger(clazz).info(msg, ta);
+        }
+    }
+
+    @Override
+    public void trace(Class clazz, String msg) {
+        this.trace(clazz, msg, null);
+    }
+
+    @Override
+    public void trace(Class clazz, String msg, Throwable ta) {
+        if (!deactivate && this.getLogger(clazz).isTraceEnabled()) {
+            this.getLogger(clazz).trace(msg, ta);
         }
     }
 
@@ -101,7 +113,7 @@ public final class PRoLogger implements ILogger {
 
     @Override
     public void warn(Class clazz, String msg, Throwable ta) {
-        if (!deactivate) {
+        if (!deactivate && this.getLogger(clazz).isWarnEnabled()) {
             this.getLogger(clazz).warn(msg, ta);
         }
     }

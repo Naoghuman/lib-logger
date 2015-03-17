@@ -38,70 +38,117 @@ public interface ILogger {
     public void deactivate(Boolean deactivate);
     
     /**
-     * Print a specific message im debug-mode for the given class.
+     * Print a specific message im debug-mode for the given class if
+     * (deactive == false) and isDebugEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
      */
     public void debug(Class clazz, String msg);
     
     /**
-     * Print a specific message im debug-mode with a throwable for the given class.
+     * Print a specific message im debug-mode with a throwable for the given 
+     * class if (deactive == false) and isDebugEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
      * @param ta The error which is thrown.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
      */
     public void debug(Class clazz, String msg, Throwable ta);
     
     /**
-     * Print a specific message im error-mode for the given class.
+     * Print a specific message im error-mode for the given class if
+     * (deactive == false) and isErrorEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
+     * @see #deactivate(java.lang.Boolean) 
+     * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
      */
     public void error(Class clazz, String msg);
     
     /**
-     * Print a specific message im error-mode with a throwable for the given class.
+     * Print a specific message im error-mode with a throwable for the given 
+     * class if (deactive == false) and isErrorEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
      * @param ta The error which is thrown.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
      */
     public void error(Class clazz, String msg, Throwable ta);
     
     /**
-     * Print a specific message im info-mode for the given class.
+     * Print a specific message im info-mode for the given class if
+     * (deactive == false) and isInfoEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
      */
     public void info(Class clazz, String msg);
     
     /**
-     * Print a specific message im info-mode with a throwable for the given class.
+     * Print a specific message im info-mode with a throwable for the given 
+     * class if (deactive == false) and isInfoEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
      * @param ta The error which is thrown.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
      */
     public void info(Class clazz, String msg, Throwable ta);
     
     /**
-     * Print a specific message im warn-mode for the given class.
+     * Print a specific message im warn-mode for the given class if
+     * (deactive == false) and isTraceEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
      */
-    public void warn(Class clazz, String msg);
+    public void trace(Class clazz, String msg);
     
     /**
-     * Print a specific message im warn-mode with a throwable for the given class.
+     * Print a specific message im trace-mode with a throwable for the given 
+     * class if (deactive == false) and isTraceEnabled() == true.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
      * @param ta The error which is thrown.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
+     */
+    public void trace(Class clazz, String msg, Throwable ta);
+    
+    /**
+     * Print a specific message im trace-mode for the given class if
+     * (deactive == false) and isWarnEnabled() == true.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
+     */
+    public void warn(Class clazz, String msg);
+    
+    /**
+     * Print a specific message im warn-mode with a throwable for the given 
+     * class if (deactive == false) and isWarnEnabled() == true.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
      */
     public void warn(Class clazz, String msg, Throwable ta);
     
