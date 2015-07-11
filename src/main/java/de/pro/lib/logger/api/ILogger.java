@@ -16,6 +16,8 @@
  */
 package de.pro.lib.logger.api;
 
+import org.apache.logging.log4j.Level;
+
 /**
  * The <code>Interface</code> for the class {@link de.pro.lib.logger.PRoLogger}.<br />
  * Over the facade {@link de.pro.lib.logger.api.LoggerFacade} you can access
@@ -38,7 +40,7 @@ public interface ILogger {
     public void deactivate(Boolean deactivate);
     
     /**
-     * Print a specific message im debug-mode for the given class if
+     * Print a specific message in debug-mode for the given class if
      * (deactive == false) and (isDebugEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
@@ -49,7 +51,7 @@ public interface ILogger {
     public void debug(Class clazz, String msg);
     
     /**
-     * Print a specific message im debug-mode with a throwable for the given 
+     * Print a specific message in debug-mode with a throwable for the given 
      * class if (deactive == false) and (isDebugEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
@@ -61,7 +63,21 @@ public interface ILogger {
     public void debug(Class clazz, String msg, Throwable ta);
     
     /**
-     * Print a specific message im error-mode for the given class if
+     * Let the developer define a log <code>Level</code> which will be used
+     * in the methods {@link #own(Class, String)} and 
+     * {@link #own(Class, String, Throwable)}. Default is {@link Level.DEBUG}.
+     * <p>
+     * All levels are allowed expected {@link Level.ALL} and {@link Level.OFF}.
+     * 
+     * @param level The <code>Level</code> which should be used.
+     * @see org.apache.logging.log4j.Level
+     * @see #own(Class, String)
+     * @see #own(Class, String, Throwable)
+     */
+    public void define(Level level);
+    
+    /**
+     * Print a specific message in error-mode for the given class if
      * (deactive == false) and (isErrorEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
@@ -72,7 +88,7 @@ public interface ILogger {
     public void error(Class clazz, String msg);
     
     /**
-     * Print a specific message im error-mode with a throwable for the given 
+     * Print a specific message in error-mode with a throwable for the given 
      * class if (deactive == false) and (isErrorEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
@@ -84,7 +100,7 @@ public interface ILogger {
     public void error(Class clazz, String msg, Throwable ta);
     
     /**
-     * Print a specific message im info-mode for the given class if
+     * Print a specific message in info-mode for the given class if
      * (deactive == false) and (isInfoEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
@@ -95,7 +111,7 @@ public interface ILogger {
     public void info(Class clazz, String msg);
     
     /**
-     * Print a specific message im info-mode with a throwable for the given 
+     * Print a specific message in info-mode with a throwable for the given 
      * class if (deactive == false) and (isInfoEnabled() == true).
      * 
      * @param clazz The class for that the message should print.
@@ -105,52 +121,6 @@ public interface ILogger {
      * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
      */
     public void info(Class clazz, String msg, Throwable ta);
-    
-    /**
-     * Print a specific message im warn-mode for the given class if
-     * (deactive == false) and (isTraceEnabled() == true).
-     * 
-     * @param clazz The class for that the message should print.
-     * @param msg The message which sould print.
-     * @see #deactivate(java.lang.Boolean)
-     * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
-     */
-    public void trace(Class clazz, String msg);
-    
-    /**
-     * Print a specific message im trace-mode with a throwable for the given 
-     * class if (deactive == false) and (isTraceEnabled() == true).
-     * 
-     * @param clazz The class for that the message should print.
-     * @param msg The message which sould print.
-     * @param ta The error which is thrown.
-     * @see #deactivate(java.lang.Boolean)
-     * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
-     */
-    public void trace(Class clazz, String msg, Throwable ta);
-    
-    /**
-     * Print a specific message im trace-mode for the given class if
-     * (deactive == false) and (isWarnEnabled() == true).
-     * 
-     * @param clazz The class for that the message should print.
-     * @param msg The message which sould print.
-     * @see #deactivate(java.lang.Boolean)
-     * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
-     */
-    public void warn(Class clazz, String msg);
-    
-    /**
-     * Print a specific message im warn-mode with a throwable for the given 
-     * class if (deactive == false) and (isWarnEnabled() == true).
-     * 
-     * @param clazz The class for that the message should print.
-     * @param msg The message which sould print.
-     * @param ta The error which is thrown.
-     * @see #deactivate(java.lang.Boolean)
-     * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
-     */
-    public void warn(Class clazz, String msg, Throwable ta);
     
     /**
      * This will print a <code>Figlet</code> or <code>normal</code> message in 
@@ -170,5 +140,76 @@ public interface ILogger {
      * @param figlet The figlet (or in normal format) message between the border.
      */
     public void message(char borderSign, int borderSignCount, String figlet);
+    
+    /**
+     * Print a specific message in the log level mode when (deactive == false) 
+     * and (isLogModeEnabled() == true). The developer can the log level define 
+     * in the method {@link #define(Level)}. Default is that 
+     * <code>Level.DEBUG</code>.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @see #define(Level)
+     */
+    public void own(Class clazz, String msg);
+    
+    /**
+     * Print a specific message in the log level mode when (deactive == false) 
+     * and (isLogModeEnabled() == true). The developer can the log level define 
+     * in the method {@link #define(Level)}. Default is that 
+     * <code>Level.DEBUG</code>.
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     * @see #define(Level)
+     */
+    public void own(Class clazz, String msg, Throwable ta);
+    
+    /**
+     * Print a specific message in warn-mode for the given class if
+     * (deactive == false) and (isTraceEnabled() == true).
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
+     */
+    public void trace(Class clazz, String msg);
+    
+    /**
+     * Print a specific message in trace-mode with a throwable for the given 
+     * class if (deactive == false) and (isTraceEnabled() == true).
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
+     */
+    public void trace(Class clazz, String msg, Throwable ta);
+    
+    /**
+     * Print a specific message in trace-mode for the given class if
+     * (deactive == false) and (isWarnEnabled() == true).
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
+     */
+    public void warn(Class clazz, String msg);
+    
+    /**
+     * Print a specific message in warn-mode with a throwable for the given 
+     * class if (deactive == false) and (isWarnEnabled() == true).
+     * 
+     * @param clazz The class for that the message should print.
+     * @param msg The message which sould print.
+     * @param ta The error which is thrown.
+     * @see #deactivate(java.lang.Boolean)
+     * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
+     */
+    public void warn(Class clazz, String msg, Throwable ta);
     
 }

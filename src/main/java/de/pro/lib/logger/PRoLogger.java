@@ -18,6 +18,7 @@ package de.pro.lib.logger;
 
 import de.pro.lib.logger.api.ILogger;
 import java.util.HashMap;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,6 +35,7 @@ public final class PRoLogger implements ILogger {
     private final HashMap<Class, Logger> loggers = new HashMap<>();
     
     private Boolean deactivate = Boolean.FALSE;
+    private Level level = Level.DEBUG;
     
     /**
      * Default contructor.
@@ -71,6 +73,19 @@ public final class PRoLogger implements ILogger {
     }
 
     @Override
+    public void define(Level level) {
+        if (
+                level.equals(Level.ALL)
+                || level.equals(Level.OFF)
+        ) {
+            final String msg = "All level expected Level.ALL and Level.OFF are allowed"; // NOI18N
+            throw new IllegalArgumentException(msg);
+        }
+        
+        this.level = level;
+    }
+
+    @Override
     public void error(Class clazz, String msg) {
         this.error(clazz, msg, null);
     }
@@ -91,6 +106,55 @@ public final class PRoLogger implements ILogger {
     public void info(Class clazz, String msg, Throwable ta) {
         if (!deactivate && this.getLogger(clazz).isInfoEnabled()) {
             this.getLogger(clazz).info(msg, ta);
+        }
+    }
+
+    @Override
+    public void message(char borderSign, int borderSignCount, String message) {
+        final StringBuilder msg = new StringBuilder();
+        msg.append("\n"); // NOI18N
+        
+        final StringBuilder border = new StringBuilder();
+        
+        for (int i = 0; i < borderSignCount; i++) {
+            border.append(String.valueOf(borderSign));
+        }
+        msg.append(border.toString()).append("\n"); // NOI18N
+        msg.append(message).append("\n"); // NOI18N
+        msg.append(border.toString());
+        
+        this.getLogger(PRoLogger.class).info(msg.toString());
+    }
+
+    @Override
+    public void own(Class clazz, String msg) {
+        this.own(clazz, msg, null);
+    }
+
+    @Override
+    public void own(Class clazz, String msg, Throwable ta) {
+        if (deactivate) {
+            return;
+        }
+        
+        if (level.equals(Level.DEBUG) && this.getLogger(clazz).isDebugEnabled()) {
+            this.getLogger(clazz).debug(msg, ta);
+        }
+        
+        if (level.equals(Level.ERROR) && this.getLogger(clazz).isErrorEnabled()) {
+            this.getLogger(clazz).error(msg, ta);
+        }
+        
+        if (level.equals(Level.INFO) && this.getLogger(clazz).isInfoEnabled()) {
+            this.getLogger(clazz).info(msg, ta);
+        }
+        
+        if (level.equals(Level.TRACE) && this.getLogger(clazz).isTraceEnabled()) {
+            this.getLogger(clazz).trace(msg, ta);
+        }
+        
+        if (level.equals(Level.WARN) && this.getLogger(clazz).isWarnEnabled()) {
+            this.getLogger(clazz).warn(msg, ta);
         }
     }
 
@@ -116,23 +180,6 @@ public final class PRoLogger implements ILogger {
         if (!deactivate && this.getLogger(clazz).isWarnEnabled()) {
             this.getLogger(clazz).warn(msg, ta);
         }
-    }
-
-    @Override
-    public void message(char borderSign, int borderSignCount, String message) {
-        final StringBuilder msg = new StringBuilder();
-        msg.append("\n"); // NOI18N
-        
-        final StringBuilder border = new StringBuilder();
-        
-        for (int i = 0; i < borderSignCount; i++) {
-            border.append(String.valueOf(borderSign));
-        }
-        msg.append(border.toString()).append("\n"); // NOI18N
-        msg.append(message).append("\n"); // NOI18N
-        msg.append(border.toString());
-        
-        this.getLogger(PRoLogger.class).info(msg.toString());
     }
     
 }
