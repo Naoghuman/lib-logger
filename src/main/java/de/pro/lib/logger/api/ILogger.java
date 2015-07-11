@@ -65,9 +65,9 @@ public interface ILogger {
     /**
      * Let the developer define a log <code>Level</code> which will be used
      * in the methods {@link #own(Class, String)} and 
-     * {@link #own(Class, String, Throwable)}. Default is {@link Level.DEBUG}.
+     * {@link #own(Class, String, Throwable)}. Default is Level.DEBUG.
      * <p>
-     * All levels are allowed expected {@link Level.ALL} and {@link Level.OFF}.
+     * All levels are allowed expected Level.ALL and Level.OFF.
      * 
      * @param level The <code>Level</code> which should be used.
      * @see org.apache.logging.log4j.Level

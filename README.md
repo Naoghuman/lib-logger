@@ -3,7 +3,7 @@ Lib-Logger
 
 A library for `easy` logging with the [Apache Log4j 2] in a [JavaFX] &amp; [Maven] application.
 
-Last release `version` is `0.1.0` (03.2015).
+Last release `version` is `0.1.1` (07.2015).
 
 
 
@@ -37,7 +37,7 @@ public final class LoggerFacade
 
 ```java
 /**
- * Print a specific message im debug-mode for the given class if
+ * Print a specific message in debug-mode for the given class if
  * (deactive == false) and isDebugEnabled() == true.
  * 
  * @param clazz The class for that the message should print.
@@ -50,7 +50,7 @@ public void debug(Class clazz, String msg);
 
 ```java
 /**
- * Print a specific message im debug-mode with a throwable for the given 
+ * Print a specific message in debug-mode with a throwable for the given 
  * class if (deactive == false) and isDebugEnabled() == true.
  * 
  * @param clazz The class for that the message should print.
@@ -101,9 +101,9 @@ Requirements<a name="Requirements" />
 ------------
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.1.0.jar](#Installation).
-  * Included is the [log4j-api-2.2.jar].
-  * Included is the [log4j-core-2.2.jar].
+* The library [Lib-Logger-0.1.1.jar](#Installation).
+  * Included is the [log4j-api-2.3.jar].
+  * Included is the [log4j-core-2.3.jar].
 
 
 
@@ -168,8 +168,8 @@ You can reach me under <peter.rogge@yahoo.de>.
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
-[log4j-api-2.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
-[log4j-core-2.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-api-2.3.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-core-2.3.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/
 [NetBeans]:https://netbeans.org/
 [Pull Request]:https://help.github.com/articles/using-pull-requests
