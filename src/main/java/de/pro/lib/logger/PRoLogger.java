@@ -16,21 +16,21 @@
  */
 package de.pro.lib.logger;
 
-import de.pro.lib.logger.api.ILogger;
+import de.pro.lib.logger.api.ILibLogger;
 import java.util.HashMap;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * The implementation from the Interface {@link de.pro.lib.logger.api.ILogger}.<br />
+ * The implementation from the Interface {@link de.pro.lib.logger.api.ILibLogger}.<br />
  * Access to this class is over the facade {@link de.pro.lib.logger.api.LoggerFacade}.
  * 
  * @author PRo
- * @see de.pro.lib.logger.api.ILogger
+ * @see de.pro.lib.logger.api.ILibLogger
  * @see de.pro.lib.logger.api.LoggerFacade
  */
-public final class PRoLogger implements ILogger {
+public final class PRoLogger implements ILibLogger {
     
     private final HashMap<Class, Logger> loggers = new HashMap<>();
     

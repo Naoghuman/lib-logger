@@ -20,21 +20,21 @@ import de.pro.lib.logger.PRoLogger;
 
 /**
  * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides a 
- * singleton instance of the Interface {@link de.pro.lib.logger.api.ILogger}.
+ * singleton instance of the Interface {@link de.pro.lib.logger.api.ILibLogger}.
  *
  * @author PRo
- * @see de.pro.lib.logger.api.ILogger
+ * @see de.pro.lib.logger.api.ILibLogger
  */
 public final class LoggerFacade {
-    private static ILogger instance = null;
+    private static ILibLogger instance = null;
     
     /**
-     * Provides a singleton instance from the Interface {@link de.pro.lib.logger.api.ILogger}.
+     * Provides a singleton instance from the Interface {@link de.pro.lib.logger.api.ILibLogger}.
      * 
-     * @return A singleton instance of {@link de.pro.lib.logger.api.ILogger}.
-     * @see de.pro.lib.logger.api.ILogger
+     * @return A singleton instance of {@link de.pro.lib.logger.api.ILibLogger}.
+     * @see de.pro.lib.logger.api.ILibLogger
      */
-    public static ILogger getDefault() {
+    public static ILibLogger getDefault() {
         
         if (instance == null) {
             instance = new PRoLogger();

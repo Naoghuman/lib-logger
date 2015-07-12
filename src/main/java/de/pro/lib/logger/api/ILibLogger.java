@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Level;
  * @see de.pro.lib.logger.PRoLogger
  * @see de.pro.lib.logger.api.LoggerFacade
  */
-public interface ILogger {
+public interface ILibLogger {
     
     /**
      * Alloweds the developer to decide if the Logger should log or not.<br />

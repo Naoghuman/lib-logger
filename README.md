@@ -27,10 +27,10 @@ Examples<a name="Examples" />
 ```java
 /**
  * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides a 
- * singleton instance of the Interface {@link de.pro.lib.logger.api.ILogger}.
+ * singleton instance of the Interface {@link de.pro.lib.logger.api.ILibLogger}.
  *
  * @author PRo
- * @see de.pro.lib.logger.api.ILogger
+ * @see de.pro.lib.logger.api.ILibLogger
  */
 public final class LoggerFacade
 ```
