@@ -30,7 +30,7 @@ import org.apache.logging.log4j.Logger;
  * @see de.pro.lib.logger.api.ILibLogger
  * @see de.pro.lib.logger.api.LoggerFacade
  */
-public final class PRoLogger implements ILibLogger {
+public final class LibLogger implements ILibLogger {
     
     private final HashMap<Class, Logger> loggers = new HashMap<>();
     
@@ -40,7 +40,7 @@ public final class PRoLogger implements ILibLogger {
     /**
      * Default contructor.
      */
-    public PRoLogger() { }
+    public LibLogger() { }
     
     private Logger getLogger(Class clazz) {
         // Look if the class have a logger
@@ -123,7 +123,7 @@ public final class PRoLogger implements ILibLogger {
         msg.append(message).append("\n"); // NOI18N
         msg.append(border.toString());
         
-        this.getLogger(PRoLogger.class).info(msg.toString());
+        this.getLogger(LibLogger.class).info(msg.toString());
     }
 
     @Override

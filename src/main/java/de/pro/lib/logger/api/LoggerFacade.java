@@ -16,7 +16,7 @@
  */
 package de.pro.lib.logger.api;
 
-import de.pro.lib.logger.PRoLogger;
+import de.pro.lib.logger.LibLogger;
 
 /**
  * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides a 
@@ -37,7 +37,7 @@ public final class LoggerFacade {
     public static ILibLogger getDefault() {
         
         if (instance == null) {
-            instance = new PRoLogger();
+            instance = new LibLogger();
         }
         
         return instance;

@@ -19,12 +19,12 @@ package de.pro.lib.logger.api;
 import org.apache.logging.log4j.Level;
 
 /**
- * The <code>Interface</code> for the class {@link de.pro.lib.logger.PRoLogger}.<br />
+ * The <code>Interface</code> for the class {@link de.pro.lib.logger.LibLogger}.<br />
  * Over the facade {@link de.pro.lib.logger.api.LoggerFacade} you can access
  * the methods in this <code>Interface</code>.
  *
  * @author PRo
- * @see de.pro.lib.logger.PRoLogger
+ * @see de.pro.lib.logger.LibLogger
  * @see de.pro.lib.logger.api.LoggerFacade
  */
 public interface ILibLogger {
