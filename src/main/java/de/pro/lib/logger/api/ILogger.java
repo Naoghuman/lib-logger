@@ -63,11 +63,13 @@ public interface ILogger {
     public void debug(Class clazz, String msg, Throwable ta);
     
     /**
-     * Let the developer define a log <code>Level</code> which will be used
-     * in the methods {@link #own(Class, String)} and 
-     * {@link #own(Class, String, Throwable)}. Default is Level.DEBUG.
+     * Let the developer define a log {@link org.apache.logging.log4j.Level} 
+     * which will be used in the methods {@link #own(Class, String)} and 
+     * {@link #own(Class, String, Throwable)}. Default is 
+     * {@link org.apache.logging.log4j.Level#DEBUG}.
      * <p>
-     * All levels are allowed expected Level.ALL and Level.OFF.
+     * All levels are allowed expected {@link org.apache.logging.log4j.Level#ALL} 
+     * and {@link org.apache.logging.log4j.Level#OFF}.
      * 
      * @param level The <code>Level</code> which should be used.
      * @see org.apache.logging.log4j.Level
@@ -142,10 +144,10 @@ public interface ILogger {
     public void message(char borderSign, int borderSignCount, String figlet);
     
     /**
-     * Print a specific message in the log level mode when (deactive == false) 
-     * and (isLogModeEnabled() == true). The developer can the log level define 
-     * in the method {@link #define(Level)}. Default is that 
-     * <code>Level.DEBUG</code>.
+     * Print a specific message in the defined log {@link org.apache.logging.log4j.Level} 
+     * mode when (deactive == false) and (isLogModeEnabled() == true). The 
+     * developer can the log level define in the method {@link #define(Level)}. 
+     * Default is that {@link org.apache.logging.log4j.Level#DEBUG}.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
@@ -154,10 +156,10 @@ public interface ILogger {
     public void own(Class clazz, String msg);
     
     /**
-     * Print a specific message in the log level mode when (deactive == false) 
-     * and (isLogModeEnabled() == true). The developer can the log level define 
-     * in the method {@link #define(Level)}. Default is that 
-     * <code>Level.DEBUG</code>.
+     * Print a specific message in the defined log {@link org.apache.logging.log4j.Level} 
+     * mode when (deactive == false) and (isLogModeEnabled() == true). The 
+     * developer can the log level define in the method {@link #define(Level)}. 
+     * Default is that {@link org.apache.logging.log4j.Level#DEBUG}.
      * 
      * @param clazz The class for that the message should print.
      * @param msg The message which sould print.
