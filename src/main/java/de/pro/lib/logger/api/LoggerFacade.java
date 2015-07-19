@@ -27,6 +27,10 @@ import de.pro.lib.logger.LibLogger;
  */
 public enum LoggerFacade {
     
+    /**
+     * Over the value <code>INSTANCE</code> the developer have access to the
+     * singleton instance from the <code>LoggerFacade</code>.
+     */
     INSTANCE;
     
     private ILibLogger logger = null;
@@ -40,7 +44,7 @@ public enum LoggerFacade {
     }
     
     /**
-     * Over the {@link de.pro.lib.logger.api.ILibLogger} have the developer 
+     * Over the {@link de.pro.lib.logger.api.ILibLogger} the developer have
      * access to the logging methods.
      * 
      * @return a singleton instance from ILibLogger.

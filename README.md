@@ -3,7 +3,7 @@ Lib-Logger
 
 A library for `easy` logging with the [Apache Log4j 2] in a [JavaFX] &amp; [Maven] application.
 
-Last release `version` is `0.1.1` (07.2015).
+Last release `version` is `0.2.0` (07.2015).
 
 
 
@@ -101,7 +101,7 @@ Requirements<a name="Requirements" />
 ------------
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.1.1.jar](#Installation).
+* The library [Lib-Logger-0.2.0.jar](#Installation).
   * Included is the [log4j-api-2.3.jar].
   * Included is the [log4j-core-2.3.jar].
 
