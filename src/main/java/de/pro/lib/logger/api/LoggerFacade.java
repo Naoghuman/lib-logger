@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 PRo
+ * Copyright (C) 2015 PRo
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,29 +19,34 @@ package de.pro.lib.logger.api;
 import de.pro.lib.logger.LibLogger;
 
 /**
- * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides a 
- * singleton instance of the Interface {@link de.pro.lib.logger.api.ILibLogger}.
+ * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides access to
+ * the Interface {@link de.pro.lib.logger.api.ILibLogger}.
  *
  * @author PRo
  * @see de.pro.lib.logger.api.ILibLogger
  */
-public final class LoggerFacade {
-    private static ILibLogger instance = null;
+public enum LoggerFacade {
     
-    /**
-     * Provides a singleton instance from the Interface {@link de.pro.lib.logger.api.ILibLogger}.
-     * 
-     * @return A singleton instance of {@link de.pro.lib.logger.api.ILibLogger}.
-     * @see de.pro.lib.logger.api.ILibLogger
-     */
-    public static ILibLogger getDefault() {
-        
-        if (instance == null) {
-            instance = new LibLogger();
-        }
-        
-        return instance;
+    INSTANCE;
+    
+    private ILibLogger logger = null;
+    
+    private LoggerFacade() {
+        this.initialize();
     }
     
-    private LoggerFacade() { }
+    private void initialize() {
+        logger = new LibLogger();
+    }
+    
+    /**
+     * Over the {@link de.pro.lib.logger.api.ILibLogger} have the developer 
+     * access to the logging methods.
+     * 
+     * @return a singleton instance from ILibLogger.
+     */
+    public ILibLogger getLogger() {
+        return logger;
+    }
+    
 }
