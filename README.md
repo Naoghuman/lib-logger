@@ -26,13 +26,13 @@ Examples<a name="Examples" />
 
 ```java
 /**
- * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides a 
- * singleton instance of the Interface {@link de.pro.lib.logger.api.ILibLogger}.
+ * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides access to
+ * the Interface {@link de.pro.lib.logger.api.ILibLogger}.
  *
  * @author PRo
  * @see de.pro.lib.logger.api.ILibLogger
  */
-public final class LoggerFacade
+public enum LoggerFacade
 ```
 
 ```java
@@ -45,7 +45,7 @@ public final class LoggerFacade
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
-public void debug(Class clazz, String msg);
+LoggerFacade.INSTANCE.getLogger().debug(Class clazz, String msg);
 ```
 
 ```java
@@ -59,14 +59,14 @@ public void debug(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
-public void debug(Class clazz, String msg, Throwable ta);
+LoggerFacade.INSTANCE.getLogger().debug(Class clazz, String msg, Throwable ta);
 ```
 
 ```java
 /**
  * This will print a <code>Figlet</code> or <code>normal</code> message in 
  * the logfile.<br />
- * For example with <code>Loggerfacade.getDefault().message('#', 70, figlet);</code>
+ * For example with <code>LoggerFacade.INSTANCE.getLogger().message('#', 70, figlet);</code>
  * following will print to the log:<p>
  * 
  * #####################################################################<br />
@@ -80,10 +80,10 @@ public void debug(Class clazz, String msg, Throwable ta);
  * @param borderSignCount Define how much elements have the border.
  * @param figlet The figlet (or in normal format) message between the border.
  */
-LoggerFacade.getDefault().message(char borderSign, int borderSignCount, String figlet);
+LoggerFacade.INSTANCE.getLogger().message(char borderSign, int borderSignCount, String figlet);
 ```
 
-For example with `Loggerfacade.getDefault().message('#', 62, figlet);` following message will
+For example with `LoggerFacade.INSTANCE.getLogger().message('#', 62, figlet);` following message will
 logged (Have a look in [Figlet] when you are interested how to gernerate such messages):
 ```
 #############################################################
