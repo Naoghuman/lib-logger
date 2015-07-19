@@ -20,7 +20,7 @@ import de.pro.lib.logger.LibLogger;
 
 /**
  * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides access to
- * the Interface {@link de.pro.lib.logger.api.ILibLogger}.
+ * the logging methods during the Interface {@link de.pro.lib.logger.api.ILibLogger}.
  *
  * @author PRo
  * @see de.pro.lib.logger.api.ILibLogger
