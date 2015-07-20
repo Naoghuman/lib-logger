@@ -6,7 +6,7 @@
     <artifactId>Lib-Logger</artifactId>
     <version>0.2.1-SNAPSHOT</version> <!-- -SNAPSHOT -->
     <packaging>jar</packaging>
-    <description>A library for easy logging with the Apache Log4j 2  in a JavaFX &amp; Maven application. See https://github.com/Naoghuman/lib-logger for more details.</description>
+    <description>A library for easy logging with the Apache Log4j 2  in a JavaFX &amp; Maven desktop application. See https://github.com/Naoghuman/lib-logger for more details.</description>
     <name>Lib-Logger</name>
     <inceptionYear>2014</inceptionYear>
     <url>https://github.com/Naoghuman/lib-logger.git</url>

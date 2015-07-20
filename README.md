@@ -1,7 +1,8 @@
 Lib-Logger
 ==============
 
-A library for `easy` logging with the [Apache Log4j 2] in a [JavaFX] &amp; [Maven] application.
+A library for `easy` logging with the [Apache Log4j 2] in a [JavaFX] &amp; [Maven] 
+desktop application.
 
 Last release `version` is `0.2.0` (07.2015).
 
