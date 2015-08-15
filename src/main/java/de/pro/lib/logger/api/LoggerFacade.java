@@ -17,6 +17,7 @@
 package de.pro.lib.logger.api;
 
 import de.pro.lib.logger.LibLogger;
+import org.apache.logging.log4j.Level;
 
 /**
  * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides access to
@@ -25,7 +26,7 @@ import de.pro.lib.logger.LibLogger;
  * @author PRo
  * @see de.pro.lib.logger.api.ILibLogger
  */
-public enum LoggerFacade {
+public enum LoggerFacade implements ILibLogger {
     
     /**
      * Over the value <code>INSTANCE</code> the developer have access to the
@@ -42,15 +43,80 @@ public enum LoggerFacade {
     private void initialize() {
         logger = new LibLogger();
     }
-    
-    /**
-     * Over the {@link de.pro.lib.logger.api.ILibLogger} the developer have
-     * access to the logging methods.
-     * 
-     * @return a singleton instance from ILibLogger.
-     */
-    public ILibLogger getLogger() {
-        return logger;
+
+    @Override
+    public void deactivate(Boolean deactivate) {
+        logger.deactivate(deactivate);
+    }
+
+    @Override
+    public void debug(Class clazz, String msg) {
+        logger.debug(clazz, msg);
+    }
+
+    @Override
+    public void debug(Class clazz, String msg, Throwable ta) {
+        logger.debug(clazz, msg, ta);
+    }
+
+    @Override
+    public void define(Level level) {
+        logger.define(level);
+    }
+
+    @Override
+    public void error(Class clazz, String msg) {
+        logger.error(clazz, msg);
+    }
+
+    @Override
+    public void error(Class clazz, String msg, Throwable ta) {
+        logger.error(clazz, msg, ta);
+    }
+
+    @Override
+    public void info(Class clazz, String msg) {
+        logger.info(clazz, msg);
+    }
+
+    @Override
+    public void info(Class clazz, String msg, Throwable ta) {
+        logger.info(clazz, msg, ta);
+    }
+
+    @Override
+    public void message(char borderSign, int borderSignCount, String figlet) {
+        logger.message(borderSign, borderSignCount, figlet);
+    }
+
+    @Override
+    public void own(Class clazz, String msg) {
+        logger.own(clazz, msg);
+    }
+
+    @Override
+    public void own(Class clazz, String msg, Throwable ta) {
+        logger.own(clazz, msg, ta);
+    }
+
+    @Override
+    public void trace(Class clazz, String msg) {
+        logger.trace(clazz, msg);
+    }
+
+    @Override
+    public void trace(Class clazz, String msg, Throwable ta) {
+        logger.trace(clazz, msg, ta);
+    }
+
+    @Override
+    public void warn(Class clazz, String msg) {
+        logger.warn(clazz, msg);
+    }
+
+    @Override
+    public void warn(Class clazz, String msg, Throwable ta) {
+        logger.warn(clazz, msg, ta);
     }
     
 }
