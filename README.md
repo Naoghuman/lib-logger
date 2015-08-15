@@ -3,7 +3,7 @@ Lib-Logger
 
 
 
-Intention<a name="Intention" />
+Intention
 ---------
 
 `Lib-Logger`is a library for `easy` logging with the [Apache Log4j 2] in a 
@@ -16,10 +16,12 @@ Current `version` is the release `0.2.0` (07.2015).
 Content
 -------
 
-* [Intention](#Intention)
 * [Examples](#Examples)
+    - [deactivate(Boolean deactivate)](#Deactivate)
+    - [define(Level level), own(Class clazz, String msg)](#DefineOwn)
+    - [message(char borderSign, int borderSignCount, String figlet)](#Message)
 * [Api](#Api)
-    - [LoggerFacade](#LoggerFacade)
+    - [de.pro.lib.logger.api.LoggerFacade](#LoggerFacade)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
 * [Documentation](#Documentation)
@@ -32,6 +34,60 @@ Content
 
 Examples<a name="Examples" />
 --------
+
+### deactivate(Boolean deactivate)<a name="Deactivate" />
+
+```java
+LoggerFacade.INSTANCE.debug(this.getClass(), "Start with generation from Testdata..."); // NOI18N
+LoggerFacade.INSTANCE.deactivate(Boolean.TRUE);
+
+final String entityName = DreamService.this.getEntityName();
+final ICrudService crudService = DatabaseFacade.INSTANCE.getDatabase().getCrudService(entityName);
+crudService.beginTransaction();
+
+final List<DreamModel> dreamModels = SqlProvider.getDefault().getDreamSqlProvider().findAll();
+long id = -1_000_000_000L + dreamModels.size();
+for (int i = 0; i < getMaxEntities(); i++) {
+	final DreamModel model = new DreamModel();
+	model.setGenerationTime(getGenerationTime());
+	model.setDescription(LoremIpsum.getDefault().getDescription());
+	model.setId(id++);
+	model.setTitle(LoremIpsum.getDefault().getTitle());
+	model.setText(LoremIpsum.getDefault().getText());
+                    
+	crudService.create(model, false);
+	updateProgress(i, getMaxEntities());
+                    
+	if (i % 5000 == 0) {
+		crudService.commitTransaction();
+		crudService.beginTransaction();
+	}
+}
+
+crudService.commitTransaction();
+
+LoggerFacade.INSTANCE.deactivate(Boolean.FALSE);
+LoggerFacade.INSTANCE.debug(this.getClass(), "Ready with generation from Testdata..."); // NOI18N
+```
+
+
+### define(Level level), own(Class clazz, String msg)<a name="DefineOwn" />
+
+Given is
+```java
+LoggerFacade.INSTANCE.define(Level.DEBUG);
+
+final String actionKey = "ACTION__REMOVE_FILE_FROM_EDITOR"; // NOI18N
+LoggerFacade.INSTANCE.own(ILibAction.class, "Register action: " + actionKey); // NOI18N
+```
+
+will print in console
+```
+2015-08-15 23:34:24,289  DEBUG Register action: ACTION__REMOVE_FILE_FROM_EDITOR     [ILibAction]
+```
+
+
+### message(char borderSign, int borderSignCount, String figlet)<a name="Message" />
 
 Given is the `String`
 ```java
@@ -59,7 +115,7 @@ gernerate such messages):
 Api<a name="Api" />
 --------
 
-### LoggerFacade<a name="LoggerFacade" />
+### de.pro.lib.logger.api.LoggerFacade<a name="LoggerFacade" />
 
 ```java
 /**
