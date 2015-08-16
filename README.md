@@ -9,7 +9,7 @@ Intention
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
 
-Current `version` is the release `0.2.0` (07.2015).
+Current `version` is the release `0.2.1` (08.2015).
 
 
 
@@ -349,11 +349,15 @@ LoggerFacade.INSTANCE.warn(Class clazz, String msg, Throwable ta);
 Download<a name="Download" />
 --------
 
-Current `version` is `0.2.0`. Main points in this release are:
-* Change LoggerFacade to a singleton `Enum` class.
+Current `version` is `0.2.1`. Main points in this release are:
+* Implement in `LoggerFacade` the interface `ILibLogger` directly for easier handling.
+* Add new section `Api` to the ReadMe.
+* Add new section `Download` to the ReadMe.
+* Add new section `Intention` to the ReadMe.
+* Extend the section `Examples` in the ReadMe.
 
 Download:
-* [Release v0.2.0 (07.2015)]
+* [Release v0.2.1 (08.2015)]
 
 An overview about all existings releases can be found here:
 * [Overview from all releases in Lib-Logger]
@@ -364,7 +368,7 @@ Requirements<a name="Requirements" />
 ------------
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.2.0.jar](#Installation).
+* The library [Lib-Logger-0.2.1.jar](#Installation).
   * Included is the [log4j-api-2.3.jar].
   * Included is the [log4j-core-2.3.jar].
 
@@ -373,7 +377,7 @@ Requirements<a name="Requirements" />
 Installation<a name="Installation" />
 ------------
 
-#### Install the project in your preferred IDE.
+##### Install the project in your preferred IDE:
 
 * If not installed download the [JRE 8] or the [JDK 8].
   * Optional: To work better with [FXML] files in a [JavaFX] application download the [JavaFX Scene Builder] under 'Additional Resources'.
@@ -440,6 +444,6 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.2.0 (07.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.2.0
+[Release v0.2.1 (08.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.2.1
 
 
