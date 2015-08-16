@@ -6,7 +6,7 @@ Lib-Logger
 Intention
 ---------
 
-`Lib-Logger`is a library for `easy` logging with the [Apache Log4j 2] in a 
+`Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
 
 Current `version` is the release `0.2.0` (07.2015).
@@ -22,6 +22,7 @@ Content
     - [message(char borderSign, int borderSignCount, String figlet)](#Message)
 * [Api](#Api)
     - [de.pro.lib.logger.api.LoggerFacade](#LoggerFacade)
+* [Download](#Download)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
 * [Documentation](#Documentation)
@@ -345,6 +346,20 @@ LoggerFacade.INSTANCE.warn(Class clazz, String msg, Throwable ta);
 
 
 
+Download<a name="Download" />
+--------
+
+Current `version` is `0.2.0`. Main points in this release are:
+* Change LoggerFacade to a singleton `Enum` class.
+
+Download current version:
+* [Release v0.2.0 ((07.2015)]
+
+An overview about all existings releases can be found here:
+* [Overview from all releases in Lib-Logger]
+
+
+
 Requirements<a name="Requirements" />
 ------------
 
@@ -421,6 +436,8 @@ You can reach me under <peter.rogge@yahoo.de>.
 [log4j-core-2.3.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/
 [NetBeans]:https://netbeans.org/
+[Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
+[Release v0.2.0 ((07.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.2.0
 
 
