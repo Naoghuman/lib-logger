@@ -384,7 +384,7 @@ Installation<a name="Installation" />
 Documentation<a name="Documentation" />
 -------------
 
-* In section [Api](#Api) you can see the main point to access the library.
+* In section [Api](#Api) you can see the main point to access the functionality in the library.
 * For additional information see the [JavaDoc] in the library itself.
 
 
