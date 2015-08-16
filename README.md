@@ -353,7 +353,7 @@ Current `version` is `0.2.0`. Main points in this release are:
 * Change LoggerFacade to a singleton `Enum` class.
 
 Download:
-* [Release v0.2.0] (07.2015)
+* [Release v0.2.0 (07.2015)]
 
 An overview about all existings releases can be found here:
 * [Overview from all releases in Lib-Logger]
@@ -438,6 +438,6 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.2.0]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.2.0
+[Release v0.2.0 (07.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.2.0
 
 
