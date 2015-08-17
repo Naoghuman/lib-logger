@@ -377,7 +377,7 @@ Requirements<a name="Requirements" />
 Installation<a name="Installation" />
 ------------
 
-##### Install the project in your preferred IDE:
+##### Install the project in your preferred IDE
 
 * If not installed download the [JRE 8] or the [JDK 8].
   * Optional: To work better with [FXML] files in a [JavaFX] application download the [JavaFX Scene Builder] under 'Additional Resources'.
