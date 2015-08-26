@@ -138,7 +138,7 @@ public enum LoggerFacade implements ILibLogger
  * log or not. <code>TRUE</code> if no logging desired, otherwise <code>FALSE</code>
  * for logging.
  */
-LoggerFacade.INSTANCE.deactivate(Boolean deactivate);
+public void deactivate(Boolean deactivate);
 ```
  
 ```java
@@ -151,7 +151,7 @@ LoggerFacade.INSTANCE.deactivate(Boolean deactivate);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
-LoggerFacade.INSTANCE.debug(Class clazz, String msg);
+public void debug(Class clazz, String msg);
 ```
     
 ```java
@@ -165,7 +165,7 @@ LoggerFacade.INSTANCE.debug(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
-LoggerFacade.INSTANCE.debug(Class clazz, String msg, Throwable ta);
+public void debug(Class clazz, String msg, Throwable ta);
 ```
     
 ```java
@@ -183,7 +183,7 @@ LoggerFacade.INSTANCE.debug(Class clazz, String msg, Throwable ta);
  * @see #own(Class, String)
  * @see #own(Class, String, Throwable)
  */
-LoggerFacade.INSTANCE.define(Level level);
+public void define(Level level);
 ```
     
 ```java
@@ -196,7 +196,7 @@ LoggerFacade.INSTANCE.define(Level level);
  * @see #deactivate(java.lang.Boolean) 
  * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
  */
-LoggerFacade.INSTANCE.error(Class clazz, String msg);
+public void error(Class clazz, String msg);
 ```
     
 ```java
@@ -210,7 +210,7 @@ LoggerFacade.INSTANCE.error(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
  */
-LoggerFacade.INSTANCE.error(Class clazz, String msg, Throwable ta);
+public void error(Class clazz, String msg, Throwable ta);
 ```
     
 ```java
@@ -223,7 +223,7 @@ LoggerFacade.INSTANCE.error(Class clazz, String msg, Throwable ta);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
  */
-LoggerFacade.INSTANCE.info(Class clazz, String msg);
+public void info(Class clazz, String msg);
 ```
     
 ```java
@@ -237,7 +237,7 @@ LoggerFacade.INSTANCE.info(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
  */
-LoggerFacade.INSTANCE.info(Class clazz, String msg, Throwable ta);
+public void info(Class clazz, String msg, Throwable ta);
 ```
     
 ```java
@@ -258,7 +258,7 @@ LoggerFacade.INSTANCE.info(Class clazz, String msg, Throwable ta);
  * @param borderSignCount Define how much elements have the border.
  * @param figlet The figlet (or in normal format) message between the border.
  */
-LoggerFacade.INSTANCE.message(char borderSign, int borderSignCount, String figlet);
+public void message(char borderSign, int borderSignCount, String figlet);
 ```
     
 ```java
@@ -272,7 +272,7 @@ LoggerFacade.INSTANCE.message(char borderSign, int borderSignCount, String figle
  * @param msg The message which sould print.
  * @see #define(Level)
  */
-LoggerFacade.INSTANCE.own(Class clazz, String msg);
+public void own(Class clazz, String msg);
 ```
     
 ```java
@@ -287,7 +287,7 @@ LoggerFacade.INSTANCE.own(Class clazz, String msg);
  * @param ta The error which is thrown.
  * @see #define(Level)
  */
-LoggerFacade.INSTANCE.own(Class clazz, String msg, Throwable ta);
+public void own(Class clazz, String msg, Throwable ta);
 ```
     
 ```java
@@ -300,7 +300,7 @@ LoggerFacade.INSTANCE.own(Class clazz, String msg, Throwable ta);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
  */
-LoggerFacade.INSTANCE.trace(Class clazz, String msg);
+public void trace(Class clazz, String msg);
 ```
     
 ```java
@@ -314,7 +314,7 @@ LoggerFacade.INSTANCE.trace(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
  */
-LoggerFacade.INSTANCE.trace(Class clazz, String msg, Throwable ta);
+public void trace(Class clazz, String msg, Throwable ta);
 ```
     
 ```java
@@ -327,7 +327,7 @@ LoggerFacade.INSTANCE.trace(Class clazz, String msg, Throwable ta);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
  */
-LoggerFacade.INSTANCE.warn(Class clazz, String msg);
+public void warn(Class clazz, String msg);
 ```
     
 ```java
@@ -341,7 +341,7 @@ LoggerFacade.INSTANCE.warn(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
  */
-LoggerFacade.INSTANCE.warn(Class clazz, String msg, Throwable ta);
+public void warn(Class clazz, String msg, Throwable ta);
 ```
 
 
