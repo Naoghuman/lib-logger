@@ -1,10 +1,10 @@
 Lib-Logger
-==========
+===
 
 
 
 Intention
----------
+---
 
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
@@ -14,7 +14,7 @@ Current `version` is the release `0.2.1` (08.2015).
 
 
 Content
--------
+---
 
 * [Examples](#Examples)
     - [deactivate(Boolean deactivate)](#Deactivate)
@@ -34,7 +34,7 @@ Content
 
 
 Examples<a name="Examples" />
---------
+---
 
 ### deactivate(Boolean deactivate)<a name="Deactivate" />
 
@@ -114,7 +114,7 @@ gernerate such messages):
 
 
 Api<a name="Api" />
---------
+---
 
 ### de.pro.lib.logger.api.LoggerFacade<a name="LoggerFacade" />
 
@@ -347,7 +347,7 @@ public void warn(Class clazz, String msg, Throwable ta);
 
 
 Download<a name="Download" />
---------
+---
 
 Current `version` is `0.2.1`. Main points in this release are:
 * Implement in `LoggerFacade` the interface `ILibLogger` directly for easier handling.
@@ -365,7 +365,7 @@ An overview about all existings releases can be found here:
 
 
 Requirements<a name="Requirements" />
-------------
+---
 
 * On your system you need [JRE 8] or [JDK 8] installed.
 * The library [Lib-Logger-0.2.1.jar](#Installation).
@@ -375,7 +375,7 @@ Requirements<a name="Requirements" />
 
 
 Installation<a name="Installation" />
-------------
+---
 
 ##### Install the project in your preferred IDE
 
@@ -388,7 +388,7 @@ Installation<a name="Installation" />
 
 
 Documentation<a name="Documentation" />
--------------
+---
 
 * In section [Api](#Api) you can see the main point to access the functionality in the library.
 * For additional information see the [JavaDoc] in the library itself.
@@ -396,7 +396,7 @@ Documentation<a name="Documentation" />
 
 
 Contribution<a name="Contribution" />
-------------
+---
 
 * If you find a `Bug` I will be glad if you could report an [Issue].
 * If you want to contribute to the project plz fork the project and do a [Pull Request].
@@ -404,21 +404,21 @@ Contribution<a name="Contribution" />
 
 
 License<a name="License" />
--------
+---
 
 The project `Lib-Logger` is licensed under [General Public License 3.0].
 
 
 
 Autor<a name="Autor" />
------
+---
 
 The project `Lib-Logger` is maintained by me, Peter Rogge. See [Contact](#Contact).
 
 
 
 Contact<a name="Contact" />
--------
+---
 
 You can reach me under <peter.rogge@yahoo.de>.
 
