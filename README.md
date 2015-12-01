@@ -354,9 +354,15 @@ Current `version` is `0.3.0`. Main points in this release are:
 * Refactoring the groupId from de.pro to com.github.naoghuman
 
 **Maven coordinates**  
-| Group ID             | Artifact ID | Version |  
-| :------------------: | :---------: | :-----: |  
-| com.github.naoghuman | lib-logger  | 0.3.0   |  
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.github.naoghuman</groupId>
+        <artifactId>lib-logger</artifactId>
+        <version>0.3.0</version>
+    </dependency>
+</dependencies>
+```
 
 **Download manuell**
 * [Release v0.3.0 (12.2015)]
