@@ -21,7 +21,7 @@ Content
     - [define(Level level), own(Class clazz, String msg)](#DefineOwn)
     - [message(char borderSign, int borderSignCount, String figlet)](#Message)
 * [Api](#Api)
-    - [de.pro.lib.logger.api.LoggerFacade](#LoggerFacade)
+    - [com.github.naoghuman.lib.logger.api.LoggerFacade](#LoggerFacade)
 * [Download](#Download)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
@@ -116,12 +116,13 @@ gernerate such messages):
 Api<a name="Api" />
 ---
 
-### de.pro.lib.logger.api.LoggerFacade<a name="LoggerFacade" />
+### com.github.naoghuman.lib.logger.api.LoggerFacade<a name="LoggerFacade" />
 
 ```java
 /**
- * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides access to
- * the logging methods during the Interface {@link de.pro.lib.logger.api.ILibLogger}.
+ * The facade {@link com.github.naoghuman.lib.logger.api.LoggerFacade} provides 
+ * access to the logging methods during the Interface 
+ * {@link de.pro.lib.logger.api.ILibLogger}.
  *
  * @author PRo
  * @see de.pro.lib.logger.api.ILibLogger

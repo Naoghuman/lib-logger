@@ -14,17 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.pro.lib.logger.api;
+package com.github.naoghuman.lib.logger.api;
 
-import de.pro.lib.logger.LibLogger;
+import com.github.naoghuman.lib.logger.LibLogger;
 import org.apache.logging.log4j.Level;
 
 /**
- * The facade {@link de.pro.lib.logger.api.LoggerFacade} provides access to
- * the logging methods during the Interface {@link de.pro.lib.logger.api.ILibLogger}.
+ * The facade {@link com.github.naoghuman.lib.logger.api.LoggerFacade} provides 
+ * access to the logging methods during the Interface 
+ * {@link com.github.naoghuman.lib.logger.api.ILibLogger}.
  *
  * @author PRo
- * @see de.pro.lib.logger.api.ILibLogger
+ * @see com.github.naoghuman.lib.logger.api.ILibLogger
  */
 public enum LoggerFacade implements ILibLogger {
     

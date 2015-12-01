@@ -14,18 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.pro.lib.logger.api;
+package com.github.naoghuman.lib.logger.api;
 
 import org.apache.logging.log4j.Level;
 
 /**
- * The <code>Interface</code> for the class {@link de.pro.lib.logger.LibLogger}.<br />
- * Over the facade {@link de.pro.lib.logger.api.LoggerFacade} you can access
- * the methods in this <code>Interface</code>.
+ * The <code>Interface</code> for the class {@link com.github.naoghuman.lib.logger.LibLogger}.<br />
+ * Over the facade {@link com.github.naoghuman.lib.logger.api.LoggerFacade} you 
+ * can access the methods in this <code>Interface</code>.
  *
  * @author PRo
- * @see de.pro.lib.logger.LibLogger
- * @see de.pro.lib.logger.api.LoggerFacade
+ * @see com.github.naoghuman.logger.LibLogger
+ * @see com.github.naoghuman.lib.logger.api.LoggerFacade
  */
 public interface ILibLogger {
     

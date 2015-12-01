@@ -14,21 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.pro.lib.logger;
+package com.github.naoghuman.lib.logger;
 
-import de.pro.lib.logger.api.ILibLogger;
+import com.github.naoghuman.lib.logger.api.ILibLogger;
 import java.util.HashMap;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * The implementation from the Interface {@link de.pro.lib.logger.api.ILibLogger}.<br />
- * Access to this class is over the facade {@link de.pro.lib.logger.api.LoggerFacade}.
+ * The implementation from the Interface {@link com.github.naoghuman.lib.logger.api.ILibLogger}.<br />
+ * Access to this class is over the facade {@link com.github.naoghuman.lib.logger.api.LoggerFacade}.
  * 
  * @author PRo
- * @see de.pro.lib.logger.api.ILibLogger
- * @see de.pro.lib.logger.api.LoggerFacade
+ * @see com.github.naoghuman.lib.logger.api.ILibLogger
+ * @see com.github.naoghuman.lib.logger.api.LoggerFacade
  */
 public final class LibLogger implements ILibLogger {
     
