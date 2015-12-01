@@ -355,7 +355,7 @@ Current `version` is `0.3.0`. Main points in this release are:
 
 **Maven coordinates**  
 | Group ID             | Artifact ID | Version |  
-| -------------------- | ----------- | ------- |  
+| :------------------: | :---------: | :-----: |  
 | com.github.naoghuman | lib-logger  | 0.3.0   |  
 
 **Download manuell**
