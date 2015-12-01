@@ -244,7 +244,7 @@ public void info(Class clazz, String msg, Throwable ta);
 /**
  * This will print a <code>Figlet</code> or <code>normal</code> message in 
  * the logfile.<br />
- * For example with <code>Loggerfacade.getDefault().message('#', 70, figlet);</code>
+ * For example with <code>Loggerfacade.INSTANCE.message('#', 70, figlet);</code>
  * following will print to the log:<p>
  * 
  * #####################################################################<br />
@@ -369,8 +369,8 @@ Requirements<a name="Requirements" />
 
 * On your system you need [JRE 8] or [JDK 8] installed.
 * The library [Lib-Logger-0.2.1.jar](#Installation).
-  * Included is the [log4j-api-2.3.jar].
-  * Included is the [log4j-core-2.3.jar].
+  * Included is the [log4j-api-2.4.1.jar].
+  * Included is the [log4j-core-2.4.1.jar].
 
 
 
@@ -439,8 +439,8 @@ You can reach me under <peter.rogge@yahoo.de>.
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
-[log4j-api-2.3.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
-[log4j-core-2.3.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-api-2.4.1.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-core-2.4.1.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases

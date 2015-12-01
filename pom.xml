@@ -4,7 +4,7 @@
     
     <groupId>de.pro</groupId>
     <artifactId>Lib-Logger</artifactId>
-    <version>0.2.2-SNAPSHOT</version> <!-- -SNAPSHOT -->
+    <version>0.3.0-SNAPSHOT</version> <!-- -SNAPSHOT -->
     <packaging>jar</packaging>
     <description>Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX &amp; Maven desktop application. See https://github.com/Naoghuman/lib-logger for more details.</description>
     <name>Lib-Logger</name>
@@ -85,12 +85,12 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.3</version>
+            <version>2.4.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.3</version>
+            <version>2.4.1</version>
         </dependency>
     </dependencies>
 </project>

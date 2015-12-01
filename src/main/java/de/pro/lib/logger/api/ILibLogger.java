@@ -127,7 +127,7 @@ public interface ILibLogger {
     /**
      * This will print a <code>Figlet</code> or <code>normal</code> message in 
      * the logfile.<br />
-     * For example with <code>Loggerfacade.getDefault().message('#', 70, figlet);</code>
+     * For example with <code>Loggerfacade.INSTANCE.message('#', 70, figlet);</code>
      * following will print to the log:<p>
      * 
      * #####################################################################<br />
