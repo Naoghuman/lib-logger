@@ -353,10 +353,10 @@ Download<a name="Download" />
 Current `version` is `0.3.0`. Main points in this release are:
 * Refactoring the groupId from de.pro to com.github.naoghuman
 
-**Maven coordinates**
-| Group ID             | Artifact ID | Version |
-| -------------------- | ----------- | ------- |
-| com.github.naoghuman | lib-logger  | 0.3.0   |
+**Maven coordinates**  
+| Group ID             | Artifact ID | Version |  
+| -------------------- | ----------- | ------- |  
+| com.github.naoghuman | lib-logger  | 0.3.0   |  
 
 **Download manuell**
 * [Release v0.3.0 (12.2015)]
