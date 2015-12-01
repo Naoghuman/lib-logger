@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <groupId>de.pro</groupId>
-    <artifactId>Lib-Logger</artifactId>
-    <version>0.3.0-SNAPSHOT</version> <!-- -SNAPSHOT -->
+    <groupId>com.github.naoghuman</groupId>
+    <artifactId>lib-logger</artifactId>
+    <version>0.3.0</version> <!-- -SNAPSHOT -->
     <packaging>jar</packaging>
     <description>Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX &amp; Maven desktop application. See https://github.com/Naoghuman/lib-logger for more details.</description>
     <name>Lib-Logger</name>
@@ -44,7 +44,7 @@
     
     <build>
         <plugins>
-            <!-- for RELEASE 
+            <!-- for RELEASE -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -58,7 +58,7 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
+            <!-- -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -67,7 +67,7 @@
                     <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
                 
-                <!-- for RELEASE 
+                <!-- for RELEASE -->
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -76,7 +76,7 @@
                         </goals>
                     </execution>
                 </executions>
-                -->
+                <!-- -->
             </plugin>
         </plugins>
     </build>

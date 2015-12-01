@@ -9,7 +9,7 @@ Intention
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
 
-Current `version` is the release `0.2.1` (08.2015).
+Current `version` is the release `0.3.0` (12.2015).
 
 
 
@@ -350,17 +350,18 @@ public void warn(Class clazz, String msg, Throwable ta);
 Download<a name="Download" />
 ---
 
-Current `version` is `0.2.1`. Main points in this release are:
-* Implement in `LoggerFacade` the interface `ILibLogger` directly for easier handling.
-* Add new section `Api` to the ReadMe.
-* Add new section `Download` to the ReadMe.
-* Add new section `Intention` to the ReadMe.
-* Extend the section `Examples` in the ReadMe.
+Current `version` is `0.3.0`. Main points in this release are:
+* Refactoring the groupId from de.pro to com.github.naoghuman
 
-Download:
-* [Release v0.2.1 (08.2015)]
+**Maven coordinates**
+| Group ID             | Artifact ID | Version |
+| :------------------: | :---------: | :-----: |
+| com.github.naoghuman | lib-logger  | 0.3.0   |
 
-An overview about all existings releases can be found here:
+**Download manuell**
+* [Release v0.3.0 (12.2015)]
+
+**An overview** about all existings releases can be found here:
 * [Overview from all releases in Lib-Logger]
 
 
@@ -369,7 +370,7 @@ Requirements<a name="Requirements" />
 ---
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.2.1.jar](#Installation).
+* The library [Lib-Logger-0.3.0.jar](#Installation).
   * Included is the [log4j-api-2.4.1.jar].
   * Included is the [log4j-core-2.4.1.jar].
 
@@ -446,6 +447,6 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.2.1 (08.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.2.1
+[Release v0.3.0 (12.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.3.0
 
 

@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Level;
  * can access the methods in this <code>Interface</code>.
  *
  * @author PRo
- * @see com.github.naoghuman.logger.LibLogger
+ * @see com.github.naoghuman.lib.logger.LibLogger
  * @see com.github.naoghuman.lib.logger.api.LoggerFacade
  */
 public interface ILibLogger {
