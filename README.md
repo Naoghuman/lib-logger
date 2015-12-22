@@ -353,7 +353,7 @@ Download<a name="Download" />
 Current `version` is `0.3.0`. Main points in this release are:
 * Refactoring the groupId from de.pro to com.github.naoghuman
 
-**Maven coordinates**  
+**Maven coordinates (IMPORTANT momentary not available)**  
 ```xml
 <dependencies>
     <dependency>
