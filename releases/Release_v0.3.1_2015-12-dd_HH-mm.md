@@ -34,6 +34,7 @@ Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX
 
 
 #### Additional
+#9 [Internal] Add /todo/ to .gitignore.
 
 
 
