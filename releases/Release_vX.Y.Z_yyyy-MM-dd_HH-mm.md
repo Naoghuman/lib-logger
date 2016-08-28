@@ -1,4 +1,4 @@
-Welcome to `Lib-Logger` with the new release `v0.3.1`.
+Welcome to `Lib-Logger` with the new release `x.y.z`.
 
 Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX 
 & Maven desktop application.
@@ -6,8 +6,8 @@ Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX
 
 
 #### Summary
-* Point
-* Other point
+* ...
+* ...
 
 
 
@@ -20,7 +20,6 @@ Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX
 
 
 #### Enhancement
-#5 [pom] New format from jar(s) for Maven Central.
 
 
 
@@ -29,7 +28,6 @@ Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX
 
 
 #### Refactoring
-#10 [Documentation] Add a template for the release-notes.
 
 
 
@@ -47,3 +45,4 @@ Naoghuman
 
 
 [//]: # (Links)
+
