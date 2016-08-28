@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 PRo
+ * Copyright (C) 2015 Naoghuman
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 package com.github.naoghuman.lib.logger.api;
 
 import com.github.naoghuman.lib.logger.LibLogger;
+import java.util.Optional;
 import org.apache.logging.log4j.Level;
 
 /**
@@ -24,16 +25,21 @@ import org.apache.logging.log4j.Level;
  * access to the logging methods during the Interface 
  * {@link com.github.naoghuman.lib.logger.api.ILibLogger}.
  *
- * @author PRo
+ * @author Naoghuman
  * @see com.github.naoghuman.lib.logger.api.ILibLogger
  */
-public enum LoggerFacade implements ILibLogger {
+public final class LoggerFacade implements ILibLogger {
     
+    private static final Optional<LoggerFacade> instance = Optional.of(new LoggerFacade());
+
     /**
-     * Over the value <code>INSTANCE</code> the developer have access to the
-     * singleton instance from the <code>LoggerFacade</code>.
+     * Returns a singleton instance from the class <code>LoggerFacade</code>.
+     * 
+     * @return a singleton instance from the class <code>LoggerFacade</code>.
      */
-    INSTANCE;
+    public static final LoggerFacade getDefault() {
+        return instance.get();
+    }
     
     private ILibLogger logger = null;
     

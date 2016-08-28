@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 PRo
+ * Copyright (C) 2014 Naoghuman
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import org.apache.logging.log4j.Level;
  * Over the facade {@link com.github.naoghuman.lib.logger.api.LoggerFacade} you 
  * can access the methods in this <code>Interface</code>.
  *
- * @author PRo
+ * @author Naoghuman
  * @see com.github.naoghuman.lib.logger.LibLogger
  * @see com.github.naoghuman.lib.logger.api.LoggerFacade
  */

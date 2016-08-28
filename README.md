@@ -39,8 +39,8 @@ Examples<a name="Examples" />
 ### deactivate(Boolean deactivate)<a name="Deactivate" />
 
 ```java
-LoggerFacade.INSTANCE.debug(this.getClass(), "Start with generation from Testdata..."); // NOI18N
-LoggerFacade.INSTANCE.deactivate(Boolean.TRUE);
+LoggerFacade.getDefault().debug(this.getClass(), "Start with generation from Testdata..."); // NOI18N
+LoggerFacade.getDefault().deactivate(Boolean.TRUE);
 
 final String entityName = DreamService.this.getEntityName();
 final ICrudService crudService = DatabaseFacade.INSTANCE.getDatabase().getCrudService(entityName);
@@ -67,8 +67,8 @@ for (int i = 0; i < getMaxEntities(); i++) {
 
 crudService.commitTransaction();
 
-LoggerFacade.INSTANCE.deactivate(Boolean.FALSE);
-LoggerFacade.INSTANCE.debug(this.getClass(), "Ready with generation from Testdata..."); // NOI18N
+LoggerFacade.getDefault().deactivate(Boolean.FALSE);
+LoggerFacade.getDefault().debug(this.getClass(), "Ready with generation from Testdata..."); // NOI18N
 ```
 
 
@@ -76,10 +76,10 @@ LoggerFacade.INSTANCE.debug(this.getClass(), "Ready with generation from Testdat
 
 Given is
 ```java
-LoggerFacade.INSTANCE.define(Level.DEBUG);
+LoggerFacade.getDefault().define(Level.DEBUG);
 
 final String actionKey = "ACTION__REMOVE_FILE_FROM_EDITOR"; // NOI18N
-LoggerFacade.INSTANCE.own(ILibAction.class, "Register action: " + actionKey); // NOI18N
+LoggerFacade.getDefault().own(ILibAction.class, "Register action: " + actionKey); // NOI18N
 ```
 
 will print in console
@@ -99,7 +99,7 @@ public static final String FIGLET =
         + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\_/\_/ \___|_|\___\___/|_| |_| |_|\___|\n";
 ```
 
-Logging the above `String`with `LoggerFacade.INSTANCE.message('#', 62, FIGLET);`
+Logging the above `String`with `LoggerFacade.getDefault().message('#', 62, FIGLET);`
 shows following message (Have a look in [Figlet] when you are interested how to 
 gernerate such messages):
 ```
@@ -122,12 +122,12 @@ Api<a name="Api" />
 /**
  * The facade {@link com.github.naoghuman.lib.logger.api.LoggerFacade} provides 
  * access to the logging methods during the Interface 
- * {@link de.pro.lib.logger.api.ILibLogger}.
+ * {@link com.github.naoghuman.lib.logger.api.ILibLogger}.
  *
- * @author PRo
- * @see de.pro.lib.logger.api.ILibLogger
+ * @author Naoghuman
+ * @see com.github.naoghuman.lib.logger.api.ILibLogger
  */
-public enum LoggerFacade implements ILibLogger
+public final class LoggerFacade implements ILibLogger
 ```
 
 ```java
@@ -245,7 +245,7 @@ public void info(Class clazz, String msg, Throwable ta);
 /**
  * This will print a <code>Figlet</code> or <code>normal</code> message in 
  * the logfile.<br />
- * For example with <code>Loggerfacade.INSTANCE.message('#', 70, figlet);</code>
+ * For example with <code>Loggerfacade.getDefault().message('#', 70, figlet);</code>
  * following will print to the log:<p>
  * 
  * #####################################################################<br />
@@ -353,7 +353,7 @@ Download<a name="Download" />
 Current `version` is `0.3.0`. Main points in this release are:
 * Refactoring the groupId from de.pro to com.github.naoghuman
 
-**Maven coordinates (IMPORTANT momentary not available)**  
+**Maven coordinates (__IMPORTANT__ momentary not available)**  
 ```xml
 <dependencies>
     <dependency>
@@ -391,7 +391,7 @@ Installation<a name="Installation" />
   * Optional: To work better with [FXML] files in a [JavaFX] application download the [JavaFX Scene Builder] under 'Additional Resources'.
 * Choose your preferred IDE (e.g. [NetBeans], [Eclipse] or [IntelliJ IDEA]) for development.
 * Download or clone [Lib-Logger].
-* Open the project in your IDE and run it.
+* TODO add more informations (see example...)
 
 
 
@@ -400,7 +400,7 @@ Documentation<a name="Documentation" />
 
 * In section [Api](#Api) you can see the main point(s) to access the functionality 
   in this library.
-* For additional information see the [JavaDoc] in the library itself.
+* For additional information you can see the [JavaDoc] in the library itself.
 
 
 
@@ -454,5 +454,3 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [Release v0.3.0 (12.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.3.0
-
-
