@@ -9,7 +9,7 @@ Intention
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
 
-Current `version` is the release `0.3.0` (12.2015).
+Current `version` is the release `0.4.0` (08.30.2016).
 
 
 
@@ -350,22 +350,22 @@ public void warn(Class clazz, String msg, Throwable ta);
 Download<a name="Download" />
 ---
 
-Current `version` is `0.3.0`. Main points in this release are:
-* Refactoring the groupId from de.pro to com.github.naoghuman
+Current `version` is `0.4.0`. Main points in this release are:
+* Deploy the jar files to Maven Central :smiley: .
 
-**Maven coordinates (__IMPORTANT__ momentary not available)**  
+**Maven coordinates**  
 ```xml
 <dependencies>
     <dependency>
         <groupId>com.github.naoghuman</groupId>
         <artifactId>lib-logger</artifactId>
-        <version>0.3.0</version>
+        <version>0.4.0</version>
     </dependency>
 </dependencies>
 ```
 
 **Download manuell**
-* [Release v0.3.0 (12.2015)]
+* [Release v0.4.0 (08.30.2016)]
 
 **An overview** about all existings releases can be found here:
 * [Overview from all releases in Lib-Logger]
@@ -376,9 +376,9 @@ Requirements<a name="Requirements" />
 ---
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.3.0.jar](#Installation).
-  * Included is the [log4j-api-2.4.1.jar].
-  * Included is the [log4j-core-2.4.1.jar].
+* The library [Lib-Logger-0.4.0.jar](#Installation).
+  * Included is the [log4j-api-2.6.2.jar].
+  * Included is the [log4j-core-2.6.2.jar].
 
 
 
@@ -443,14 +443,14 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Issue]:https://github.com/Naoghuman/lib-logger/issues
 [JavaDoc]:http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
-[JavaFX Scene Builder]:http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[JavaFX Scene Builder]:http://gluonhq.com/labs/scene-builder/
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
-[log4j-api-2.4.1.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
-[log4j-core-2.4.1.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-api-2.6.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-core-2.6.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.3.0 (12.2015)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.3.0
+[Release v0.4.0 (08.30.2016)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.4.0
