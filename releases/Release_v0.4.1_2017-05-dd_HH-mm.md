@@ -6,8 +6,7 @@ Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX
 
 
 #### Summary
-* ...
-* ...
+* Update the dependencies from the library log4j.
 
 
 
@@ -30,6 +29,7 @@ Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX
 
 #### Refactoring
 #16 [pom] Update the tag tagNameFormat for the plugin naming.
+#15 [Dependencies] Update dependencies from the library log4j.
 
 
 
