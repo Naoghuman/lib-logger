@@ -453,4 +453,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.4.0 (08.30.2016)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.4.0
+[Release v0.4.1 (05.21.2017)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.4.1
