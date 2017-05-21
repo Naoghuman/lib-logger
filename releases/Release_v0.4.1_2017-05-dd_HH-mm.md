@@ -20,6 +20,7 @@ Lib-Logger is a library for `easy` logging with the `Apache Log4j 2` in a JavaFX
 
 
 #### Enhancement
+#14 [Documentation] Insert maven-central coordinates into README.
 
 
 

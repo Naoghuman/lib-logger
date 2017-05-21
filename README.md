@@ -354,6 +354,7 @@ Current `version` is `0.4.0`. Main points in this release are:
 * Deploy the jar files to Maven Central :smiley: .
 
 **Maven coordinates**  
+In context from a [Maven] project you can use following maven coordinates: 
 ```xml
 <dependencies>
     <dependency>
@@ -390,8 +391,7 @@ Installation<a name="Installation" />
 * If not installed download the [JRE 8] or the [JDK 8].
   * Optional: To work better with [FXML] files in a [JavaFX] application download the [JavaFX Scene Builder] under 'Additional Resources'.
 * Choose your preferred IDE (e.g. [NetBeans], [Eclipse] or [IntelliJ IDEA]) for development.
-* Download or clone [Lib-Logger].
-* TODO add more informations (see example...)
+* Download or clone the library [Lib-Logger].
 
 
 
