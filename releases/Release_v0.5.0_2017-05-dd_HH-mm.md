@@ -20,6 +20,7 @@ Welcome to `Lib-Logger` with the new release `0.5.0`.
 
 
 #### Enhancement
+#19 [log4j] Update the file `log4j.xml` to reflect the changes from `Demo-Template`.
 
 
 
