@@ -29,7 +29,9 @@ import org.apache.logging.log4j.Logger;
  * @author Naoghuman
  * @see com.github.naoghuman.lib.logger.api.ILibLogger
  * @see com.github.naoghuman.lib.logger.api.LoggerFacade
+ * @deprecated will be replaced with {@link com.github.naoghuman.lib.logger.internal.DefaultLogger}
  */
+@Deprecated
 public final class LibLogger implements ILibLogger {
     
     private final HashMap<Class, Logger> loggers = new HashMap<>();
@@ -40,6 +42,7 @@ public final class LibLogger implements ILibLogger {
     /**
      * Default contructor.
      */
+    @Deprecated
     public LibLogger() { }
     
     private Logger getLogger(Class clazz) {
@@ -55,16 +58,19 @@ public final class LibLogger implements ILibLogger {
         return logger;
     }
 
+    @Deprecated
     @Override
     public void deactivate(Boolean deactivate) {
         this.deactivate = deactivate;
     }
 
+    @Deprecated
     @Override
     public void debug(Class clazz, String msg) {
         this.debug(clazz, msg, null);
     }
 
+    @Deprecated
     @Override
     public void debug(Class clazz, String msg, Throwable ta) {
         if (!deactivate && this.getLogger(clazz).isDebugEnabled()) {
@@ -72,6 +78,7 @@ public final class LibLogger implements ILibLogger {
         }
     }
 
+    @Deprecated
     @Override
     public void define(Level level) {
         if (
@@ -85,11 +92,13 @@ public final class LibLogger implements ILibLogger {
         this.level = level;
     }
 
+    @Deprecated
     @Override
     public void error(Class clazz, String msg) {
         this.error(clazz, msg, null);
     }
 
+    @Deprecated
     @Override
     public void error(Class clazz, String msg, Throwable ta) {
         if (!deactivate && this.getLogger(clazz).isErrorEnabled()) {
@@ -97,11 +106,13 @@ public final class LibLogger implements ILibLogger {
         }
     }
 
+    @Deprecated
     @Override
     public void info(Class clazz, String msg) {
         this.info(clazz, msg, null);
     }
 
+    @Deprecated
     @Override
     public void info(Class clazz, String msg, Throwable ta) {
         if (!deactivate && this.getLogger(clazz).isInfoEnabled()) {
@@ -109,6 +120,7 @@ public final class LibLogger implements ILibLogger {
         }
     }
 
+    @Deprecated
     @Override
     public void message(char borderSign, int borderSignCount, String message) {
         final StringBuilder msg = new StringBuilder();
@@ -126,11 +138,13 @@ public final class LibLogger implements ILibLogger {
         this.getLogger(LibLogger.class).info(msg.toString());
     }
 
+    @Deprecated
     @Override
     public void own(Class clazz, String msg) {
         this.own(clazz, msg, null);
     }
 
+    @Deprecated
     @Override
     public void own(Class clazz, String msg, Throwable ta) {
         if (deactivate) {
@@ -158,11 +172,13 @@ public final class LibLogger implements ILibLogger {
         }
     }
 
+    @Deprecated
     @Override
     public void trace(Class clazz, String msg) {
         this.trace(clazz, msg, null);
     }
 
+    @Deprecated
     @Override
     public void trace(Class clazz, String msg, Throwable ta) {
         if (!deactivate && this.getLogger(clazz).isTraceEnabled()) {
@@ -170,11 +186,13 @@ public final class LibLogger implements ILibLogger {
         }
     }
 
+    @Deprecated
     @Override
     public void warn(Class clazz, String msg) {
         this.warn(clazz, msg, null);
     }
 
+    @Deprecated
     @Override
     public void warn(Class clazz, String msg, Throwable ta) {
         if (!deactivate && this.getLogger(clazz).isWarnEnabled()) {

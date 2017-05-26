@@ -26,7 +26,9 @@ import org.apache.logging.log4j.Level;
  * @author Naoghuman
  * @see com.github.naoghuman.lib.logger.LibLogger
  * @see com.github.naoghuman.lib.logger.api.LoggerFacade
+ * @deprecated will be replaced with {@link com.github.naoghuman.lib.logger.core.Logger}
  */
+@Deprecated
 public interface ILibLogger {
     
     /**
@@ -37,6 +39,7 @@ public interface ILibLogger {
      * log or not. <code>TRUE</code> if no logging desired, otherwise <code>FALSE</code>
      * for logging.
      */
+    @Deprecated
     public void deactivate(Boolean deactivate);
     
     /**
@@ -48,6 +51,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
      */
+    @Deprecated
     public void debug(Class clazz, String msg);
     
     /**
@@ -60,6 +64,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
      */
+    @Deprecated
     public void debug(Class clazz, String msg, Throwable ta);
     
     /**
@@ -76,6 +81,7 @@ public interface ILibLogger {
      * @see #own(Class, String)
      * @see #own(Class, String, Throwable)
      */
+    @Deprecated
     public void define(Level level);
     
     /**
@@ -87,6 +93,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean) 
      * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
      */
+    @Deprecated
     public void error(Class clazz, String msg);
     
     /**
@@ -99,6 +106,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
      */
+    @Deprecated
     public void error(Class clazz, String msg, Throwable ta);
     
     /**
@@ -110,6 +118,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
      */
+    @Deprecated
     public void info(Class clazz, String msg);
     
     /**
@@ -122,6 +131,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
      */
+    @Deprecated
     public void info(Class clazz, String msg, Throwable ta);
     
     /**
@@ -141,6 +151,7 @@ public interface ILibLogger {
      * @param borderSignCount Define how much elements have the border.
      * @param figlet The figlet (or in normal format) message between the border.
      */
+    @Deprecated
     public void message(char borderSign, int borderSignCount, String figlet);
     
     /**
@@ -153,6 +164,7 @@ public interface ILibLogger {
      * @param msg The message which sould print.
      * @see #define(Level)
      */
+    @Deprecated
     public void own(Class clazz, String msg);
     
     /**
@@ -166,6 +178,7 @@ public interface ILibLogger {
      * @param ta The error which is thrown.
      * @see #define(Level)
      */
+    @Deprecated
     public void own(Class clazz, String msg, Throwable ta);
     
     /**
@@ -177,6 +190,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
      */
+    @Deprecated
     public void trace(Class clazz, String msg);
     
     /**
@@ -189,6 +203,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
      */
+    @Deprecated
     public void trace(Class clazz, String msg, Throwable ta);
     
     /**
@@ -200,6 +215,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
      */
+    @Deprecated
     public void warn(Class clazz, String msg);
     
     /**
@@ -212,6 +228,7 @@ public interface ILibLogger {
      * @see #deactivate(java.lang.Boolean)
      * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
      */
+    @Deprecated
     public void warn(Class clazz, String msg, Throwable ta);
     
 }

@@ -27,7 +27,9 @@ import org.apache.logging.log4j.Level;
  *
  * @author Naoghuman
  * @see com.github.naoghuman.lib.logger.api.ILibLogger
+ * @deprecated will be replaced with {@link com.github.naoghuman.lib.logger.core.LoggerFacade}
  */
+@Deprecated
 public final class LoggerFacade implements ILibLogger {
     
     private static final Optional<LoggerFacade> instance = Optional.of(new LoggerFacade());
@@ -37,6 +39,7 @@ public final class LoggerFacade implements ILibLogger {
      * 
      * @return a singleton instance from the class <code>LoggerFacade</code>.
      */
+    @Deprecated
     public static final LoggerFacade getDefault() {
         return instance.get();
     }
@@ -51,76 +54,91 @@ public final class LoggerFacade implements ILibLogger {
         logger = new LibLogger();
     }
 
+    @Deprecated
     @Override
     public void deactivate(Boolean deactivate) {
         logger.deactivate(deactivate);
     }
 
+    @Deprecated
     @Override
     public void debug(Class clazz, String msg) {
         logger.debug(clazz, msg);
     }
 
+    @Deprecated
     @Override
     public void debug(Class clazz, String msg, Throwable ta) {
         logger.debug(clazz, msg, ta);
     }
 
+    @Deprecated
     @Override
     public void define(Level level) {
         logger.define(level);
     }
 
+    @Deprecated
     @Override
     public void error(Class clazz, String msg) {
         logger.error(clazz, msg);
     }
 
+    @Deprecated
     @Override
     public void error(Class clazz, String msg, Throwable ta) {
         logger.error(clazz, msg, ta);
     }
 
+    @Deprecated
     @Override
     public void info(Class clazz, String msg) {
         logger.info(clazz, msg);
     }
 
+    @Deprecated
     @Override
     public void info(Class clazz, String msg, Throwable ta) {
         logger.info(clazz, msg, ta);
     }
 
+    @Deprecated
     @Override
     public void message(char borderSign, int borderSignCount, String figlet) {
         logger.message(borderSign, borderSignCount, figlet);
     }
 
+    @Deprecated
     @Override
     public void own(Class clazz, String msg) {
         logger.own(clazz, msg);
     }
 
+    @Deprecated
     @Override
     public void own(Class clazz, String msg, Throwable ta) {
         logger.own(clazz, msg, ta);
     }
 
+    @Deprecated
     @Override
     public void trace(Class clazz, String msg) {
         logger.trace(clazz, msg);
     }
 
+    @Deprecated
     @Override
     public void trace(Class clazz, String msg, Throwable ta) {
         logger.trace(clazz, msg, ta);
     }
 
+    @Deprecated
     @Override
     public void warn(Class clazz, String msg) {
         logger.warn(clazz, msg);
     }
 
+    @Deprecated
     @Override
     public void warn(Class clazz, String msg, Throwable ta) {
         logger.warn(clazz, msg, ta);
