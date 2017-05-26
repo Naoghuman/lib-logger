@@ -28,6 +28,7 @@ Welcome to `Lib-Logger` with the new release `0.5.0`.
 
 
 #### Refactoring
+#17 [pom] Remove dependency to `maven-release-plugin`.
 
 
 
