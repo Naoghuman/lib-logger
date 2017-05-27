@@ -131,8 +131,8 @@ application.version=v${pom.version}
 ### Log different regular messages<a name="LoDiReMe" />
 
 While the first example shows how to [Configure a project for logging](#CoThFoLo) 
-and the second how to [Log a starting message](#LoAStMe) this example shows the 
-how to log regular messages with the library [Lib-Logger].
+and the second how to [Log a starting message](#LoAStMe) this example shows how 
+to log regular messages with the library [Lib-Logger].
 
 ```java
 public static final void loadResourcesInCache() {
