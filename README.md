@@ -81,7 +81,7 @@ public class StartApplication extends Application implements IApplicationConfigu
     ...
 }
 
-// which will print in the console and in the configured `xy.log` file
+// which will print in the console and in the configured `xy.log` file:
 ------------------------------------------------------------------------
 Building Demo-Template 0.1.0-SNAPSHOT
 ------------------------------------------------------------------------
@@ -141,7 +141,7 @@ public static final void loadResourcesInCache() {
     ...
 }
 
-// which will print
+// which will print in the console and in the configured `xy.log` file:
 2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
 ```
 
@@ -153,7 +153,7 @@ public void initialize(URL location, ResourceBundle resources) {
     ...        
 }
 
-// which will print
+// which will print in the console and in the configured `xy.log` file:
 2017-05-27 08:56:55,073  INFO  Initialize ApplicationPresenter     [ApplicationPresenter]
 ```
 
