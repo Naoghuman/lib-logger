@@ -6,8 +6,11 @@ Welcome to `Lib-Logger` with the new release `0.5.0`.
 
 
 #### Summary
-* ...
-* ...
+* This is a major update.
+* Create new package structure to reflect my new library conventions.
+* Deprecated all old classes and interfaces.
+* Update the readme to reflect the changes.
+* Update the examples in the readme to clearify the usage from the library.
 
 
 

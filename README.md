@@ -15,7 +15,7 @@ _Image:_ [UML] Lib-Logger
 > __Hint__  
 > The `UML` diagram is created with the `Online Modeling Platform` [GenMyModel].
 
-Current `version` is the release `0.4.1` (21.05.2017).
+Current `version` is the release `0.5.0` (05.27.2017).
 
 
 
@@ -439,8 +439,12 @@ public void warn(final Class clazz, final String msg, final Throwable ta);
 Download<a name="Download" />
 ---
 
-Current `version` is `0.4.1`. Main points in this release are:
-* This is a minor update. Update dependencies to the library `log4j`.
+Current `version` is `0.5.0`. Main points in this release are:
+* This is a major update.
+* Create new package structure to reflect my new library conventions.
+* Deprecated all old classes and interfaces.
+* Update the readme to reflect the changes.
+* Update the examples in the readme to clearify the usage from the library.
 
 **Maven coordinates**  
 In context from a [Maven] project you can use following maven coordinates: 
@@ -449,13 +453,13 @@ In context from a [Maven] project you can use following maven coordinates:
     <dependency>
         <groupId>com.github.naoghuman</groupId>
         <artifactId>lib-logger</artifactId>
-        <version>0.4.1</version>
+        <version>0.5.0</version>
     </dependency>
 </dependencies>
 ```
 
 **Download manuell**
-* [Release v0.4.1 (05.21.2017)]
+* [Release v0.5.0 (05.27.2017)]
 
 **An overview** about all existings releases can be found here:
 * [Overview from all releases in Lib-Logger]
@@ -466,7 +470,7 @@ Requirements<a name="Requirements" />
 ---
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.4.1.jar](#Installation).
+* The library [Lib-Logger-0.5.0.jar](#Installation).
   * Included is the [log4j-api-2.8.2.jar].
   * Included is the [log4j-core-2.8.2.jar].
 
@@ -554,5 +558,5 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.4.1 (05.21.2017)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.4.1
+[Release v0.5.0 (05.27.2017)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.0
 [UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language
