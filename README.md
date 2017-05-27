@@ -9,6 +9,12 @@ Intention
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
 
+_Image:_ [UML] Lib-Logger  
+![UML-diagram_Lib-Logger_v0.5.0_2017-05-26_23-37.png][UML-diagram_Lib-Logger_v0.5.0_2017-05-26_23-37]
+
+> __Hint__  
+> The `UML` diagram is created with the `Online Modeling Platform` [GenMyModel].
+
 Current `version` is the release `0.4.1` (21.05.2017).
 
 
@@ -17,11 +23,12 @@ Content
 ---
 
 * [Examples](#Examples)
-    - [deactivate(Boolean deactivate)](#Deactivate)
-    - [define(Level level), own(Class clazz, String msg)](#DefineOwn)
-    - [message(char borderSign, int borderSignCount, String figlet)](#Message)
+    - [Configure a project for logging](#CoThFoLo)
+    - [Log a starting message](#LoAStMe)
+    - [Log different regular messages](#LoDiReMe)
 * [Api](#Api)
-    - [com.github.naoghuman.lib.logger.api.LoggerFacade](#LoggerFacade)
+    - [com.github.naoghuman.lib.logger.core.LoggerFacade](#LoggerFacade)
+    - [com.github.naoghuman.lib.logger.core.Logger](#Logger)
 * [Download](#Download)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
@@ -36,79 +43,134 @@ Content
 Examples<a name="Examples" />
 ---
 
-### deactivate(Boolean deactivate)<a name="Deactivate" />
+
+
+### Configure a project for logging<a name="CoThFoLo" />
+
+In this example I will show how to configure a [Java] project for the usage from the library `Lib-Logger`:
+* Move the file `log4j2.xml` to the default package in `src/main/resources` in your new project.
+* Open the file and tweak it for your necessities. Plz see for more informations:
+    * [Log4j – Configuring Log4j 2 - Apache Log4j 2]
+    * [Log4j – Frequently Asked Questions - Apache Log4j 2]
+* That was about it :smile:
+
+_Image:_ Move the template file `log4j2.xml`  
+![move-log4j2-to-application_v0.5.0_2017-05-27_08-21.png][move-log4j2-to-application_v0.5.0_2017-05-27_08-21]
+
+
+### Log a starting message<a name="LoAStMe" />
+
+This example shows how to log a starting message with following statement
 
 ```java
-LoggerFacade.getDefault().debug(this.getClass(), "Start with generation from Testdata..."); // NOI18N
-LoggerFacade.getDefault().deactivate(Boolean.TRUE);
+public class StartApplication extends Application implements IApplicationConfiguration {
 
-final String entityName = DreamService.this.getEntityName();
-final ICrudService crudService = DatabaseFacade.INSTANCE.getDatabase().getCrudService(entityName);
-crudService.beginTransaction();
-
-final List<DreamModel> dreamModels = SqlProvider.getDefault().getDreamSqlProvider().findAll();
-long id = -1_000_000_000L + dreamModels.size();
-for (int i = 0; i < getMaxEntities(); i++) {
-	final DreamModel model = new DreamModel();
-	model.setGenerationTime(getGenerationTime());
-	model.setDescription(LoremIpsum.getDefault().getDescription());
-	model.setId(id++);
-	model.setTitle(LoremIpsum.getDefault().getTitle());
-	model.setText(LoremIpsum.getDefault().getText());
-                    
-	crudService.create(model, false);
-	updateProgress(i, getMaxEntities());
-                    
-	if (i % 5000 == 0) {
-		crudService.commitTransaction();
-		crudService.beginTransaction();
-	}
+    @Override
+    public void init() throws Exception {
+        
+        PropertiesFacade.getDefault().register(KEY__APPLICATION__RESOURCE_BUNDLE);
+        PropertiesFacade.getDefault().register(ITemplateConfiguration.KEY__TEMPLATE__RESOURCE_BUNDLE);
+        
+        final char borderSign = this.getProperty(KEY__APPLICATION__BORDER_SIGN).charAt(0);
+        final String message = this.getProperty(KEY__APPLICATION__MESSAGE_START);
+        final String title = this.getProperty(KEY__APPLICATION__TITLE) + this.getProperty(KEY__APPLICATION__VERSION);
+        LoggerFacade.getDefault().message(borderSign, 80, String.format(message, title));
+        
+        ...
+    }
+    ...
 }
 
-crudService.commitTransaction();
+// which will print in the console and in the configured `xy.log` file
+------------------------------------------------------------------------
+Building Demo-Template 0.1.0-SNAPSHOT
+------------------------------------------------------------------------
 
-LoggerFacade.getDefault().deactivate(Boolean.FALSE);
-LoggerFacade.getDefault().debug(this.getClass(), "Ready with generation from Testdata..."); // NOI18N
+--- exec-maven-plugin:1.2.1:exec (default-cli) @ demo-template ---
+2017-05-27 08:56:53,688  DEBUG Load properties: /com/github/naoghuman/demo/template/application/application.properties     [LibProperties]
+2017-05-27 08:56:53,705  DEBUG Load properties: /com/github/naoghuman/demo/template/template.properties     [LibProperties]
+2017-05-27 08:56:53,706  INFO  
+################################################################################
+Start Demo-Template v0.1.0-SNAPSHOT.
+################################################################################     [Logger]
 ```
 
+where the constants defined in
 
-### define(Level level), own(Class clazz, String msg)<a name="DefineOwn" />
-
-Given is
 ```java
-LoggerFacade.getDefault().define(Level.DEBUG);
+public interface IApplicationConfiguration {
+    
+    public static final String KEY__APPLICATION__BORDER_SIGN     = "application.border.sign"; // NOI18N
+    public static final String KEY__APPLICATION__MESSAGE_START   = "application.message.start"; // NOI18N
+    public static final String KEY__APPLICATION__RESOURCE_BUNDLE = "/com/github/naoghuman/demo/template/application/application.properties"; // NOI18N
+    public static final String KEY__APPLICATION__TITLE           = "application.title"; // NOI18N
+    public static final String KEY__APPLICATION__VERSION         = "application.version"; // NOI18N
+    
+    ...
 
-final String actionKey = "ACTION__REMOVE_FILE_FROM_EDITOR"; // NOI18N
-LoggerFacade.getDefault().own(ILibAction.class, "Register action: " + actionKey); // NOI18N
+}
 ```
 
-will print in console
-```
-2015-08-15 23:34:24,289  DEBUG Register action: ACTION__REMOVE_FILE_FROM_EDITOR     [ILibAction]
-```
+and the key-value pairs in `application.properties`:
 
-
-### message(char borderSign, int borderSignCount, String figlet)<a name="Message" />
-
-Given is the `String`
 ```java
-public static final String FIGLET = 
-        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ \      / /__| |\n"
-        + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \\n"
-        + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ V  V /  __/ | (_| (_) | | | | | |  __/\n"
-        + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\_/\_/ \___|_|\___\___/|_| |_| |_|\___|\n";
+# Application
+application.border.sign=#
+application.message.start=Start %s.
+application.message.stop=Stop %s.
+
+# This values will be replaced during startup from the application.
+# The format from the title in the application will be: ${pom.name} v${pom.version}
+# Be aware from the empty sign between the two parameters.
+application.build.datetime=${timestamp}
+application.title=${pom.name} 
+application.version=v${pom.version}
 ```
 
-Logging the above `String`with `LoggerFacade.getDefault().message('#', 62, FIGLET);`
-shows following message (Have a look in [Figlet] when you are interested how to 
-gernerate such messages):
+
+### Log different regular messages<a name="LoDiReMe" />
+
+While the first example shows how to [Configure a project for logging](#CoThFoLo) 
+and the second how to [Log a starting message](#LoAStMe) this example shows the 
+how to log regular messages with the library [Lib-Logger].
+
+```java
+public static final void loadResourcesInCache() {
+    LoggerFacade.getDefault().debug(TemplateLoader.class, "Load resources in cache"); // NOI18N
+
+    ...
+}
+
+// which will print
+2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
 ```
-#############################################################
-         \ \      / /__| | ___ ___  _ __ ___   ___          
-          \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \         
-           \ V  V /  __/ | (_| (_) | | | | | |  __/         
-            \_/\_/ \___|_|\___\___/|_| |_| |_|\___|         
-#############################################################
+
+```java
+@Override
+public void initialize(URL location, ResourceBundle resources) {
+    LoggerFacade.getDefault().info(this.getClass(), "Initialize ApplicationPresenter"); // NOI18N
+
+    ...        
+}
+
+// which will print
+2017-05-27 08:56:55,073  INFO  Initialize ApplicationPresenter     [ApplicationPresenter]
+```
+
+Here an example how to log an `error` if one happen :smile:
+
+```java
+private static String getResource(String name) {
+    String loadedResource = null;
+    try {
+        final URL url = new URL(name);
+        loadedResource = getResource(url.openStream());
+    } catch(IOException ex){
+        LoggerFacade.getDefault().error(ProjectCollector.class, "Error read resources: " + name, ex); // NOI18N
+    }
+        
+    return loadedResource;
+}
 ```
 
 
@@ -116,49 +178,77 @@ gernerate such messages):
 Api<a name="Api" />
 ---
 
-### com.github.naoghuman.lib.logger.api.LoggerFacade<a name="LoggerFacade" />
+
+### com.github.naoghuman.lib.logger.core.LoggerFacade<a name="LoggerFacade" />
 
 ```java
 /**
- * The facade {@link com.github.naoghuman.lib.logger.api.LoggerFacade} provides 
+ * The facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} provides 
  * access to the logging methods during the Interface 
- * {@link com.github.naoghuman.lib.logger.api.ILibLogger}.
+ * {@link com.github.naoghuman.lib.logger.core.Logger}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.logger.api.ILibLogger
+ * @see com.github.naoghuman.lib.logger.core.Logger
  */
-public final class LoggerFacade implements ILibLogger
+public final class LoggerFacade implements Logger {
 ```
 
 ```java
 /**
- * Alloweds the developer to decide if the Logger should log or not.<br />
+ * Returns a singleton instance from the class <code>LoggerFacade</code>.
+ * 
+ * @return a singleton instance from the class <code>LoggerFacade</code>.
+ */
+public static final LoggerFacade getDefault();
+```
+
+
+### com.github.naoghuman.lib.logger.core.Logger<a name="Logger" />
+
+
+```java
+/**
+ * The <code>Interface</code> for the class {@link com.github.naoghuman.lib.logger.internal.DefaultLogger}.<br>
+ * Over the facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} you 
+ * can access the methods in this <code>Interface</code>.
+ *
+ * @author Naoghuman
+ * @see com.github.naoghuman.lib.logger.internal.DefaultLogger
+ * @see com.github.naoghuman.lib.logger.core.LoggerFacade
+ */
+public interface Logger {
+```
+
+
+```java
+/**
+ * Alloweds the developer to decide if the Logger should log or not.<br>
  * Can be usefull during testing purpose.
  * 
  * @param deactivate <code>Boolean</code> which defined if the Logger should
  * log or not. <code>TRUE</code> if no logging desired, otherwise <code>FALSE</code>
  * for logging.
  */
-public void deactivate(Boolean deactivate);
+public void deactivate(final Boolean deactivate);
 ```
  
 ```java
 /**
- * Print a specific message in debug-mode for the given class if
- * (deactive == false) and (isDebugEnabled() == true).
+ * Print a specific message in debug-mode for the given class if (deactive == 
+ * false) and (isDebugEnabled() == true).
  * 
  * @param clazz The class for that the message should print.
  * @param msg The message which sould print.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
-public void debug(Class clazz, String msg);
+public void debug(final Class clazz, final String msg);
 ```
     
 ```java
 /**
- * Print a specific message in debug-mode with a throwable for the given 
- * class if (deactive == false) and (isDebugEnabled() == true).
+ * Print a specific message in debug-mode with a throwable for the given class 
+ * if (deactive == false) and (isDebugEnabled() == true).
  * 
  * @param clazz The class for that the message should print.
  * @param msg The message which sould print.
@@ -166,15 +256,14 @@ public void debug(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
-public void debug(Class clazz, String msg, Throwable ta);
+public void debug(final Class clazz, final String msg, final Throwable ta);
 ```
     
 ```java
 /**
  * Let the developer define a log {@link org.apache.logging.log4j.Level} 
  * which will be used in the methods {@link #own(Class, String)} and 
- * {@link #own(Class, String, Throwable)}. Default is 
- * {@link org.apache.logging.log4j.Level#DEBUG}.
+ * {@link #own(Class, String, Throwable)}. Default is {@link org.apache.logging.log4j.Level#DEBUG}.
  * <p>
  * All levels are allowed expected {@link org.apache.logging.log4j.Level#ALL} 
  * and {@link org.apache.logging.log4j.Level#OFF}.
@@ -184,20 +273,20 @@ public void debug(Class clazz, String msg, Throwable ta);
  * @see #own(Class, String)
  * @see #own(Class, String, Throwable)
  */
-public void define(Level level);
+public void define(final Level level);
 ```
     
 ```java
 /**
- * Print a specific message in error-mode for the given class if
- * (deactive == false) and (isErrorEnabled() == true).
+ * Print a specific message in error-mode for the given class if (deactive == 
+ * false) and (isErrorEnabled() == true).
  * 
  * @param clazz The class for that the message should print.
  * @param msg The message which sould print.
  * @see #deactivate(java.lang.Boolean) 
  * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
  */
-public void error(Class clazz, String msg);
+public void error(final Class clazz, final String msg);
 ```
     
 ```java
@@ -211,20 +300,20 @@ public void error(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
  */
-public void error(Class clazz, String msg, Throwable ta);
+public void error(final Class clazz, final String msg, final Throwable ta);
 ```
     
 ```java
 /**
- * Print a specific message in info-mode for the given class if
- * (deactive == false) and (isInfoEnabled() == true).
+ * Print a specific message in info-mode for the given class if (deactive == 
+ * false) and (isInfoEnabled() == true).
  * 
  * @param clazz The class for that the message should print.
  * @param msg The message which sould print.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
  */
-public void info(Class clazz, String msg);
+public void info(final Class clazz, final String msg);
 ```
     
 ```java
@@ -238,18 +327,18 @@ public void info(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
  */
-public void info(Class clazz, String msg, Throwable ta);
+public void info(final Class clazz, final String msg, final Throwable ta);
 ```
     
 ```java
 /**
  * This will print a <code>Figlet</code> or <code>normal</code> message in 
- * the logfile.<br />
- * For example with <code>Loggerfacade.getDefault().message('#', 70, figlet);</code>
+ * the logfile.<br>
+ * For example with <code>LoggerFacade.getDefault().message('#', 70, figlet);</code>
  * following will print to the log:<p>
  * 
- * #####################################################################<br />
- * Here you can see your message message.<br />
+ * #####################################################################<br>
+ * Here you will see your message.<br>
  * #####################################################################<p>
  * 
  * Have a look at <code>http://www.lemoda.net/games/message/message-instant.html</code> 
@@ -259,7 +348,7 @@ public void info(Class clazz, String msg, Throwable ta);
  * @param borderSignCount Define how much elements have the border.
  * @param figlet The figlet (or in normal format) message between the border.
  */
-public void message(char borderSign, int borderSignCount, String figlet);
+public void message(final char borderSign, final int borderSignCount, final String figlet);
 ```
     
 ```java
@@ -273,7 +362,7 @@ public void message(char borderSign, int borderSignCount, String figlet);
  * @param msg The message which sould print.
  * @see #define(Level)
  */
-public void own(Class clazz, String msg);
+public void own(final Class clazz, final String msg);
 ```
     
 ```java
@@ -288,20 +377,20 @@ public void own(Class clazz, String msg);
  * @param ta The error which is thrown.
  * @see #define(Level)
  */
-public void own(Class clazz, String msg, Throwable ta);
+public void own(final Class clazz, final String msg, final Throwable ta);
 ```
     
 ```java
 /**
- * Print a specific message in warn-mode for the given class if
- * (deactive == false) and (isTraceEnabled() == true).
+ * Print a specific message in warn-mode for the given class if (deactive == 
+ * false) and (isTraceEnabled() == true).
  * 
  * @param clazz The class for that the message should print.
  * @param msg The message which sould print.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
  */
-public void trace(Class clazz, String msg);
+public void trace(final Class clazz, final String msg);
 ```
     
 ```java
@@ -315,20 +404,20 @@ public void trace(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
  */
-public void trace(Class clazz, String msg, Throwable ta);
+public void trace(final Class clazz, final String msg, final Throwable ta);
 ```
     
 ```java
 /**
- * Print a specific message in trace-mode for the given class if
- * (deactive == false) and (isWarnEnabled() == true).
+ * Print a specific message in trace-mode for the given class if (deactive == 
+ * false) and (isWarnEnabled() == true).
  * 
  * @param clazz The class for that the message should print.
  * @param msg The message which sould print.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
  */
-public void warn(Class clazz, String msg);
+public void warn(final Class clazz, final String msg);
 ```
     
 ```java
@@ -342,7 +431,7 @@ public void warn(Class clazz, String msg);
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
  */
-public void warn(Class clazz, String msg, Throwable ta);
+public void warn(final Class clazz, final String msg, final Throwable ta);
 ```
 
 
@@ -389,8 +478,10 @@ Installation<a name="Installation" />
 ##### Install the project in your preferred IDE
 
 * If not installed download the [JRE 8] or the [JDK 8].
-  * Optional: To work better with [FXML] files in a [JavaFX] application download the [JavaFX Scene Builder] under 'Additional Resources'.
-* Choose your preferred IDE (e.g. [NetBeans], [Eclipse] or [IntelliJ IDEA]) for development.
+  * Optional: To work better with [FXML] files in a [JavaFX] application download 
+    the [JavaFX Scene Builder] under 'Additional Resources'.
+* Choose your preferred IDE (e.g. [NetBeans], [Eclipse] or [IntelliJ IDEA]) for 
+  development.
 * Download or clone the library [Lib-Logger].
 
 
@@ -433,20 +524,30 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 
+[//]: # (Images)
+[move-log4j2-to-application_v0.5.0_2017-05-27_08-21]:https://cloud.githubusercontent.com/assets/8161815/26518746/e45ae648-42b6-11e7-9c72-43789dc412e2.png
+[UML-diagram_Lib-Logger_v0.5.0_2017-05-26_23-37]:https://cloud.githubusercontent.com/assets/8161815/26513576/8b2d8c82-426c-11e7-98d9-fd54a1943b9f.png
+
+
+
 [//]: # (Links)
 [Apache Log4j 2]:https://logging.apache.org/log4j/2.0/index.html
 [Eclipse]:https://www.eclipse.org/
 [Figlet]:http://www.lemoda.net/games/figlet/figlet-instant.html
 [FXML]:http://docs.oracle.com/javafx/2/fxml_get_started/jfxpub-fxml_get_started.htm
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
+[GenMyModel]:https://www.genmymodel.com/
 [IntelliJ IDEA]:http://www.jetbrains.com/idea/
 [Issue]:https://github.com/Naoghuman/lib-logger/issues
+[Java]:http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html
 [JavaDoc]:http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX Scene Builder]:http://gluonhq.com/labs/scene-builder/
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
+[Log4j – Configuring Log4j 2 - Apache Log4j 2]:https://logging.apache.org/log4j/2.x/manual/configuration.html
+[Log4j – Frequently Asked Questions - Apache Log4j 2]:https://logging.apache.org/log4j/2.0/faq.html
 [log4j-api-2.8.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [log4j-core-2.8.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/
@@ -454,3 +555,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [Release v0.4.1 (05.21.2017)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.4.1
+[UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language
