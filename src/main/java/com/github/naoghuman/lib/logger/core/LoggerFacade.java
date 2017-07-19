@@ -22,20 +22,20 @@ import org.apache.logging.log4j.Level;
 
 /**
  * The facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} provides 
- * access to the logging methods during the Interface 
+ * access to the logging methods during the {@code Interface} 
  * {@link com.github.naoghuman.lib.logger.core.Logger}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.logger.core.Logger
+ * @see    com.github.naoghuman.lib.logger.core.Logger
  */
 public final class LoggerFacade implements Logger {
     
     private static final Optional<LoggerFacade> instance = Optional.of(new LoggerFacade());
 
     /**
-     * Returns a singleton instance from the class <code>LoggerFacade</code>.
+     * Returns a singleton instance from the class {@code LoggerFacade}.
      * 
-     * @return a singleton instance from the class <code>LoggerFacade</code>.
+     * @return a singleton instance from the class {@code LoggerFacade}.
      */
     public static final LoggerFacade getDefault() {
         return instance.get();

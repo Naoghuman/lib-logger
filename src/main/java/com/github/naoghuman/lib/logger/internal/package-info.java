@@ -15,6 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * Contains the implementation for the library <code>Lib-Logger</code>.
+ * Contains the {@code Implementation} for the library {@code Lib-Logger}.
  */
 package com.github.naoghuman.lib.logger.internal;

@@ -15,6 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * Contains the <code>API</code> for the library <code>Lib-Logger</code>.
+ * Contains the {@code API} for the library {@code Lib-Logger}.
  */
 package com.github.naoghuman.lib.logger.core;

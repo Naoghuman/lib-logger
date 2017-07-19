@@ -184,13 +184,13 @@ Api<a name="Api" />
 ```java
 /**
  * The facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} provides 
- * access to the logging methods during the Interface 
+ * access to the logging methods during the {@code Interface} 
  * {@link com.github.naoghuman.lib.logger.core.Logger}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.logger.core.Logger
+ * @see    com.github.naoghuman.lib.logger.core.Logger
  */
-public final class LoggerFacade implements Logger {
+public final class LoggerFacade implements Logger
 ```
 
 ```java
@@ -208,15 +208,18 @@ public static final LoggerFacade getDefault();
 
 ```java
 /**
- * The <code>Interface</code> for the class {@link com.github.naoghuman.lib.logger.internal.DefaultLogger}.<br>
- * Over the facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} you 
- * can access the methods in this <code>Interface</code>.
+ * The {@code Interface} for the {@code Class} 
+ * {@link com.github.naoghuman.lib.logger.internal.DefaultLogger}.
+ * <p>
+ * Over the facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} the 
+ * developer access to the {@code Implementation} from the methods in this 
+ * {@code Interface}.
  *
  * @author Naoghuman
- * @see com.github.naoghuman.lib.logger.internal.DefaultLogger
- * @see com.github.naoghuman.lib.logger.core.LoggerFacade
+ * @see    com.github.naoghuman.lib.logger.internal.DefaultLogger
+ * @see    com.github.naoghuman.lib.logger.core.LoggerFacade
  */
-public interface Logger {
+public interface Logger
 ```
 
 
@@ -225,36 +228,36 @@ public interface Logger {
  * Alloweds the developer to decide if the Logger should log or not.<br>
  * Can be usefull during testing purpose.
  * 
- * @param deactivate <code>Boolean</code> which defined if the Logger should
- * log or not. <code>TRUE</code> if no logging desired, otherwise <code>FALSE</code>
- * for logging.
+ * @param deactivate {@code Boolean} which defined if the Logger should log 
+ *        or not. {@code TRUE} if no logging desired, otherwise {@code FALSE} 
+ *        for logging.
  */
 public void deactivate(final Boolean deactivate);
 ```
  
 ```java
 /**
- * Print a specific message in debug-mode for the given class if (deactive == 
- * false) and (isDebugEnabled() == true).
+ * Print a specific message in debug-mode for the given {@code Class} if 
+ * {@code (deactive == FALSE)} and {@code (isDebugEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @see #deactivate(java.lang.Boolean)
- * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
+ * @see   #deactivate(java.lang.Boolean)
+ * @see   org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
 public void debug(final Class clazz, final String msg);
 ```
     
 ```java
 /**
- * Print a specific message in debug-mode with a throwable for the given class 
- * if (deactive == false) and (isDebugEnabled() == true).
+ * Print a specific message in debug-mode with a throwable for the given 
+ * {@code Class} if {@code (deactive == FALSE)} and {@code (isDebugEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @param ta The error which is thrown.
- * @see #deactivate(java.lang.Boolean)
- * @see org.apache.logging.log4j.Logger#isDebugEnabled() 
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
+ * @param ta    The {@code error} which is thrown.
+ * @see   #deactivate(java.lang.Boolean)
+ * @see   org.apache.logging.log4j.Logger#isDebugEnabled() 
  */
 public void debug(final Class clazz, final String msg, final Throwable ta);
 ```
@@ -268,23 +271,23 @@ public void debug(final Class clazz, final String msg, final Throwable ta);
  * All levels are allowed expected {@link org.apache.logging.log4j.Level#ALL} 
  * and {@link org.apache.logging.log4j.Level#OFF}.
  * 
- * @param level The <code>Level</code> which should be used.
- * @see org.apache.logging.log4j.Level
- * @see #own(Class, String)
- * @see #own(Class, String, Throwable)
+ * @param level The {@code Level} which should be used.
+ * @see   org.apache.logging.log4j.Level
+ * @see   #own(Class, String)
+ * @see   #own(Class, String, Throwable)
  */
 public void define(final Level level);
 ```
     
 ```java
 /**
- * Print a specific message in error-mode for the given class if (deactive == 
- * false) and (isErrorEnabled() == true).
+ * Print a specific message in error-mode for the given class if 
+ * {@code (deactive == FALSE)} and {@code (isErrorEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @see #deactivate(java.lang.Boolean) 
- * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
+ * @see   #deactivate(java.lang.Boolean) 
+ * @see   org.apache.logging.log4j.Logger#isErrorEnabled() 
  */
 public void error(final Class clazz, final String msg);
 ```
@@ -292,24 +295,24 @@ public void error(final Class clazz, final String msg);
 ```java
 /**
  * Print a specific message in error-mode with a throwable for the given 
- * class if (deactive == false) and (isErrorEnabled() == true).
+ * {@code Class} if {@code (deactive == FALSE)} and {@code (isErrorEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @param ta The error which is thrown.
- * @see #deactivate(java.lang.Boolean)
- * @see org.apache.logging.log4j.Logger#isErrorEnabled() 
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
+ * @param ta    The {@code error} which is thrown.
+ * @see   #deactivate(java.lang.Boolean)
+ * @see   org.apache.logging.log4j.Logger#isErrorEnabled() 
  */
 public void error(final Class clazz, final String msg, final Throwable ta);
 ```
     
 ```java
 /**
- * Print a specific message in info-mode for the given class if (deactive == 
- * false) and (isInfoEnabled() == true).
+ * Print a specific message in info-mode for the given {@code Class} if 
+ * {@code (deactive == FALSE)} and {@code (isInfoEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
  */
@@ -318,12 +321,12 @@ public void info(final Class clazz, final String msg);
     
 ```java
 /**
- * Print a specific message in info-mode with a throwable for the given 
- * class if (deactive == false) and (isInfoEnabled() == true).
+ * Print a specific message in info-mode with a throwable for the given {@code Class} 
+ * if {@code (deactive == FALSE)} and {@code (isInfoEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @param ta The error which is thrown.
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
+ * @param ta    The {@code error} which is thrown.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isInfoEnabled() 
  */
@@ -332,21 +335,20 @@ public void info(final Class clazz, final String msg, final Throwable ta);
     
 ```java
 /**
- * This will print a <code>Figlet</code> or <code>normal</code> message in 
- * the logfile.<br>
- * For example with <code>LoggerFacade.getDefault().message('#', 70, figlet);</code>
- * following will print to the log:<p>
- * 
+ * This will print a {@code Figlet} or {@code normal} message in the logfile.<br>
+ * For example with {@code LoggerFacade.getDefault().message('#', 70, figlet);}
+ * following will print to the log-file:
+ * <p>
  * #####################################################################<br>
  * Here you will see your message.<br>
- * #####################################################################<p>
- * 
- * Have a look at <code>http://www.lemoda.net/games/message/message-instant.html</code> 
+ * #####################################################################
+ * <p>
+ * Have a look at {@code http://www.lemoda.net/games/message/message-instant.html}
  * how to generate a message-message.
  * 
- * @param borderSign The sign which represent an element from the border.
- * @param borderSignCount Define how much elements have the border.
- * @param figlet The figlet (or in normal format) message between the border.
+ * @param borderSign      The {@code sign}sign represent an element from the border.
+ * @param borderSignCount Define how much {@code elements} have the border.
+ * @param figlet          The {@code figlet} (or in normal format) message between the border.
  */
 public void message(final char borderSign, final int borderSignCount, final String figlet);
 ```
@@ -354,12 +356,12 @@ public void message(final char borderSign, final int borderSignCount, final Stri
 ```java
 /**
  * Print a specific message in the defined log {@link org.apache.logging.log4j.Level} 
- * mode when (deactive == false) and (isLogModeEnabled() == true). The 
- * developer can the log level define in the method {@link #define(Level)}. 
+ * mode when {@code (deactive == FALSE)} and {@code (isLogModeEnabled() == TRUE)}.
+ * The developer can the log level define in the method {@link #define(Level)}. 
  * Default is that {@link org.apache.logging.log4j.Level#DEBUG}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
  * @see #define(Level)
  */
 public void own(final Class clazz, final String msg);
@@ -368,13 +370,13 @@ public void own(final Class clazz, final String msg);
 ```java
 /**
  * Print a specific message in the defined log {@link org.apache.logging.log4j.Level} 
- * mode when (deactive == false) and (isLogModeEnabled() == true). The 
- * developer can the log level define in the method {@link #define(Level)}. 
+ * mode when {@code (deactive == FALSE)} and {@code (isLogModeEnabled() == TRUE)}.
+ * The developer can the log level define in the method {@link #define(Level)}. 
  * Default is that {@link org.apache.logging.log4j.Level#DEBUG}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @param ta The error which is thrown.
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
+ * @param ta    The {@code error} which is thrown.
  * @see #define(Level)
  */
 public void own(final Class clazz, final String msg, final Throwable ta);
@@ -382,11 +384,11 @@ public void own(final Class clazz, final String msg, final Throwable ta);
     
 ```java
 /**
- * Print a specific message in warn-mode for the given class if (deactive == 
- * false) and (isTraceEnabled() == true).
+ * Print a specific message in warn-mode for the given class if 
+ * {@code (deactive == FALSE)} and {@code (isTraceEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
  */
@@ -395,12 +397,12 @@ public void trace(final Class clazz, final String msg);
     
 ```java
 /**
- * Print a specific message in trace-mode with a throwable for the given 
- * class if (deactive == false) and (isTraceEnabled() == true).
+ * Print a specific message in trace-mode with a throwable for the given {@code Class} 
+ * if {@code (deactive == FALSE)} and {@code (isTraceEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @param ta The error which is thrown.
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
+ * @param ta    The {@code error} which is thrown.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isTraceEnabled() 
  */
@@ -409,11 +411,11 @@ public void trace(final Class clazz, final String msg, final Throwable ta);
     
 ```java
 /**
- * Print a specific message in trace-mode for the given class if (deactive == 
- * false) and (isWarnEnabled() == true).
+ * Print a specific message in trace-mode for the given {@code Class} if 
+ * {@code (deactive == FALSE)} and {@code (isWarnEnabled() == TRUE)}.
  * 
- * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
+ * @param clazz The {@code Class} for that the message should print.
+ * @param msg   The {@code message} which should print.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
  */
@@ -422,12 +424,12 @@ public void warn(final Class clazz, final String msg);
     
 ```java
 /**
- * Print a specific message in warn-mode with a throwable for the given 
- * class if (deactive == false) and (isWarnEnabled() == true).
+ * Print a specific message in warn-mode with a throwable for the given {@code Class}
+ * {@code (deactive == FALSE)} and {@code (isWarnEnabled() == TRUE)}.
  * 
  * @param clazz The class for that the message should print.
- * @param msg The message which sould print.
- * @param ta The error which is thrown.
+ * @param msg   The {@code message} which should print.
+ * @param ta    The {@code error} which is thrown.
  * @see #deactivate(java.lang.Boolean)
  * @see org.apache.logging.log4j.Logger#isWarnEnabled() 
  */

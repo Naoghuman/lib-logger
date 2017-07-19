@@ -28,6 +28,7 @@ Welcome to `Lib-Logger` with the new release `x.y.z`.
 
 
 #### Refactoring
+#21 [JavaDoc] Use {@code xy} instead the tag &lt;code&gt; in JavaDoc.
 
 
 

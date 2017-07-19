@@ -21,12 +21,14 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 
 /**
- * The implementation from the Interface {@link com.github.naoghuman.lib.logger.core.Logger}.<br>
- * Access to this class is over the facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade}.
+ * The default {@code Implementation} from the {@code Interface} 
+ * {@link com.github.naoghuman.lib.logger.core.Logger}.
+ * <p>
+ * Access to this {@code Class} is over the facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade}.
  * 
  * @author Naoghuman
- * @see com.github.naoghuman.lib.logger.core.Logger
- * @see com.github.naoghuman.lib.logger.core.LoggerFacade
+ * @see    com.github.naoghuman.lib.logger.core.Logger
+ * @see    com.github.naoghuman.lib.logger.core.LoggerFacade
  */
 public final class DefaultLogger implements com.github.naoghuman.lib.logger.core.Logger {
     
