@@ -1,4 +1,4 @@
-Welcome to `Lib-Logger` with the new release `x.y.z`.
+Welcome to `Lib-Logger` with the new release `0.5.1`.
 
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
@@ -29,6 +29,7 @@ Welcome to `Lib-Logger` with the new release `x.y.z`.
 
 #### Refactoring
 #21 [JavaDoc] Use {@code xy} instead the tag &lt;code&gt; in JavaDoc.
+#20 [UML] Add missing dependency between Logger and LoggerFacade.
 
 
 
