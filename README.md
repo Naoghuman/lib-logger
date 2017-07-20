@@ -15,7 +15,7 @@ _Image:_ [UML] Lib-Logger
 > __Hint__  
 > The `UML` diagram is created with the `Online Modeling Platform` [GenMyModel].
 
-Current `version` is the release `0.5.0` (05.27.2017).
+Current `version` is the release `0.5.1` (07.20.2017 / MM.dd.yyyy).
 
 
 
@@ -441,12 +441,10 @@ public void warn(final Class clazz, final String msg, final Throwable ta);
 Download<a name="Download" />
 ---
 
-Current `version` is `0.5.0`. Main points in this release are:
-* This is a major update.
-* Create new package structure to reflect my new library conventions.
-* Deprecated all old classes and interfaces.
-* Update the readme to reflect the changes.
-* Update the examples in the readme to clearify the usage from the library.
+Current `version` is `0.5.1`. Main points in this release are:
+* This is a minor update.
+* Update the UML diagram.
+* Update the JavaDoc.
 
 **Maven coordinates**  
 In context from a [Maven] project you can use following maven coordinates: 
@@ -461,7 +459,7 @@ In context from a [Maven] project you can use following maven coordinates:
 ```
 
 **Download manuell**
-* [Release v0.5.0 (05.27.2017)]
+* [Release v0.5.1 (07.20.2017 / MM.dd.yyyy)]
 
 **An overview** about all existings releases can be found here:
 * [Overview from all releases in Lib-Logger]
@@ -472,7 +470,7 @@ Requirements<a name="Requirements" />
 ---
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.5.0.jar](#Installation).
+* The library [Lib-Logger-0.5.1.jar](#Installation).
   * Included is the [log4j-api-2.8.2.jar].
   * Included is the [log4j-core-2.8.2.jar].
 
@@ -560,5 +558,5 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.5.0 (05.27.2017)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.0
+[Release v0.5.1 (07.20.2017 / MM.dd.yyyy)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.1
 [UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language

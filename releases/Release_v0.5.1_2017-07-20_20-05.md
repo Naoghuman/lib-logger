@@ -6,8 +6,9 @@ Welcome to `Lib-Logger` with the new release `0.5.1`.
 
 
 #### Summary
-* ...
-* ...
+* This is a minor update.
+* Update the UML diagram.
+* Update the JavaDoc.
 
 
 
