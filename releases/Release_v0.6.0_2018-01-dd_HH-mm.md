@@ -16,6 +16,7 @@ Welcome to `Lib-Logger` with the new release `0.6.0`.
 
 
 #### Feature
+#26 [stability] Add new class DefaultLoggerValidator to internal package.
 
 
 

@@ -62,11 +62,15 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
 
     @Override
     public final void debug(final Class clazz, final String msg) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         this.debug(clazz, msg, null);
     }
 
     @Override
     public final void debug(final Class clazz, final String msg, final Throwable ta) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         if (!deactivate && this.getLogger(clazz).isDebugEnabled()) {
             this.getLogger(clazz).debug(msg, ta);
         }
@@ -87,11 +91,15 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
 
     @Override
     public final void error(final Class clazz, final String msg) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         this.error(clazz, msg, null);
     }
 
     @Override
     public final void error(final Class clazz, final String msg, final Throwable ta) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         if (!deactivate && this.getLogger(clazz).isErrorEnabled()) {
             this.getLogger(clazz).error(msg, ta);
         }
@@ -99,11 +107,15 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
 
     @Override
     public final void info(final Class clazz, final String msg) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         this.info(clazz, msg, null);
     }
 
     @Override
     public final void info(final Class clazz, final String msg, final Throwable ta) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         if (!deactivate && this.getLogger(clazz).isInfoEnabled()) {
             this.getLogger(clazz).info(msg, ta);
         }
@@ -128,6 +140,8 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
 
     @Override
     public final void own(final Class clazz, final String msg) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         this.own(clazz, msg, null);
     }
 
@@ -160,11 +174,15 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
 
     @Override
     public final void trace(final Class clazz, final String msg) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         this.trace(clazz, msg, null);
     }
 
     @Override
     public final void trace(final Class clazz, final String msg, final Throwable ta) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         if (!deactivate && this.getLogger(clazz).isTraceEnabled()) {
             this.getLogger(clazz).trace(msg, ta);
         }
@@ -172,11 +190,15 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
 
     @Override
     public final void warn(final Class clazz, final String msg) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         this.warn(clazz, msg, null);
     }
 
     @Override
     public final void warn(final Class clazz, final String msg, final Throwable ta) {
+        DefaultLoggerValidator.requireNonNull(clazz);
+        
         if (!deactivate && this.getLogger(clazz).isWarnEnabled()) {
             this.getLogger(clazz).warn(msg, ta);
         }
