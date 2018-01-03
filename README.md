@@ -24,8 +24,8 @@ Content
 
 * [Examples](#Examples)
     - [Configure a project for logging](#CoThFoLo)
-    - [Log a starting message](#LoAStMe)
     - [Log different regular messages](#LoDiReMe)
+    - [Log a starting message](#LoAStMe)
 * [Api](#Api)
     - [com.github.naoghuman.lib.logger.core.LoggerFacade](#LoggerFacade)
     - [com.github.naoghuman.lib.logger.core.Logger](#Logger)
@@ -44,7 +44,6 @@ Examples<a name="Examples" />
 ---
 
 
-
 ### Configure a project for logging<a name="CoThFoLo" />
 
 In this example I will show how to configure a [Java] project for the usage from the library `Lib-Logger`:
@@ -56,6 +55,52 @@ In this example I will show how to configure a [Java] project for the usage from
 
 _Image:_ Move the template file `log4j2.xml`  
 ![move-log4j2-to-application_v0.5.0_2017-05-27_08-21.png][move-log4j2-to-application_v0.5.0_2017-05-27_08-21]
+
+
+### Log different regular messages<a name="LoDiReMe" />
+
+While the first example shows how to [Configure a project for logging](#CoThFoLo) 
+and the second how to [Log a starting message](#LoAStMe) this example shows how 
+to log regular messages with the library [Lib-Logger].
+
+```java
+public static final void loadResourcesInCache() {
+    LoggerFacade.getDefault().debug(TemplateLoader.class, "Load resources in cache"); // NOI18N
+
+    ...
+}
+
+// which will print in the console and in the configured `xy.log` file:
+2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
+```
+
+```java
+@Override
+public void initialize(URL location, ResourceBundle resources) {
+    LoggerFacade.getDefault().info(this.getClass(), "Initialize ApplicationPresenter"); // NOI18N
+
+    ...        
+}
+
+// which will print in the console and in the configured `xy.log` file:
+2017-05-27 08:56:55,073  INFO  Initialize ApplicationPresenter     [ApplicationPresenter]
+```
+
+Here an example how to log an `error` if one happen :smile:
+
+```java
+private static String getResource(String name) {
+    String loadedResource = null;
+    try {
+        final URL url = new URL(name);
+        loadedResource = getResource(url.openStream());
+    } catch(IOException ex){
+        LoggerFacade.getDefault().error(ProjectCollector.class, "Error read resources: " + name, ex); // NOI18N
+    }
+        
+    return loadedResource;
+}
+```
 
 
 ### Log a starting message<a name="LoAStMe" />
@@ -125,52 +170,6 @@ application.message.stop=Stop %s.
 application.build.datetime=${timestamp}
 application.title=${pom.name} 
 application.version=v${pom.version}
-```
-
-
-### Log different regular messages<a name="LoDiReMe" />
-
-While the first example shows how to [Configure a project for logging](#CoThFoLo) 
-and the second how to [Log a starting message](#LoAStMe) this example shows how 
-to log regular messages with the library [Lib-Logger].
-
-```java
-public static final void loadResourcesInCache() {
-    LoggerFacade.getDefault().debug(TemplateLoader.class, "Load resources in cache"); // NOI18N
-
-    ...
-}
-
-// which will print in the console and in the configured `xy.log` file:
-2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
-```
-
-```java
-@Override
-public void initialize(URL location, ResourceBundle resources) {
-    LoggerFacade.getDefault().info(this.getClass(), "Initialize ApplicationPresenter"); // NOI18N
-
-    ...        
-}
-
-// which will print in the console and in the configured `xy.log` file:
-2017-05-27 08:56:55,073  INFO  Initialize ApplicationPresenter     [ApplicationPresenter]
-```
-
-Here an example how to log an `error` if one happen :smile:
-
-```java
-private static String getResource(String name) {
-    String loadedResource = null;
-    try {
-        final URL url = new URL(name);
-        loadedResource = getResource(url.openStream());
-    } catch(IOException ex){
-        LoggerFacade.getDefault().error(ProjectCollector.class, "Error read resources: " + name, ex); // NOI18N
-    }
-        
-    return loadedResource;
-}
 ```
 
 

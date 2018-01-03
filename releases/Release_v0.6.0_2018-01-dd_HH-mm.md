@@ -30,6 +30,7 @@ Welcome to `Lib-Logger` with the new release `0.6.0`.
 
 #### Refactoring
 #28 [pom] Update dependencies in pom.xml.
+#24 [documentation] Move the section for the starting message to the end from the examples.
 
 
 
