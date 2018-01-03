@@ -20,6 +20,7 @@ Welcome to `Lib-Logger` with the new release `0.6.0`.
 
 
 #### Enhancement
+#22 [api] Remove deprecated content.
 
 
 
