@@ -21,6 +21,7 @@ Welcome to `Lib-Logger` with the new release `0.6.0`.
 
 
 #### Enhancement
+#25 [cleanup] Use own instance from logger in the different log-methods.
 #22 [api] Remove deprecated content.
 
 

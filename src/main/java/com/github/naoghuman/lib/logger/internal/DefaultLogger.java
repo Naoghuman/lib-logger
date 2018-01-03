@@ -71,8 +71,9 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
     public final void debug(final Class clazz, final String msg, final Throwable ta) {
         DefaultLoggerValidator.requireNonNull(clazz);
         
-        if (!deactivate && this.getLogger(clazz).isDebugEnabled()) {
-            this.getLogger(clazz).debug(msg, ta);
+        final org.apache.logging.log4j.Logger logger = this.getLogger(clazz);
+        if (!deactivate && logger.isDebugEnabled()) {
+            logger.debug(msg, ta);
         }
     }
 
@@ -100,8 +101,9 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
     public final void error(final Class clazz, final String msg, final Throwable ta) {
         DefaultLoggerValidator.requireNonNull(clazz);
         
-        if (!deactivate && this.getLogger(clazz).isErrorEnabled()) {
-            this.getLogger(clazz).error(msg, ta);
+        final org.apache.logging.log4j.Logger logger = this.getLogger(clazz);
+        if (!deactivate && logger.isErrorEnabled()) {
+            logger.error(msg, ta);
         }
     }
 
@@ -116,8 +118,9 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
     public final void info(final Class clazz, final String msg, final Throwable ta) {
         DefaultLoggerValidator.requireNonNull(clazz);
         
-        if (!deactivate && this.getLogger(clazz).isInfoEnabled()) {
-            this.getLogger(clazz).info(msg, ta);
+        final org.apache.logging.log4j.Logger logger = this.getLogger(clazz);
+        if (!deactivate && logger.isInfoEnabled()) {
+            logger.info(msg, ta);
         }
     }
 
@@ -127,7 +130,6 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
         msg.append("\n"); // NOI18N
         
         final StringBuilder border = new StringBuilder();
-        
         for (int i = 0; i < borderSignCount; i++) {
             border.append(String.valueOf(borderSign));
         }
@@ -135,7 +137,8 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
         msg.append(message).append("\n"); // NOI18N
         msg.append(border.toString());
         
-        this.getLogger(com.github.naoghuman.lib.logger.core.Logger.class).info(msg.toString());
+        final org.apache.logging.log4j.Logger logger = this.getLogger(com.github.naoghuman.lib.logger.core.Logger.class);
+        logger.info(msg.toString());
     }
 
     @Override
@@ -151,24 +154,25 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
             return;
         }
         
-        if (level.equals(Level.DEBUG) && this.getLogger(clazz).isDebugEnabled()) {
-            this.getLogger(clazz).debug(msg, ta);
+        final org.apache.logging.log4j.Logger logger = this.getLogger(clazz);
+        if (level.equals(Level.DEBUG) && logger.isDebugEnabled()) {
+            logger.debug(msg, ta);
         }
         
-        if (level.equals(Level.ERROR) && this.getLogger(clazz).isErrorEnabled()) {
-            this.getLogger(clazz).error(msg, ta);
+        if (level.equals(Level.ERROR) && logger.isErrorEnabled()) {
+            logger.error(msg, ta);
         }
         
-        if (level.equals(Level.INFO) && this.getLogger(clazz).isInfoEnabled()) {
-            this.getLogger(clazz).info(msg, ta);
+        if (level.equals(Level.INFO) && logger.isInfoEnabled()) {
+            logger.info(msg, ta);
         }
         
-        if (level.equals(Level.TRACE) && this.getLogger(clazz).isTraceEnabled()) {
-            this.getLogger(clazz).trace(msg, ta);
+        if (level.equals(Level.TRACE) && logger.isTraceEnabled()) {
+            logger.trace(msg, ta);
         }
         
-        if (level.equals(Level.WARN) && this.getLogger(clazz).isWarnEnabled()) {
-            this.getLogger(clazz).warn(msg, ta);
+        if (level.equals(Level.WARN) && logger.isWarnEnabled()) {
+            logger.warn(msg, ta);
         }
     }
 
@@ -183,8 +187,9 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
     public final void trace(final Class clazz, final String msg, final Throwable ta) {
         DefaultLoggerValidator.requireNonNull(clazz);
         
-        if (!deactivate && this.getLogger(clazz).isTraceEnabled()) {
-            this.getLogger(clazz).trace(msg, ta);
+        final org.apache.logging.log4j.Logger logger = this.getLogger(clazz);
+        if (!deactivate && logger.isTraceEnabled()) {
+            logger.trace(msg, ta);
         }
     }
 
@@ -199,8 +204,9 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
     public final void warn(final Class clazz, final String msg, final Throwable ta) {
         DefaultLoggerValidator.requireNonNull(clazz);
         
-        if (!deactivate && this.getLogger(clazz).isWarnEnabled()) {
-            this.getLogger(clazz).warn(msg, ta);
+        final org.apache.logging.log4j.Logger logger = this.getLogger(clazz);
+        if (!deactivate && logger.isWarnEnabled()) {
+            logger.warn(msg, ta);
         }
     }
     
