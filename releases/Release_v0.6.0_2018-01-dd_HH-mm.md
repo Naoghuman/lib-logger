@@ -6,8 +6,10 @@ Welcome to `Lib-Logger` with the new release `0.6.0`.
 
 
 #### Summary
-* ...
-* ...
+* This is a mayor update.
+* Add new `DefaultLoggerValidator for stability purpose.
+* Remove the deprecated content.
+* Update the documentation to fit the new version.
 
 
 
