@@ -9,7 +9,7 @@ Intention
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
 
-_Image:_ [UML] Lib-Logger v0.6.0 
+_Image:_ [UML] Lib-Logger v0.6.0  
 ![UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00.png][UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00]
 
 > __Hint__  
