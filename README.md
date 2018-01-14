@@ -23,9 +23,9 @@ Content
 ---
 
 * [Examples](#Examples)
-    - [Configure a project for logging](#CoThFoLo)
-    - [Log different regular messages](#LoDiReMe)
-    - [Log a starting message](#LoAStMe)
+    - [How to configure a project for logging](#HoToCoThFoLo)
+    - [How to log a regular message](#HoToLoAReMe)
+    - [How to log a starting message](#HoToLoAStMe)
 * [Api](#Api)
     - [com.github.naoghuman.lib.logger.core.LoggerFacade](#LoggerFacade)
     - [com.github.naoghuman.lib.logger.core.Logger](#Logger)
@@ -44,9 +44,10 @@ Examples<a name="Examples" />
 ---
 
 
-### Configure a project for logging<a name="CoThFoLo" />
+### How to configure a project for logging<a name="HoToCoThFoLo" />
 
-In this example I will show how to configure a [Java] project for the usage from the library `Lib-Logger`:
+In this example I will show yout how to configure a [Java] project for the usage 
+from the library `Lib-Logger`:
 * Move the file `log4j2.xml` to the default package in `src/main/resources` in your new project.
 * Open the file and tweak it for your necessities. Plz see for more informations:
     * [Log4j – Configuring Log4j 2 - Apache Log4j 2]
@@ -57,12 +58,12 @@ _Image:_ Move the template file `log4j2.xml`
 ![move-log4j2-to-application_v0.5.0_2017-05-27_08-21.png][move-log4j2-to-application_v0.5.0_2017-05-27_08-21]
 
 
-### Log different regular messages<a name="LoDiReMe" />
+### How to log a regular message<a name="HoToLoAReMe" />
 
-While the first example shows how to [Configure a project for logging](#CoThFoLo) 
-and the second how to [Log a starting message](#LoAStMe) this example shows how 
-to log regular messages with the library [Lib-Logger].
+In the first example the developer can see `how to configure a project for logging` 
+purpose. With this requirements its now possible to log `normal` messages:
 
+Example how to log a `debug` message
 ```java
 public static final void loadResourcesInCache() {
     LoggerFacade.getDefault().debug(TemplateLoader.class, "Load resources in cache"); // NOI18N
@@ -74,6 +75,7 @@ public static final void loadResourcesInCache() {
 2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
 ```
 
+Example how to log a `info` message
 ```java
 @Override
 public void initialize(URL location, ResourceBundle resources) {
@@ -86,8 +88,7 @@ public void initialize(URL location, ResourceBundle resources) {
 2017-05-27 08:56:55,073  INFO  Initialize ApplicationPresenter     [ApplicationPresenter]
 ```
 
-Here an example how to log an `error` if one happen :smile:
-
+Example how to log a `error` message
 ```java
 private static String getResource(String name) {
     String loadedResource = null;
@@ -103,9 +104,9 @@ private static String getResource(String name) {
 ```
 
 
-### Log a starting message<a name="LoAStMe" />
+### How to log a starting message<a name="HoToLoAStMe" />
 
-This example shows how to log a starting message with following statement
+This example will show you how to log a starting message with following statements:
 
 ```java
 public class StartApplication extends Application implements IApplicationConfiguration {
@@ -127,11 +128,6 @@ public class StartApplication extends Application implements IApplicationConfigu
 }
 
 // which will print in the console and in the configured `xy.log` file:
-------------------------------------------------------------------------
-Building Demo-Template 0.1.0-SNAPSHOT
-------------------------------------------------------------------------
-
---- exec-maven-plugin:1.2.1:exec (default-cli) @ demo-template ---
 2017-05-27 08:56:53,688  DEBUG Load properties: /com/github/naoghuman/demo/template/application/application.properties     [LibProperties]
 2017-05-27 08:56:53,705  DEBUG Load properties: /com/github/naoghuman/demo/template/template.properties     [LibProperties]
 2017-05-27 08:56:53,706  INFO  
@@ -140,8 +136,7 @@ Start Demo-Template v0.1.0-SNAPSHOT.
 ################################################################################     [Logger]
 ```
 
-where the constants defined in
-
+where the `constants` defined in
 ```java
 public interface IApplicationConfiguration {
     
@@ -157,7 +152,6 @@ public interface IApplicationConfiguration {
 ```
 
 and the key-value pairs in `application.properties`:
-
 ```java
 # Application
 application.border.sign=#
