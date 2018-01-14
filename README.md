@@ -9,8 +9,8 @@ Intention
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 [JavaFX] &amp; [Maven] desktop application.
 
-_Image:_ [UML] Lib-Logger  
-![UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44.png][UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]
+_Image:_ [UML] Lib-Logger v0.6.0 
+![UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00.png][UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00]
 
 > __Hint__  
 > The `UML` diagram is created with the `Online Modeling Platform` [GenMyModel].
@@ -529,7 +529,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 [//]: # (Images)
 [move-log4j2-to-application_v0.5.0_2017-05-27_08-21]:https://cloud.githubusercontent.com/assets/8161815/26518746/e45ae648-42b6-11e7-9c72-43789dc412e2.png
-[UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]:https://user-images.githubusercontent.com/8161815/28390956-64b5d38a-6cdc-11e7-84b7-153ace99fc3e.png
+[UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00]:https://user-images.githubusercontent.com/8161815/34914830-f97a93f0-f91a-11e7-82dd-7018bbaddb1c.png
 
 
 
