@@ -51,6 +51,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isDebugEnabled()
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void debug(final Class clazz, final String msg);
     
@@ -64,6 +65,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isDebugEnabled() 
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void debug(final Class clazz, final String msg, final Throwable ta);
     
@@ -91,6 +93,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean) 
      * @see    org.apache.logging.log4j.Logger#isErrorEnabled() 
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void error(final Class clazz, final String msg);
     
@@ -104,6 +107,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isErrorEnabled() 
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void error(final Class clazz, final String msg, final Throwable ta);
     
@@ -116,6 +120,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isInfoEnabled() 
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void info(final Class clazz, final String msg);
     
@@ -129,6 +134,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isInfoEnabled()
      * @throws NullPointerException if {@code clazz == NULL}. 
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void info(final Class clazz, final String msg, final Throwable ta);
     
@@ -160,6 +166,7 @@ public interface Logger {
      * @param msg   The {@code message} which should print.
      * @see    #define(Level)
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void own(final Class clazz, final String msg);
     
@@ -174,6 +181,7 @@ public interface Logger {
      * @param ta    The {@code error} which is thrown.
      * @see    #define(Level)
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void own(final Class clazz, final String msg, final Throwable ta);
     
@@ -186,6 +194,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isTraceEnabled() 
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void trace(final Class clazz, final String msg);
     
@@ -199,6 +208,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isTraceEnabled() 
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void trace(final Class clazz, final String msg, final Throwable ta);
     
@@ -211,6 +221,7 @@ public interface Logger {
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isWarnEnabled() 
      * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void warn(final Class clazz, final String msg);
     
@@ -223,7 +234,8 @@ public interface Logger {
      * @param ta    The {@code error} which is thrown.
      * @see    #deactivate(java.lang.Boolean)
      * @see    org.apache.logging.log4j.Logger#isWarnEnabled()
-     * @throws NullPointerException if {@code clazz == NULL}. 
+     * @throws NullPointerException if {@code clazz == NULL}.
+     * @throws NullPointerException if {@code msg   == NULL}.
      */
     public void warn(final Class clazz, final String msg, final Throwable ta);
     
