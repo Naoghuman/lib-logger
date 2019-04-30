@@ -11,7 +11,7 @@ Welcome to `Lib-Logger` with the new release `x.y.z`.
 
 
 
-#### New
+#### Bug
 
 
 
@@ -23,7 +23,11 @@ Welcome to `Lib-Logger` with the new release `x.y.z`.
 
 
 
-#### Bug
+#### Test
+
+
+
+#### Documentation
 
 
 

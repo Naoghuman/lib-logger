@@ -11,7 +11,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 
 
-#### New
+#### Bug
 
 
 
@@ -23,7 +23,12 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 
 
-#### Bug
+#### Test
+
+
+
+#### Documentation
+#38 [doc] Update the template for the releases.
 
 
 
