@@ -186,6 +186,11 @@ public interface Logger {
     public void own(final Class clazz, final String msg, final Throwable ta);
     
     /**
+     * Prints all system properties to the log.
+     */
+    public void printSystemProperties();
+    
+    /**
      * Prints a specific message in warn-mode for the given class if 
      * {@code (deactive == FALSE)} and {@code (isTraceEnabled() == TRUE)}.
      * 

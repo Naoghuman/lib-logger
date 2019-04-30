@@ -16,7 +16,9 @@
  */
 package com.github.naoghuman.lib.logger.internal;
 
+import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Properties;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 
@@ -174,6 +176,24 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
         }
     }
 
+    @Override
+    public void printSystemProperties() {
+        final Properties properties = System.getProperties();
+        
+        int maxLength = 0;
+        for(final Object key : properties.keySet()) {
+            maxLength = Math.max(maxLength, String.valueOf(key).length());
+        }
+        
+        final Enumeration keys = properties.keys();
+        while (keys.hasMoreElements()) {
+            final String key   = (String) keys.nextElement();
+            final String value = (String) properties.get(key);
+            this.debug(com.github.naoghuman.lib.logger.core.Logger.class, 
+                    String.format("%-" + maxLength + "s", key) + ": " + value); // NOI18N
+        }
+    }
+    
     @Override
     public final void trace(final Class clazz, final String msg) {
         this.trace(clazz, msg, null);

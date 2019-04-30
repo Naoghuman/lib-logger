@@ -107,6 +107,11 @@ public final class LoggerFacade implements Logger {
     }
 
     @Override
+    public void printSystemProperties() {
+        logger.printSystemProperties();
+    }
+    
+    @Override
     public final void trace(final Class clazz, final String msg) {
         logger.trace(clazz, msg);
     }

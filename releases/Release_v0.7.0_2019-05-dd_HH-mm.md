@@ -17,6 +17,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 #### Feature
 #35 [build] Connect the project to 'Travis CI'.
+#32 [log] Add new method printSystemProperties() which do what the name says.
 
 
 
