@@ -16,6 +16,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 
 #### Feature
+#35 [build] Connect the project to 'Travis CI'.
 
 
 

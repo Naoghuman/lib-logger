@@ -36,6 +36,11 @@
         <url>https://github.com/Naoghuman/lib-logger.git</url>
     </scm>
     
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://travis-ci.org/Naoghuman/lib-logger</url>
+    </ciManagement>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
