@@ -39,6 +39,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 
 #### Refactoring
+#36 [pom] Update the dependencies in pom.xml.
 
 
 

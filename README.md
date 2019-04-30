@@ -491,8 +491,8 @@ Requirements<a name="Requirements" />
 
 * On your system you need [JRE 8] or [JDK 8] installed.
 * The library [Lib-Logger-0.6.0.jar](#Installation).
-    * Included is the [log4j-api-2.10.0.jar].
-    * Included is the [log4j-core-2.10.0.jar].
+    * Included is the [log4j-api-2.11.2.jar].
+    * Included is the [log4j-core-2.11.2.jar].
 
 
 
@@ -572,8 +572,8 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Log4j – Configuring Log4j 2 - Apache Log4j 2]:https://logging.apache.org/log4j/2.x/manual/configuration.html
 [Log4j – Frequently Asked Questions - Apache Log4j 2]:https://logging.apache.org/log4j/2.0/faq.html
-[log4j-api-2.10.0.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
-[log4j-core-2.10.0.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-api-2.11.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
+[log4j-core-2.11.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
