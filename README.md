@@ -1,6 +1,10 @@
 Lib-Logger
 ===
 
+[![Build Status](https://travis-ci.org/Naoghuman/lib-logger.svg?branch=master)](https://travis-ci.org/Naoghuman/lib-logger)
+[![license: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![GitHub release](https://img.shields.io/github/release/Naoghuman/lib-logger.svg)](https://GitHub.com/Naoghuman/lib-logger/releases/)
+
 
 
 Intention
@@ -14,8 +18,6 @@ _Image:_ [UML] Lib-Logger v0.6.0
 
 > __Hint__  
 > The `UML` diagram is created with the `Online Modeling Platform` [GenMyModel].
-
-Current `version` is the release `0.6.0` (01.14.2018 / MM.dd.yyyy).
 
 
 

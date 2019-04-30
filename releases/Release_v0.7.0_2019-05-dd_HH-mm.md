@@ -30,6 +30,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 #### Documentation
 #38 [doc] Update the template for the releases.
+#34 [doc] Update the section 'Intention' in the ReadMe.
 #30 [doc] Change signature in the JavaDoc.
 
 
