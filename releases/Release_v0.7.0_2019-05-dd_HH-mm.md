@@ -29,6 +29,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 
 #### Documentation
+#41 [doc] Add new folder 'concept' with a template to the project.
 #40 [doc] Update the project description.
 #38 [doc] Update the template for the releases.
 #37 [pom] Add new section 'organization' to pom.xml.
