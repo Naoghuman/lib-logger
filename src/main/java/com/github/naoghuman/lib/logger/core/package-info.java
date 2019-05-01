@@ -16,5 +16,9 @@
  */
 /**
  * Contains the {@code API} for the library {@code Lib-Logger}.
+ * 
+ * @since   0.5.0
+ * @version 0.7.0
+ * @author  Naoghuman
  */
 package com.github.naoghuman.lib.logger.core;

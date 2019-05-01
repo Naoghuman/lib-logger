@@ -25,7 +25,9 @@ import org.apache.logging.log4j.Level;
  * access to the logging methods during the {@code Interface} 
  * {@link com.github.naoghuman.lib.logger.core.Logger}.
  *
- * @author Naoghuman
+ * @since   0.1.0
+ * @version 0.7.0
+ * @author  Naoghuman
  * @see    com.github.naoghuman.lib.logger.core.Logger
  */
 public final class LoggerFacade implements Logger {
@@ -35,7 +37,10 @@ public final class LoggerFacade implements Logger {
     /**
      * Returns a singleton instance from the class {@code LoggerFacade}.
      * 
-     * @return a singleton instance from the class {@code LoggerFacade}.
+     * @since   0.1.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @return  a singleton instance from the class {@code LoggerFacade}.
      */
     public static final LoggerFacade getDefault() {
         return instance.get();

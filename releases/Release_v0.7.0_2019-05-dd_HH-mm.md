@@ -37,6 +37,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 #38 [doc] Update the template for the releases.
 #37 [pom] Add new section 'organization' to pom.xml.
 #34 [doc] Update the section 'Intention' in the ReadMe.
+#31 [doc] Add new flag @since to all classes, interfaceses and methods.
 #30 [doc] Change signature in the JavaDoc.
 
 

@@ -26,9 +26,11 @@ import org.apache.logging.log4j.Level;
  * developer access to the {@code Implementation} from the methods in this 
  * {@code Interface}.
  *
- * @author Naoghuman
- * @see    com.github.naoghuman.lib.logger.internal.DefaultLogger
- * @see    com.github.naoghuman.lib.logger.core.LoggerFacade
+ * @since   0.5.0
+ * @version 0.7.0
+ * @author  Naoghuman
+ * @see     com.github.naoghuman.lib.logger.internal.DefaultLogger
+ * @see     com.github.naoghuman.lib.logger.core.LoggerFacade
  */
 public interface Logger {
     
@@ -39,6 +41,9 @@ public interface Logger {
      * @param deactivate {@code Boolean} which defined if the Logger should log 
      *        or not. {@code TRUE} if no logging desired, otherwise {@code FALSE} 
      *        for logging.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
      */
     public void deactivate(final Boolean deactivate);
     
@@ -48,10 +53,13 @@ public interface Logger {
      * 
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isDebugEnabled()
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isDebugEnabled()
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void debug(final Class clazz, final String msg);
     
@@ -62,10 +70,13 @@ public interface Logger {
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
      * @param ta    The {@code error} which is thrown.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isDebugEnabled() 
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isDebugEnabled() 
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void debug(final Class clazz, final String msg, final Throwable ta);
     
@@ -78,9 +89,12 @@ public interface Logger {
      * and {@link org.apache.logging.log4j.Level#OFF}.
      * 
      * @param level The {@code Level} which should be used.
-     * @see   org.apache.logging.log4j.Level
-     * @see   #own(Class, String)
-     * @see   #own(Class, String, Throwable)
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see    org.apache.logging.log4j.Level
+     * @see    #own(Class, String)
+     * @see    #own(Class, String, Throwable)
      */
     public void define(final Level level);
     
@@ -90,10 +104,13 @@ public interface Logger {
      * 
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
-     * @see    #deactivate(java.lang.Boolean) 
-     * @see    org.apache.logging.log4j.Logger#isErrorEnabled() 
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean) 
+     * @see     org.apache.logging.log4j.Logger#isErrorEnabled() 
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void error(final Class clazz, final String msg);
     
@@ -104,10 +121,13 @@ public interface Logger {
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
      * @param ta    The {@code error} which is thrown.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isErrorEnabled() 
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isErrorEnabled() 
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void error(final Class clazz, final String msg, final Throwable ta);
     
@@ -117,10 +137,13 @@ public interface Logger {
      * 
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isInfoEnabled() 
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isInfoEnabled() 
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void info(final Class clazz, final String msg);
     
@@ -131,10 +154,13 @@ public interface Logger {
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
      * @param ta    The {@code error} which is thrown.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isInfoEnabled()
-     * @throws NullPointerException if {@code clazz == NULL}. 
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isInfoEnabled()
+     * @throws  NullPointerException if {@code clazz == NULL}. 
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void info(final Class clazz, final String msg, final Throwable ta);
     
@@ -153,6 +179,9 @@ public interface Logger {
      * @param borderSign      The {@code sign}sign represent an element from the border.
      * @param borderSignCount Define how much {@code elements} have the border.
      * @param figlet          The {@code figlet} (or in normal format) message between the border.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
      */
     public void message(final char borderSign, final int borderSignCount, final String figlet);
     
@@ -164,9 +193,12 @@ public interface Logger {
      * 
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
-     * @see    #define(Level)
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #define(Level)
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void own(final Class clazz, final String msg);
     
@@ -179,14 +211,21 @@ public interface Logger {
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
      * @param ta    The {@code error} which is thrown.
-     * @see    #define(Level)
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #define(Level)
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void own(final Class clazz, final String msg, final Throwable ta);
     
     /**
      * Prints all system properties to the log.
+     * 
+     * @since   0.7.0
+     * @version 0.7.0
+     * @author  Naoghuman
      */
     public void printSystemProperties();
     
@@ -196,10 +235,13 @@ public interface Logger {
      * 
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isTraceEnabled() 
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isTraceEnabled() 
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void trace(final Class clazz, final String msg);
     
@@ -210,10 +252,13 @@ public interface Logger {
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
      * @param ta    The {@code error} which is thrown.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isTraceEnabled() 
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isTraceEnabled() 
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void trace(final Class clazz, final String msg, final Throwable ta);
     
@@ -223,10 +268,13 @@ public interface Logger {
      * 
      * @param clazz The {@code Class} for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isWarnEnabled() 
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isWarnEnabled() 
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void warn(final Class clazz, final String msg);
     
@@ -237,10 +285,13 @@ public interface Logger {
      * @param clazz The class for that the message should be printed.
      * @param msg   The {@code message} which should be printed.
      * @param ta    The {@code error} which is thrown.
-     * @see    #deactivate(java.lang.Boolean)
-     * @see    org.apache.logging.log4j.Logger#isWarnEnabled()
-     * @throws NullPointerException if {@code clazz == NULL}.
-     * @throws NullPointerException if {@code msg   == NULL}.
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @see     #deactivate(java.lang.Boolean)
+     * @see     org.apache.logging.log4j.Logger#isWarnEnabled()
+     * @throws  NullPointerException if {@code clazz == NULL}.
+     * @throws  NullPointerException if {@code msg   == NULL}.
      */
     public void warn(final Class clazz, final String msg, final Throwable ta);
     

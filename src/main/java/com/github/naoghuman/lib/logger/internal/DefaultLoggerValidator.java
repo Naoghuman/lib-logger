@@ -23,8 +23,9 @@ import java.util.Objects;
  * {@link java.lang.Object} conforms specific behaviours or not. For example if 
  * an {@code Object} is NULL or not.
  *
- * @author Naoghuman
- * @since  0.6.0
+ * @since   0.6.0
+ * @version 0.7.0
+ * @author  Naoghuman
  */
 public final class DefaultLoggerValidator {
     
@@ -33,7 +34,10 @@ public final class DefaultLoggerValidator {
      *
      * @param value the attribute which should be validated.
      * @param <T>   the type of the reference.
-     * @throws      NullPointerException if (value == NULL).
+     * @since   0.6.0
+     * @version 0.7.0
+     * @author  Naoghuman
+     * @throws  NullPointerException if (value == NULL).
      */
     public static <T> void requireNonNull(T value) throws NullPointerException {
         Objects.requireNonNull(value, "The parameter [value] can't be NULL"); // NOI18N

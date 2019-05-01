@@ -22,8 +22,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
+ * Unittests for the class {@code DefaultLogger}.
  *
- * @author Naoghuman
+ * @since   0.7.0
+ * @version 0.7.0
+ * @author  Naoghuman
  */
 public class DefaultLoggerTest {
     

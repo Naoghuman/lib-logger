@@ -28,9 +28,11 @@ import org.apache.logging.log4j.LogManager;
  * <p>
  * Access to this {@code Class} is over the facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade}.
  * 
- * @author Naoghuman
- * @see    com.github.naoghuman.lib.logger.core.Logger
- * @see    com.github.naoghuman.lib.logger.core.LoggerFacade
+ * @since   0.5.0
+ * @version 0.7.0
+ * @author  Naoghuman
+ * @see     com.github.naoghuman.lib.logger.core.Logger
+ * @see     com.github.naoghuman.lib.logger.core.LoggerFacade
  */
 public final class DefaultLogger implements com.github.naoghuman.lib.logger.core.Logger {
     
@@ -40,7 +42,11 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
     private Level level = Level.DEBUG;
     
     /**
-     * Default contructor.
+     * Default constructor.
+     * 
+     * @since   0.5.0
+     * @version 0.7.0
+     * @author  Naoghuman
      */
     public DefaultLogger() {
 //        System.setProperty("log4j.configurationFile", "src\\main\\resources\\log4j2\\log4j2.xml");
