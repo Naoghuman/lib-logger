@@ -94,6 +94,7 @@ See https://github.com/Naoghuman/lib-logger for more details.</description>
                 <version>3.1.0</version>
                 <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
+                    <destDir>docs/apidocs</destDir>
                 </configuration>
                 <!-- for RELEASE 
                 <executions>

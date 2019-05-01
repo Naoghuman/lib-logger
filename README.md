@@ -28,9 +28,7 @@ Content
     * [How to configure a project for logging](#HoToCoThFoLo)
     * [How to log a regular message](#HoToLoAReMe)
     * [How to log a starting message](#HoToLoAStMe)
-* [Api](#Api)
-    * [com.github.naoghuman.lib.logger.core.LoggerFacade](#LoggerFacade)
-    * [com.github.naoghuman.lib.logger.core.Logger](#Logger)
+* [JavaDoc](#JavaDoc)
 * [Download](#Download)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
@@ -172,288 +170,13 @@ application.version=v${pom.version}
 
 
 
-Api<a name="Api" />
+JavaDoc<a name="JavaDoc" />
 ---
 
+The [JavaDoc] from the library `Lib-Logger` can be explored here: [JavaDoc Lib-Logger]
 
-### com.github.naoghuman.lib.logger.core.LoggerFacade<a name="LoggerFacade" />
-
-```java
-/**
- * The facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} provides 
- * access to the logging methods during the {@code Interface} 
- * {@link com.github.naoghuman.lib.logger.core.Logger}.
- *
- * @author Naoghuman
- * @see    com.github.naoghuman.lib.logger.core.Logger
- */
-public final class LoggerFacade implements Logger
-```
-
-```java
-/**
- * Returns a singleton instance from the class <code>LoggerFacade</code>.
- * 
- * @return a singleton instance from the class <code>LoggerFacade</code>.
- */
-public static final LoggerFacade getDefault();
-```
-
-
-### com.github.naoghuman.lib.logger.core.Logger<a name="Logger" />
-
-```java
-/**
- * The {@code Interface} for the {@code Class} 
- * {@link com.github.naoghuman.lib.logger.internal.DefaultLogger}.
- * <p>
- * Over the facade {@link com.github.naoghuman.lib.logger.core.LoggerFacade} the 
- * developer access to the {@code Implementation} from the methods in this 
- * {@code Interface}.
- *
- * @author Naoghuman
- * @see    com.github.naoghuman.lib.logger.internal.DefaultLogger
- * @see    com.github.naoghuman.lib.logger.core.LoggerFacade
- */
-public interface Logger
-```
-
-```java
-/**
- * Alloweds the developer to decide if the Logger should log or not.<br>
- * Can be usefull during testing purpose.
- * 
- * @param deactivate {@code Boolean} which defined if the Logger should log 
- *        or not. {@code TRUE} if no logging desired, otherwise {@code FALSE} 
- *        for logging.
- */
-public void deactivate(final Boolean deactivate);
-```
- 
-```java
-/**
- * Prints a specific message in debug-mode for the given {@code Class} if 
- * {@code (deactive == FALSE)} and {@code (isDebugEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isDebugEnabled()
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void debug(final Class clazz, final String msg);
-```
-    
-```java
-/**
- * Prints a specific message in debug-mode with a throwable for the given 
- * {@code Class} if {@code (deactive == FALSE)} and {@code (isDebugEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @param ta    The {@code error} which is thrown.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isDebugEnabled() 
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void debug(final Class clazz, final String msg, final Throwable ta);
-```
-    
-```java
-/**
- * Lets the developer define a log {@link org.apache.logging.log4j.Level} 
- * which will be used in the methods {@link #own(Class, String)} and 
- * {@link #own(Class, String, Throwable)}. Default is {@link org.apache.logging.log4j.Level#DEBUG}.
- * <p>
- * All levels are allowed expected {@link org.apache.logging.log4j.Level#ALL} 
- * and {@link org.apache.logging.log4j.Level#OFF}.
- * 
- * @param level The {@code Level} which should be used.
- * @see   org.apache.logging.log4j.Level
- * @see   #own(Class, String)
- * @see   #own(Class, String, Throwable)
- */
-public void define(final Level level);
-```
-    
-```java
-/**
- * Prints a specific message in error-mode for the given class if 
- * {@code (deactive == FALSE)} and {@code (isErrorEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @see    #deactivate(java.lang.Boolean) 
- * @see    org.apache.logging.log4j.Logger#isErrorEnabled() 
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void error(final Class clazz, final String msg);
-```
-    
-```java
-/**
- * Prints a specific message in error-mode with a throwable for the given 
- * {@code Class} if {@code (deactive == FALSE)} and {@code (isErrorEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @param ta    The {@code error} which is thrown.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isErrorEnabled() 
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void error(final Class clazz, final String msg, final Throwable ta);
-```
-    
-```java
-/**
- * Prints a specific message in info-mode for the given {@code Class} if 
- * {@code (deactive == FALSE)} and {@code (isInfoEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isInfoEnabled() 
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void info(final Class clazz, final String msg);
-```
-    
-```java
-/**
- * Prints a specific message in info-mode with a throwable for the given {@code Class} 
- * if {@code (deactive == FALSE)} and {@code (isInfoEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @param ta    The {@code error} which is thrown.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isInfoEnabled()
- * @throws NullPointerException if {@code clazz == NULL}. 
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void info(final Class clazz, final String msg, final Throwable ta);
-```
-    
-```java
-/**
- * This will print a {@code Figlet} or {@code normal} message in the logfile.<br>
- * For example with {@code LoggerFacade.getDefault().message('#', 70, figlet);}
- * following will print to the log-file:
- * <p>
- * #####################################################################<br>
- * Here you will see your message.<br>
- * #####################################################################
- * <p>
- * Have a look at {@code http://www.lemoda.net/games/message/message-instant.html}
- * how to generate a message-message.
- * 
- * @param borderSign      The {@code sign}sign represent an element from the border.
- * @param borderSignCount Define how much {@code elements} have the border.
- * @param figlet          The {@code figlet} (or in normal format) message between the border.
- */
-public void message(final char borderSign, final int borderSignCount, final String figlet);
-```
-    
-```java
-/**
- * Prints a specific message in the defined log {@link org.apache.logging.log4j.Level} 
- * mode when {@code (deactive == FALSE)} and {@code (isLogModeEnabled() == TRUE)}.
- * The developer can the log level define in the method {@link #define(Level)}. 
- * Default is that {@link org.apache.logging.log4j.Level#DEBUG}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @see    #define(Level)
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void own(final Class clazz, final String msg);
-```
-    
-```java
-/**
- * Prints a specific message in the defined log {@link org.apache.logging.log4j.Level} 
- * mode when {@code (deactive == FALSE)} and {@code (isLogModeEnabled() == TRUE)}.
- * The developer can the log level define in the method {@link #define(Level)}. 
- * Default is that {@link org.apache.logging.log4j.Level#DEBUG}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @param ta    The {@code error} which is thrown.
- * @see    #define(Level)
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void own(final Class clazz, final String msg, final Throwable ta);
-```
-    
-```java
-/**
- * Prints a specific message in warn-mode for the given class if 
- * {@code (deactive == FALSE)} and {@code (isTraceEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isTraceEnabled() 
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void trace(final Class clazz, final String msg);
-```
-    
-```java
-/**
- * Prints a specific message in trace-mode with a throwable for the given {@code Class} 
- * if {@code (deactive == FALSE)} and {@code (isTraceEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @param ta    The {@code error} which is thrown.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isTraceEnabled() 
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void trace(final Class clazz, final String msg, final Throwable ta);
-```
-    
-```java
-/**
- * Prints a specific message in trace-mode for the given {@code Class} if 
- * {@code (deactive == FALSE)} and {@code (isWarnEnabled() == TRUE)}.
- * 
- * @param clazz The {@code Class} for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isWarnEnabled() 
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void warn(final Class clazz, final String msg);
-```
-    
-```java
-/**
- * Prints a specific message in warn-mode with a throwable for the given {@code Class}
- * {@code (deactive == FALSE)} and {@code (isWarnEnabled() == TRUE)}.
- * 
- * @param clazz The class for that the message should be printed.
- * @param msg   The {@code message} which should be printed.
- * @param ta    The {@code error} which is thrown.
- * @see    #deactivate(java.lang.Boolean)
- * @see    org.apache.logging.log4j.Logger#isWarnEnabled()
- * @throws NullPointerException if {@code clazz == NULL}.
- * @throws NullPointerException if {@code msg   == NULL}.
- */
-public void warn(final Class clazz, final String msg, final Throwable ta);
-```
+_Image:_ JavaDoc Lib-Logger v0.7.0  
+![Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39.png][Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39]
 
 
 
@@ -549,6 +272,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
+[Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39]:https://user-images.githubusercontent.com/8161815/34914830-f97a93f0-f91a-11e7-82dd-7018bbaddb1c.png
 [UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00]:https://user-images.githubusercontent.com/8161815/34914830-f97a93f0-f91a-11e7-82dd-7018bbaddb1c.png
 
 
@@ -564,6 +288,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Issue]:https://github.com/Naoghuman/lib-logger/issues
 [Java]:http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html
 [JavaDoc]:http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html
+[JavaDoc Lib-Logger]:http://naoghuman.github.io/lib-logger/apidocs
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX Scene Builder]:http://gluonhq.com/labs/scene-builder/
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
