@@ -12,6 +12,7 @@ Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 
 #### Bug
+#42 [bug] The example 'log4j2.xml' isn't copied into the .jar file.
 
 
 

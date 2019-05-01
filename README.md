@@ -48,18 +48,18 @@ Examples<a name="Examples" />
 
 ### How to configure a project for logging<a name="HoToCoThFoLo" />
 
-In this example I will show yout how to configure a [Java] project for the usage 
-from the library `Lib-Logger`.
+In this example I want to show you how to configure a [Java] or [JavaFX] project 
+for the usage from the library `Lib-Logger`.
 
-_Image:_ Move the template file `log4j2.xml`  
-![move-log4j2-to-application_v0.5.0_2017-05-27_08-21.png][move-log4j2-to-application_v0.5.0_2017-05-27_08-21]
-
-* Move the file `log4j2.xml` from the folder `log4j2` to the default package in 
-  `src/main/resources` in your new project.
+* First move the file `log4j2-template.xml` to the default package `src/main/resources` 
+  in your project.
+* Then rename the file to 'log4j2.xml'.
 * Open the file and tweak it for your necessities. Plz see for more informations:
+    * [Log4j XML Configuration Prime]
     * [Log4j – Configuring Log4j 2 - Apache Log4j 2]
     * [Log4j – Frequently Asked Questions - Apache Log4j 2]
-* That was about it :smile:
+* If your project is hosted on GitHub then don't forgot to add the folder `/log/` 
+  to your `.gitignore` file.
 
 
 ### How to log a regular message<a name="HoToLoAReMe" />
@@ -549,7 +549,6 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
-[move-log4j2-to-application_v0.5.0_2017-05-27_08-21]:https://cloud.githubusercontent.com/assets/8161815/26518746/e45ae648-42b6-11e7-9c72-43789dc412e2.png
 [UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00]:https://user-images.githubusercontent.com/8161815/34914830-f97a93f0-f91a-11e7-82dd-7018bbaddb1c.png
 
 
@@ -572,6 +571,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Log4j – Configuring Log4j 2 - Apache Log4j 2]:https://logging.apache.org/log4j/2.x/manual/configuration.html
 [Log4j – Frequently Asked Questions - Apache Log4j 2]:https://logging.apache.org/log4j/2.0/faq.html
+[Log4j XML Configuration Prime]:https://wiki.apache.org/logging-log4j/Log4jXmlFormat
 [log4j-api-2.11.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [log4j-core-2.11.2.jar]:https://logging.apache.org/log4j/2.0/log4j-web/dependencies.html
 [Maven]:http://maven.apache.org/

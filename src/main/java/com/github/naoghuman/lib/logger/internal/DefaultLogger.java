@@ -42,7 +42,9 @@ public final class DefaultLogger implements com.github.naoghuman.lib.logger.core
     /**
      * Default contructor.
      */
-    public DefaultLogger() { }
+    public DefaultLogger() {
+//        System.setProperty("log4j.configurationFile", "src\\main\\resources\\log4j2\\log4j2.xml");
+    }
     
     private org.apache.logging.log4j.Logger getLogger(final Class clazz) {
         // Look if the class have a logger

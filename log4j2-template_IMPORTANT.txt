@@ -18,12 +18,16 @@
 --------------------------------------------------------------------------------
 IMPORTANT
 --------------------------------------------------------------------------------
-1) Move the file log4j2.xml to the default resource package (src/main/resources)
-   in your main maven project.
-2) Don't forget to tweak the file so that the logmessages have the format which
-   you want.
-    - See wiki.apache.org/logging-log4j/Log4jXmlFormat
-3) Is your project hosted on GitHub don't forgot to add the folder /log/ to your
-   gitignore file.
+How to configure a project for logging?
+
+* First move the file `log4j2-template.xml` to the default package `src/main/resources` 
+  in your project.
+* Then rename the file to 'log4j2.xml'.
+* Open the file and tweak it for your necessities. Plz see for more informations:
+    - https://wiki.apache.org/logging-log4j/Log4jXmlFormat
+    - https://logging.apache.org/log4j/2.x/manual/configuration.html
+    - https://logging.apache.org/log4j/2.0/faq.html
+* If your project is hosted on GitHub then don't forgot to add the folder `/log/` 
+  to your `.gitignore` file.
 
 --------------------------------------------------------------------------------

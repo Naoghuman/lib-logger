@@ -20,7 +20,6 @@
     console.
     
     <Configuration status="trace">
-    <Configuration>
 -->
 <Configuration>
     <Appenders>
