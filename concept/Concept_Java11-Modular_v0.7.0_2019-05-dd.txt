@@ -1,0 +1,52 @@
+--------------------------------------------------------------------------------
+CONCEPT <Java-11 Modular>
+--------------------------------------------------------------------------------
+INTENTION
+ - How to update Lib-Logger to Java-11?
+
+Preparation Software:
+ - Install new Apache NetBeans (10 or 11)
+ - Install JDK-11
+ - Install JavaFX-11
+
+Preparation Knowledge:
+ - Search JavaFX-11 guide.
+ - Search Java-11 guide for modular projects.
+
+Preparation GitHub project:
+ - Prepare the ReadMe (will be java-11).
+ - Last release-branch will be java-8. 
+    - That means the master-branch is then java-11.
+ - The new release in Java-11 will have '11' as mayor version -> v11.0.0
+ - Use JUnit-5.
+
+Open points:
+ - What more?
+ - ...
+
+Hint:
+ - This is only the concept.
+ - The implementation will done with the next release.
+
+--------------------------------------------------------------------------------
+SPECIFICATION
+ - ...
+
+--------------------------------------------------------------------------------
+LINKS
+ - ...
+
+--------------------------------------------------------------------------------
+EXTRAS
+ - ...
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
