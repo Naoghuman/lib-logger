@@ -13,7 +13,7 @@ Intention
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 Java(FX) &amp; [Maven] desktop application.
 
-_Image:_ [UML] Lib-Logger v0.6.0  
+_Image:_ [UML] Lib-Logger  
 ![UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00.png][UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00]
 
 > __Hint__  
@@ -32,7 +32,6 @@ Content
 * [Download](#Download)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
-* [Documentation](#Documentation)
 * [Contribution](#Contribution)
 * [License](#License)
 * [Autor](#Autor)
@@ -49,15 +48,15 @@ Examples<a name="Examples" />
 In this example I want to show you how to configure a [Java] or [JavaFX] project 
 for the usage from the library `Lib-Logger`.
 
-* First move the file `log4j2-template.xml` to the default package `src/main/resources` 
-  in your project.
+* First move the file `log4j2-template.xml` from the GitHub project into the default 
+  package `src/main/resources` in your project.
 * Then rename the file to 'log4j2.xml'.
 * Open the file and tweak it for your necessities. Plz see for more informations:
     * [Log4j XML Configuration Prime]
     * [Log4j – Configuring Log4j 2 - Apache Log4j 2]
     * [Log4j – Frequently Asked Questions - Apache Log4j 2]
-* If your project is hosted on GitHub then don't forgot to add the folder `/log/` 
-  to your `.gitignore` file.
+* If your project is hosted on GitHub or another development platform then don't 
+  forgot to add the folder `/log/` to your `.gitignore` file.
 
 
 ### How to log a regular message<a name="HoToLoAReMe" />
@@ -175,7 +174,7 @@ JavaDoc<a name="JavaDoc" />
 
 The [JavaDoc] from the library `Lib-Logger` can be explored here: [JavaDoc Lib-Logger]
 
-_Image:_ JavaDoc Lib-Logger v0.7.0  
+_Image:_ JavaDoc Lib-Logger  
 ![Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39.png][Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39]
 
 
@@ -183,11 +182,10 @@ _Image:_ JavaDoc Lib-Logger v0.7.0
 Download<a name="Download" />
 ---
 
-Current `version` is `0.6.0`. Main points in this release are:
-* This is a mayor update.
-* Add new `DefaultLoggerValidator for stability purpose.
-* Remove the deprecated content.
-* Update the documentation to fit the new version.
+Current `version` is `0.7.0`. Main points in this release are:
+* Prepare the library for `Java-11`!
+* Connect the GitHub project to Travis CI.
+* Move the `JavaDoc` to the GitHub folder `docs/apidocs`.
 
 **Maven coordinates**  
 In context from a [Maven] project you can use following maven coordinates: 
@@ -196,13 +194,13 @@ In context from a [Maven] project you can use following maven coordinates:
     <dependency>
         <groupId>com.github.naoghuman</groupId>
         <artifactId>lib-logger</artifactId>
-        <version>0.6.0</version>
+        <version>0.7.0</version>
     </dependency>
 </dependencies>
 ```
 
 **Download manuell**
-* [Release v0.6.0 (01.14.2018 / MM.dd.yyyy)]
+* [Release v0.7.0] (05.02.2019 / MM.dd.yyyy)
 
 **An overview** about all existings releases can be found here:
 * [Overview from all releases in Lib-Logger]
@@ -213,7 +211,7 @@ Requirements<a name="Requirements" />
 ---
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* The library [Lib-Logger-0.6.0.jar](#Installation).
+* The library [Lib-Logger-0.7.0.jar](#Installation).
     * Included is the [log4j-api-2.11.2.jar].
     * Included is the [log4j-core-2.11.2.jar].
 
@@ -230,15 +228,6 @@ Installation<a name="Installation" />
 * Choose your preferred IDE (e.g. [NetBeans], [Eclipse] or [IntelliJ IDEA]) for 
   development.
 * Download or clone the library [Lib-Logger].
-
-
-
-Documentation<a name="Documentation" />
----
-
-* In section [Api](#Api) you can see the main point(s) to access the functionality 
-  in this library.
-* For additional information you can see the [JavaDoc] in the library itself.
 
 
 
@@ -303,5 +292,5 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans]:https://netbeans.org/
 [Overview from all releases in Lib-Logger]:https://github.com/Naoghuman/lib-logger/releases
 [Pull Request]:https://help.github.com/articles/using-pull-requests
-[Release v0.6.0 (01.14.2018 / MM.dd.yyyy)]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.6.0
+[Release v0.7.0]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.7.0
 [UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language

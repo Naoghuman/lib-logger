@@ -1,13 +1,14 @@
 Welcome to `Lib-Logger` with the new release `0.7.0`.
 
 `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
-[JavaFX] &amp; [Maven] desktop application.
+Java(FX) &amp; [Maven] desktop application.
 
 
 
 #### Summary
-* ...
-* ...
+* Prepare the library for `Java-11`!
+* Connect the GitHub project to Travis CI.
+* Move the `JavaDoc` to the GitHub folder `docs/apidocs`.
 
 
 
