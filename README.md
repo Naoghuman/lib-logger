@@ -175,7 +175,7 @@ JavaDoc<a name="JavaDoc" />
 The [JavaDoc] from the library `Lib-Logger` can be explored here: [JavaDoc Lib-Logger]
 
 _Image:_ JavaDoc Lib-Logger  
-![Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39.png][Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39]
+![Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-22.png][Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-22]
 
 
 
@@ -261,7 +261,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
-[Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-39]:https://user-images.githubusercontent.com/8161815/34914830-f97a93f0-f91a-11e7-82dd-7018bbaddb1c.png
+[Lib-Logger_JavaDoc_v0.7.0_2019-05-02_09-22]:https://user-images.githubusercontent.com/8161815/57061126-198f8b80-6cbc-11e9-952d-a27115081d4a.png
 [UML-diagram_Lib-Logger_v0.6.0_2018-01-14_11-00]:https://user-images.githubusercontent.com/8161815/34914830-f97a93f0-f91a-11e7-82dd-7018bbaddb1c.png
 
 

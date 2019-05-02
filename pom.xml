@@ -107,7 +107,7 @@ See https://github.com/Naoghuman/lib-logger for more details.</description>
                 </executions>
                 <!-- -->
             </plugin>
-            <!-- for RELEASE 
+            <!-- for RELEASE -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
@@ -122,7 +122,7 @@ See https://github.com/Naoghuman/lib-logger for more details.</description>
                     </execution>
                 </executions>
             </plugin>
-            -->
+            <!-- -->
         </plugins>
     </build>
     
